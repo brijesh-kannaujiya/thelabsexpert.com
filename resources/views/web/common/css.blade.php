@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/line-awesome.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/nice-select.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/odometer.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/dark.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
