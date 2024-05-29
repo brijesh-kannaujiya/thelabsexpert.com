@@ -1128,7 +1128,7 @@ Navbar Area CSS
     display: none;
   }
   .others-option-for-responsive {
-    display: none;
+    display: none; 
   }
 }
 
