@@ -22,7 +22,7 @@
                 <i class="fas fa-map-marked-alt"></i> {{session('branch_name')}}
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="min-width: 0px">
-                @if(count($user_branches))
+                {{-- @if(count($user_branches))
                 @foreach($user_branches as $branch)
                 <a class="dropdown-item" href="{{route('admin.change_branch',$branch['branch_id'])}}">{{$branch['branch']['name']}}</a>
                 @endforeach
@@ -30,7 +30,7 @@
                 <span class="dropdown-item">
                     {{__('No other branches')}}
                 </span>
-                @endif
+                @endif --}}
             </div>
         </li>
         @endcan

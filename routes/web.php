@@ -1,8 +1,12 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\RolesController;
+use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
@@ -26,11 +30,32 @@ Route::get('/contact', [ContactController::class, 'index']);
 Auth::routes();
 
 
-Route::group(['middleware' => ['Locale'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
-    Route::get('/', [DashboardController::class, 'index']);
+Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
     Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
         Route::get('edit', [ProfileController::class, 'edit'])->name('edit');
         Route::post('update', [ProfileController::class, 'update'])->name('update');
     });
     Route::get('/create', [HomeController::class, 'create']);
+    Route::resource('categories', CategoriesController::class);
+    Route::resource('roles', RolesController::class);
+    Route::get('get_roles', [RolesController::class, 'ajax'])->name('get_roles');
+    Route::post('roles/bulk/delete', [RolesController::class, 'bulk_delete'])->name('roles.bulk_delete');
+
+
+    Route::resource('users', UsersController::class);
+    Route::get('get_users', [UsersController::class, 'ajax'])->name('get_users');
+    Route::post('users/bulk/delete', [UsersController::class, 'bulk_delete'])->name('users.bulk_delete');
+
+
+    Route::prefix('settings')->name('settings.')->group(function () {
+        Route::get('/', [SettingsController::class, 'index'])->name('index');
+        Route::post('info', [SettingsController::class, 'info_submit'])->name('info_submit');
+        Route::post('emails', [SettingsController::class, 'emails_submit'])->name('emails_submit');
+        Route::post('reports', [SettingsController::class, 'reports_submit'])->name('reports_submit');
+        Route::post('sms', [SettingsController::class, 'sms_submit'])->name('sms_submit');
+        Route::post('whatsapp', [SettingsController::class, 'whatsapp_submit'])->name('whatsapp_submit');
+        Route::post('api_keys', [SettingsController::class, 'api_keys_submit'])->name('api_keys_submit');
+        Route::post('barcode', [SettingsController::class, 'barcode_submit'])->name('barcode_submit');
+    });
 });

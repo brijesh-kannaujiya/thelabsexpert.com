@@ -11,9 +11,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        // $permissions = Permission::all();
-        // $modules = Module::all();
-        // dd($modules, $permissions);
+        // dd(auth());
         return view('admin.dashboard.index');
     }
 }
