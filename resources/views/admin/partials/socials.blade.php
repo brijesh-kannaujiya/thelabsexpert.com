@@ -9,7 +9,7 @@
             @if(!empty($value))
             <li class="d-inline">
                 <a href="{{$value}}">
-                    <img src="{{asset('public/img/'.$key.'.png')}}" width="40px">
+                    <img src="{{asset('img/'.$key.'.png')}}" width="40px">
                 </a>
             </li>
             @endif

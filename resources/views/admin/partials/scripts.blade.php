@@ -1,52 +1,52 @@
 <!-- jQuery -->
-<script src="{{asset('public/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="{{asset('public/jquery-ui/jquery-ui.min.js')}}"></script>
+<script src="{{asset('jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{asset('public/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- ChartJS -->
-<script src="{{asset('public/chart.js/Chart.min.js')}}"></script>
+<script src="{{asset('chart.js/Chart.min.js')}}"></script>
 <!-- Sparkline -->
-<script src="{{asset('public/sparklines/sparkline.js')}}"></script>
+<script src="{{asset('sparklines/sparkline.js')}}"></script>
 <!-- jQuery Knob Chart -->
-<script src="{{asset('public/jquery-knob/jquery.knob.min.js')}}"></script>
+<script src="{{asset('jquery-knob/jquery.knob.min.js')}}"></script>
 <!-- daterangepicker -->
-<script src="{{asset('public/moment/moment.min.js')}}"></script>
-<script src="{{asset('public/daterangepicker/daterangepicker.js')}}"></script>
+<script src="{{asset('moment/moment.min.js')}}"></script>
+<script src="{{asset('daterangepicker/daterangepicker.js')}}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="{{asset('public/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+<script src="{{asset('tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 <!-- Summernote -->
-<script src="{{asset('public/summernote/summernote-bs4.min.js')}}"></script>
+<script src="{{asset('summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->
-<script src="{{asset('public/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+<script src="{{asset('overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="{{asset('public/dist/js/adminlte.js')}}"></script>
+<script src="{{asset('dist/js/adminlte.js')}}"></script>
 <!-- DataTables -->
-<script src="{{asset('public/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('public/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('public/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{asset('public/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
-{{-- <script src="{{asset('public/datatables-fixedheader/js/dataTables.fixedHeader.min.js')}}" type="text/javascript"></script> --}}
-<script src="{{asset('public/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
-<script src="{{asset('public/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
-<script src="{{asset('public/jszip/jszip.min.js')}}"></script>
-<script src="{{asset('public/pdfmake/pdfmake.min.js')}}"></script>
-<script src="{{asset('public/pdfmake/vfs_fonts.js')}}"></script>
-<script src="{{asset('public/datatables-buttons/js/buttons.html5.min.js')}}"></script>
-<script src="{{asset('public/datatables-buttons/js/buttons.print.min.js')}}"></script>
-<script src="{{asset('public/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+<script src="{{asset('datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+{{-- <script src="{{asset('datatables-fixedheader/js/dataTables.fixedHeader.min.js')}}" type="text/javascript"></script> --}}
+<script src="{{asset('datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+<script src="{{asset('datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{asset('jszip/jszip.min.js')}}"></script>
+<script src="{{asset('pdfmake/pdfmake.min.js')}}"></script>
+<script src="{{asset('pdfmake/vfs_fonts.js')}}"></script>
+<script src="{{asset('datatables-buttons/js/buttons.html5.min.js')}}"></script>
+<script src="{{asset('datatables-buttons/js/buttons.print.min.js')}}"></script>
+<script src="{{asset('datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 <!-- Toastr-->
 <script src="{{ url('js/toastr.min.js')}}"></script>
 <!-- Validate -->
-<script src="{{asset('public/jquery-validation/jquery.validate.min.js')}}"></script>
-<script src="{{asset('public/print/jQuery.print.min.js')}}"></script>
-<script src="{{asset('public/js/jquery.classyqr.min.js')}}"></script>
-<script src="{{asset('public/js/select2.js')}}"></script>
-<script src="{{asset('public/sweet-alert/sweetalert.min.js')}}"></script>
+<script src="{{asset('jquery-validation/jquery.validate.min.js')}}"></script>
+<script src="{{asset('print/jQuery.print.min.js')}}"></script>
+<script src="{{asset('js/jquery.classyqr.min.js')}}"></script>
+<script src="{{asset('js/select2.js')}}"></script>
+<script src="{{asset('sweet-alert/sweetalert.min.js')}}"></script>
 <!-- Flatpickr -->
-<script src="{{asset('public/flatpickr/flatpickr.min.js')}}"></script>
+<script src="{{asset('flatpickr/flatpickr.min.js')}}"></script>
 <!-- Lightbox -->
-<script src="{{asset('public/ekko-lightbox/ekko-lightbox.js')}}"></script>
+<script src="{{asset('ekko-lightbox/ekko-lightbox.js')}}"></script>
 
 <!-- Scripts Translation -->
 <script>
