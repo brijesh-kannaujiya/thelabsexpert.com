@@ -17,7 +17,7 @@
                 <img src="@if(!empty(auth()->guard('patient')->user()->avatar)){{asset('public/uploads/patient-avatar/'.auth()->guard('patient')->user()->avatar)}}@else {{asset('public/img/avatar.png')}} @endif" class="img-circle elevation-2" alt="Avatar">
                 @endif --}}
 
-                <img src="{{asset('public/img/avatar.png')}}" class="img-circle elevation-2" alt="Avatar">
+                <img src="{{asset('img/avatar.png')}}" class="img-circle elevation-2" alt="Avatar">
             </div>
             <div class="info">
                 <a href="#" class="d-block">
