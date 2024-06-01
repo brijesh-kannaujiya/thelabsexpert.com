@@ -9,7 +9,7 @@
     {{-- <div class="loader">
     
   </div> --}}
-    {{-- <img src="{{url('img/'.$info['preloader'])}}" class="loader" alt=""> --}}
+    {{-- <img src="{{asset('public/img/'.$info['preloader'])}}" class="loader" alt=""> --}}
     <div class="wrapper">
 
         <!-- Navbar -->

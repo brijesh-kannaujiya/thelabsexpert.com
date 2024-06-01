@@ -5,7 +5,7 @@
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="{{url('plugins/swtich-netliva/css/netliva_switch.css')}}">
+<link rel="stylesheet" href="{{asset('public/plugins/swtich-netliva/css/netliva_switch.css')}}">
 @endsection
 @section('breadcrumb')
 <style>
@@ -617,6 +617,6 @@
 
 @section('scripts')
 <!-- Switch -->
-<script src="{{url('plugins/swtich-netliva/js/netliva_switch.js')}}"></script>
-<script src="{{url('js/admin/dashboard.js')}}"></script>
+<script src="{{asset('public/plugins/swtich-netliva/js/netliva_switch.js')}}"></script>
+<script src="{{asset('public/js/admin/dashboard.js')}}"></script>
 @endsection
