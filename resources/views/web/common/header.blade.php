@@ -57,31 +57,44 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('appointment') }}"
-                                class="nav-link {{ request()->is('appointment') ? 'active' : '' }}">
+                            <a href="{{ url('appointment') }}" class="nav-link {{ request()->is('appointment') ? 'active' : '' }}">
                                 appointment
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('about') }}"
-                                class="nav-link {{ request()->is('about') ? 'active' : '' }}">
+                            <a href="{{ url('about') }}" class="nav-link {{ request()->is('about') ? 'active' : '' }}">
                                 About
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ url('services') }}"
-                                class="nav-link {{ request()->is('services') ? 'active' : '' }}">
+                            <a href="{{ url('services') }}" class="nav-link {{ request()->is('services') ? 'active' : '' }}">
                                 Services
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ url('contact') }}"
-                                class="nav-link {{ request()->is('contact') ? 'active' : '' }}">
+                            <a href="{{ url('contact') }}" class="nav-link {{ request()->is('contact') ? 'active' : '' }}">
                                 Contact
                             </a>
                         </li>
+
+                        @auth
+                        <li class="nav-item">
+                            <a href="{{ url('admin') }}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                Dashboard
+                            </a>
+                        </li>
+                        @else
+                        <li class="nav-item">
+                            <a href="{{ url('login') }}" class="nav-link {{ request()->is('login') ? 'active' : '' }}">
+                                Login
+                            </a>
+                        </li>
+
+                        @endauth
+
+
 
                     </ul>
 
@@ -223,8 +236,7 @@
                             +088 130 629 8615
                         </a>
                         <span>OR</span>
-                        <a
-                            href="https://templates.envytheme.com/cdn-cgi/l/email-protection#deb2bbbcb19eb9b3bfb7b2f0bdb1b3">
+                        <a href="https://templates.envytheme.com/cdn-cgi/l/email-protection#deb2bbbcb19eb9b3bfb7b2f0bdb1b3">
                             <span>abc@gmail.com</span>
                         </a>
                     </h2>
