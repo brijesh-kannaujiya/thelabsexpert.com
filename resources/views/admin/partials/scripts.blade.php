@@ -36,7 +36,7 @@
 <script src="{{asset('plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset('plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 <!-- Toastr-->
-<script src="{{ url('js/toastr.min.js')}}"></script>
+<script src="{{ asset('js/toastr.min.js')}}"></script>
 <!-- Validate -->
 <script src="{{asset('plugins/jquery-validation/jquery.validate.min.js')}}"></script>
 <script src="{{asset('plugins/print/jQuery.print.min.js')}}"></script>
@@ -75,7 +75,7 @@
     var can_view_best_income_cultures = @can('view_best_income_packages') true @else false @endif;
 
 </script>
-<script src="{{ url('js/admin/main.js')}}"></script>
+<script src="{{ asset('js/admin/main.js')}}"></script>
 {{-- @else  --}}
 {{-- <script src="{{ url('js/patient/main.js')}}"></script> --}}
 {{-- @endif --}}
@@ -97,6 +97,6 @@ toastr_error(trans("{{Session::get('failed')}}"));
 
 <!-- Bulk actions -->
 {{-- @if(auth()->guard('admin')->check()) --}}
-<script src="{{ url('js/admin/bulk_action.js')}}"></script>
+<script src="{{ asset('js/admin/bulk_action.js')}}"></script>
 {{-- @endif --}}
 <!-- \Bulk actions -->
