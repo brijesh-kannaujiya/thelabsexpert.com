@@ -34,7 +34,7 @@
         <h3 class="card-title">{{ __('Create category') }}</h3>
     </div>
     <!-- /.card-header -->
-    <form method="POST" action="{{route('admin.categories.store')}}">
+    <form method="POST" action="{{route('admin.categories.store')}}" enctype="multipart/form-data">
         @csrf
         <div class="card-body">
             <div class="col-lg-12">

@@ -37,7 +37,14 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => '
         Route::post('update', [ProfileController::class, 'update'])->name('update');
     });
     Route::get('/create', [HomeController::class, 'create']);
+
+
+    // categories
     Route::resource('categories', CategoriesController::class);
+    Route::post('categories/bulk/delete', [CategoriesController::class, 'bulk_delete'])->name('categories.bulk_delete');
+
+
+
     Route::resource('roles', RolesController::class);
     Route::get('get_roles', [RolesController::class, 'ajax'])->name('get_roles');
     Route::post('roles/bulk/delete', [RolesController::class, 'bulk_delete'])->name('roles.bulk_delete');

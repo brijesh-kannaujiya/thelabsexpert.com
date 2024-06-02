@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BulkActionRequest;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
 
 class CategoriesController extends Controller
@@ -40,6 +40,10 @@ class CategoriesController extends Controller
                 ->addColumn('bulk_checkbox', function ($item) {
                     return view('admin.partials._bulk_checkbox', compact('item'));
                 })
+                ->addColumn('icon', function ($category) {
+                    $iconUrl = url($category->icon);
+                    return view('admin.categories._icon', compact('iconUrl'));
+                })
                 ->toJson();
         }
         return view('admin.categories.index');
@@ -65,10 +69,14 @@ class CategoriesController extends Controller
      */
     public function store(CategoryRequest $request)
     {
-        $category = Category::create($request->except('_token', '_method', 'files'));
-
+        $data = $request->except('_token', '_method', 'icon', 'files');
+        if ($request->hasFile('icon')) {
+            $extension = $request->file('icon')->getClientOriginalExtension();
+            $request->file('icon')->move('admin/category', 'icon_' . time() . '.' . $extension);
+            $data['icon'] =  'admin/category/icon_' . time() . '.' . $extension;
+        }
+        $category = Category::create($data);
         session()->flash('success', __('Category created successfully'));
-
         return redirect()->route('admin.categories.index');
     }
 
@@ -104,12 +112,18 @@ class CategoriesController extends Controller
      */
     public function update(CategoryRequest $request, $id)
     {
-
         $category = Category::findOrFail($id);
-        $category->update($request->except('_token', '_method', 'files'));
-
+        $data = $request->except('_token', '_method', 'files');
+        if ($request->hasFile('icon')) {
+            $extension = $request->file('icon')->getClientOriginalExtension();
+            $request->file('icon')->move('admin/category', 'icon_' . time() . '.' . $extension);
+            $data['icon'] =  'admin/category/icon_' . time() . '.' . $extension;
+            if ($category->icon) {
+                @unlink($category->icon);
+            }
+        }
+        $category->update($data);
         session()->flash('success', __('Category updated successfully'));
-
         return redirect()->route('admin.categories.index');
     }
 
@@ -122,10 +136,11 @@ class CategoriesController extends Controller
     public function destroy($id)
     {
         $category = Category::findOrFail($id);
+        if ($category->icon) {
+            @unlink($category->icon);
+        }
         $category->delete();
-
         session()->flash('success', __('Category deleted successfully'));
-
         return redirect()->route('admin.categories.index');
     }
 
@@ -139,6 +154,9 @@ class CategoriesController extends Controller
     {
         foreach ($request['ids'] as $id) {
             $category = Category::findOrFail($id);
+            if ($category->icon) {
+                @unlink($category->icon);
+            }
             $category->delete();
         }
 

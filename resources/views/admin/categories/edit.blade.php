@@ -34,7 +34,7 @@
         <h3 class="card-title">{{ __('Edit category') }}</h3>
     </div>
     <!-- /.card-header -->
-    <form method="POST" action="{{route('admin.categories.update',$category['id'])}}">
+    <form method="POST" action="{{route('admin.categories.update',$category['id'])}}" enctype="multipart/form-data">
         @csrf
         @method('put')
         <div class="card-body">

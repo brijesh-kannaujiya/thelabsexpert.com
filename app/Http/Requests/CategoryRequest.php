@@ -21,8 +21,19 @@ class CategoryRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'name' => 'required'
-        ];
+        // Dump and die the request data to debug
+        if ($this->_method == 'put') {
+            return [
+                'name' => 'required',
+                'icon' => 'nullable',
+                'description' => 'required|string'
+            ];
+        } else {
+            return [
+                'name' => 'required',
+                'icon' => 'required',
+                'description' => 'required|string'
+            ];
+        }
     }
 }

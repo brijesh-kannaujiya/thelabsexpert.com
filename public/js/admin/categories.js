@@ -17,33 +17,7 @@
             "<'row'<'col-sm-4'l><'col-sm-4'B><'col-sm-4'f>>" +
             "<'row'<'col-sm-12'tr>>" +
             "<'row'<'col-sm-4'i><'col-sm-8'p>>",
-        buttons: [
-            // {
-            //     extend:    'copyHtml5',
-            //     text:      '<i class="fas fa-copy"></i> Copy',
-            //     titleAttr: 'Copy'
-            // },
-            // {
-            //     extend:    'excelHtml5',
-            //     text:      '<i class="fas fa-file-excel"></i> Excel',
-            //     titleAttr: 'Excel'
-            // },
-            // {
-            //     extend:    'csvHtml5',
-            //     text:      '<i class="fas fa-file-csv"></i> CVS',
-            //     titleAttr: 'CSV'
-            // },
-            // {
-            //     extend:    'pdfHtml5',
-            //     text:      '<i class="fas fa-file-pdf"></i> PDF',
-            //     titleAttr: 'PDF'
-            // },
-            // {
-            //   extend:    'colvis',
-            //   text:      '<i class="fas fa-eye"></i>',
-            //   titleAttr: 'PDF'
-            // }
-        ],
+        buttons: [],
         processing: true,
         serverSide: true,
         ajax: {
@@ -57,8 +31,10 @@
                 sortable: false,
                 orderable: false,
             },
-            { data: "id", sortable: true, orderable: true },
-            { data: "name", sortable: true, orderable: true },
+            { data: "id", sortable: false, orderable: false },
+            { data: "name", sortable: false, orderable: false },
+            { data: "description", sortable: false, orderable: false },
+            { data: "icon", sortable: false, orderable: false },
             {
                 data: "action",
                 searchable: false,

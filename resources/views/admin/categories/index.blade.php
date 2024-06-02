@@ -49,6 +49,8 @@
                         </th>
                         <th width="10px">#</th>
                         <th>{{__('Name')}}</th>
+                        <th>{{__('Description')}}</th>
+                        <th>{{__('Icon')}}</th>
                         <th width="100px">{{__('Action')}}</th>
                     </tr>
                 </thead>
