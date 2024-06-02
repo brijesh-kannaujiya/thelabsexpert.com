@@ -31,12 +31,12 @@ Auth::routes();
 
 
 Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('index');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('index');
     Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
         Route::get('edit', [ProfileController::class, 'edit'])->name('edit');
         Route::post('update', [ProfileController::class, 'update'])->name('update');
     });
-    Route::get('/create', [HomeController::class, 'create']);
+    // Route::get('/create', [HomeController::class, 'create']);
 
 
     // categories

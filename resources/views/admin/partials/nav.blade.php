@@ -111,7 +111,7 @@
                 <i class="fas fa-sign-out-alt"></i>
             </button>
             {{-- action="@if(auth()->guard('admin')->check()){{route('admin.logout')}}@else{{route('patient.logout')}}@endif" --}}
-            <form id="sign_out" method="POST" action="logout">
+            <form id="sign_out" method="POST" action="{{route('logout')}}">
                 @csrf
             </form>
         </li>
