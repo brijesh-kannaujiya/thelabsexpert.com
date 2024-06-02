@@ -3,63 +3,63 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateProfileRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Show the form for editing profile
+     *
+     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function edit()
     {
-        //
+        return view('admin.profile.edit');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Update profile
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function update(UpdateProfileRequest $request)
     {
-        //
-    }
+        //update user
+        $user = User::findOrFail(auth()->user()->id);
+        $user->name = $request->name;
+        $user->email = $request->email;
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        //optional updating password
+        if (!empty($request['password'])) {
+            $user->password = Hash::make($request->password);
+        }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        //signature
+        if ($request->hasFile('signature')) {
+            //upload signature
+            $signature = $request->file('signature');
+            $signature_name = auth()->user()->id . '.' . $signature->getClientOriginalExtension();
+            $signature->move('uploads/signature', $signature_name);
+            $user->signature = $signature_name;
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+        //avatar
+        if ($request->hasFile('avatar')) {
+            //upload avatar
+            $avatar = $request->file('avatar');
+            $avatar_name = time() . auth()->guard('admin')->user()->id . '.' . $avatar->getClientOriginalExtension();
+            $avatar->move('uploads/user-avatar', $avatar_name);
+            $user->avatar = $avatar_name;
+        }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+        $user->save();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        session()->flash('success', __('Profile updated successfully'));
+
+        return redirect()->route('admin.profile.edit');
     }
 }
