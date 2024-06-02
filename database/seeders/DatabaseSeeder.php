@@ -15,11 +15,13 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            PermissionSeeder::class,
-            UserSeeder::class,
-            SettingSeeder::class,
-            LanguageSeeder::class,
-            CategorySeeder::class,
+            // PermissionSeeder::class,
+            // UserSeeder::class,
+            // SettingSeeder::class,
+            // LanguageSeeder::class,
+            // CategorySeeder::class,
+            NewPermissionSeeder::class,
+            VialSeeder::class,
         ]);
 
         DB::table('activity_log')->truncate();

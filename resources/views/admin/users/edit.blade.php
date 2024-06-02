@@ -51,7 +51,7 @@
         <div class="card-footer">
             <div class="col-lg-12">
                 <button type="submit" class="btn btn-primary">
-                  <i class="fa fa-check"></i>  {{__('Save')}}
+                    <i class="fa fa-check"></i> {{__('Save')}}
                 </button>
             </div>
         </div>
@@ -62,5 +62,5 @@
 
 @endsection
 @section('scripts')
-    <script src="{{url('js/admin/users.js')}}"></script>
+<script src="{{asset('js/admin/users.js')}}"></script>
 @endsection

@@ -58,7 +58,7 @@
 
 @endsection
 @section('scripts')
-<script src="{{url('js/admin/roles.js')}}"></script>
+<script src="{{asset('js/admin/roles.js')}}"></script>
 <script>
     (function($) {
 

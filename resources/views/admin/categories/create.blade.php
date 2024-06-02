@@ -55,5 +55,5 @@
 
 @endsection
 @section('scripts')
-<script src="{{url('js/admin/categories.js')}}"></script>
+<script src="{{asset('js/admin/categories.js')}}"></script>
 @endsection

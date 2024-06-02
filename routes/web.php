@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Admin\VialsController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
@@ -43,13 +44,17 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => '
     Route::resource('categories', CategoriesController::class);
     Route::post('categories/bulk/delete', [CategoriesController::class, 'bulk_delete'])->name('categories.bulk_delete');
 
+    // vials
+    Route::resource('vials', VialsController::class);
+    Route::post('vials/bulk/delete', [VialsController::class, 'bulk_delete'])->name('vials.bulk_delete');
 
 
+    // roles
     Route::resource('roles', RolesController::class);
     Route::get('get_roles', [RolesController::class, 'ajax'])->name('get_roles');
     Route::post('roles/bulk/delete', [RolesController::class, 'bulk_delete'])->name('roles.bulk_delete');
 
-
+    // users
     Route::resource('users', UsersController::class);
     Route::get('get_users', [UsersController::class, 'ajax'])->name('get_users');
     Route::post('users/bulk/delete', [UsersController::class, 'bulk_delete'])->name('users.bulk_delete');

@@ -9,14 +9,7 @@
             </a>
         </li>
 
-        <li class="nav-item">
-            <a href="{{route('admin.profile.edit')}}" class="nav-link" id="profile">
-                <i class="nav-icon fas fa-user-circle"></i>
-                <p>
-                    {{__('Profile')}}
-                </p>
-            </a>
-        </li>
+
 
         @can('view_group')
         <li class="nav-item">
@@ -378,38 +371,73 @@
         </li>
         @endcan
 
-        @canany(['view_user','view_role'])
+        {{-- @canany(['view_user','view_role'])
         <li class="nav-item has-treeview" id="users_roles">
             <a href="#" class="nav-link" id="users_roles_link">
                 <i class="nav-icon fas fa-user"></i>
                 <p>
                     {{__('Roles And Users')}}
-                    <i class="right fas fa-angle-left"></i>
+        <i class="right fas fa-angle-left"></i>
+        </p>
+        </a>
+        <ul class="nav nav-treeview">
+
+            @can('view_role')
+            <li class="nav-item">
+                <a href="{{route('admin.roles.index')}}" class="nav-link" id="roles">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{{__('Roles')}}</p>
+                </a>
+            </li>
+            @endcan
+
+            @can('view_user')
+            <li class="nav-item">
+                <a href="{{route('admin.users.index')}}" class="nav-link" id="users">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{{__('Users')}}</p>
+                </a>
+            </li>
+            @endcan
+
+        </ul>
+        </li>
+        @endcan --}}
+
+        @can('view_role')
+        <li class="nav-item">
+            <a href="{{route('admin.roles.index')}}" class="nav-link" id="roles">
+                <i class="nav-icon far fa-user"></i>
+                <p>
+                    {{__('Roles')}}
                 </p>
             </a>
-            <ul class="nav nav-treeview">
-
-                @can('view_role')
-                <li class="nav-item">
-                    <a href="{{route('admin.roles.index')}}" class="nav-link" id="roles">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>{{__('Roles')}}</p>
-                    </a>
-                </li>
-                @endcan
-
-                @can('view_user')
-                <li class="nav-item">
-                    <a href="{{route('admin.users.index')}}" class="nav-link" id="users">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>{{__('Users')}}</p>
-                    </a>
-                </li>
-                @endcan
-
-            </ul>
         </li>
         @endcan
+
+        @can('view_user')
+        <li class="nav-item">
+            <a href="{{route('admin.users.index')}}" class="nav-link" id="users">
+                <i class="nav-icon far fa-user"></i>
+                <p>
+                    {{__('Users')}}
+                </p>
+            </a>
+        </li>
+        @endcan
+
+        @can('view_vials')
+        <li class="nav-item">
+            <a href="{{route('admin.vials.index')}}" class="nav-link" id="vials">
+                {{-- <i class="nav-icon far fa-vial"></i> --}}
+                <i class="nav-icon fas fa-vial"></i>
+                <p>
+                    {{__('Vials')}}
+                </p>
+            </a>
+        </li>
+        @endcan
+
 
         @can('view_chat')
         <li class="nav-item">
@@ -467,6 +495,14 @@
         </li>
         @endcan
 
+        <li class="nav-item">
+            <a href="{{route('admin.profile.edit')}}" class="nav-link" id="profile">
+                <i class="nav-icon fas fa-user-circle"></i>
+                <p>
+                    {{__('Profile')}}
+                </p>
+            </a>
+        </li>
 
     </ul>
 </nav>
