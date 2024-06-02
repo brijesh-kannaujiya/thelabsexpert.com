@@ -1,7 +1,7 @@
 @extends('admin.common.app')
 
 @section('title')
-{{__('Categories')}}
+{{__('Users')}}
 @endsection
 
 @section('breadcrumb')
@@ -10,14 +10,14 @@
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1 class="m-0 text-dark">
-                    <i class="fa fa-tasks"></i>
-                    {{__('Categories')}}
+                    <i class="fa fa-user-circle"></i>
+                    {{__('Users')}}
                 </h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{route('admin.index')}}">{{__('Home')}}</a></li>
-                    <li class="breadcrumb-item active">{{__('Categories')}}</li>
+                    <li class="breadcrumb-item active"><a href="#">{{__('Users')}}</a></li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -30,10 +30,10 @@
 <div class="card card-primary card-outline">
     <div class="card-header">
         <h3 class="card-title">
-            {{__('Categories table')}}
+            {{__('Users Table')}}
         </h3>
-        @can('create_category')
-        <a href="{{route('admin.categories.create')}}" class="btn btn-primary btn-sm float-right">
+        @can('create_user')
+        <a href="{{route('admin.users.create')}}" class="btn btn-primary btn-sm float-right">
             <i class="fa fa-plus"></i> {{ __('Create') }}
         </a>
         @endcan
@@ -41,7 +41,7 @@
     <!-- /.card-header -->
     <div class="card-body">
         <div class="col-lg-12 table-responsive">
-            <table id="categories_table" class="table table-striped table-bordered" width="100%">
+            <table id="reports_table" class=" table table table-striped table-bordered" width="100%">
                 <thead>
                     <tr>
                         <th width="10px">
@@ -49,8 +49,8 @@
                         </th>
                         <th width="10px">#</th>
                         <th>{{__('Name')}}</th>
-                        <th>{{__('Description')}}</th>
-                        <th>{{__('Icon')}}</th>
+                        <th>{{__('Email')}}</th>
+                        <th>{{__('Roles')}}</th>
                         <th width="100px">{{__('Action')}}</th>
                     </tr>
                 </thead>
@@ -66,8 +66,8 @@
 @endsection
 @section('scripts')
 <script>
-    var can_delete = @can('delete_category') true @else false @endcan
+    var can_delete = @can('delete_user') true @else false @endcan
 
 </script>
-<script src="{{asset('js/admin/categories.js')}}"></script>
+<script src="{{asset('js/admin/users.js')}}"></script>
 @endsection

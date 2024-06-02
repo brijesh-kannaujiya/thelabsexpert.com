@@ -29,7 +29,7 @@
     <div class="card-header">
         <h3 class="card-title">{{ __('Roles Table') }}</h3>
         @can('create_role')
-        <a href="#" class="btn btn-primary btn-sm float-right">
+        <a href="{{route('admin.roles.create')}}" class="btn btn-primary btn-sm float-right">
             <i class="fa fa-plus"></i> {{ __('Create') }}
         </a>
         @endcan
@@ -65,5 +65,5 @@
     var can_delete = @can('delete_role') true @else false @endcan
 
 </script>
-<script src="{{url('js/admin/roles.js')}}"></script>
+<script src="{{asset('js/admin/roles.js')}}"></script>
 @endsection

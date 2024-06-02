@@ -1,10 +1,11 @@
 @extends('admin.common.app')
 
 @section('title')
-{{ __('Create Role') }}
+{{ __('Edit Role') }}
 @endsection
 
 @section('css')
+<link rel="stylesheet" href="{{url('css/select2.css')}}">
 @endsection
 
 @section('breadcrumb')
@@ -19,9 +20,8 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item active"><a href="#">{{ __('Roles') }}</a>
-                    </li>
-                    <li class="breadcrumb-item active">{{ __('Create Role') }}</li>
+                    <li class="breadcrumb-item active"><a href="{{route('admin.roles.index')}}">{{ __('Roles') }}</a></li>
+                    <li class="breadcrumb-item active">{{ __('Edit Role') }}</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -32,11 +32,12 @@
 @section('content')
 <div class="card card-primary">
     <div class="card-header">
-        <h3 class="card-title">{{ __('Create Role') }}</h3>
+        <h3 class="card-title">{{ __('Edit Role') }}</h3>
     </div>
     <!-- /.card-header -->
-    <form method="POST" action="{{route('admin.roles.store')}}">
+    <form method="POST" action="{{route('admin.roles.update',$role['id'])}}">
         @csrf
+        @method('put')
         <div class="card-body">
             <div class="col-lg-12">
                 @include('admin.roles._form')
@@ -58,4 +59,18 @@
 @endsection
 @section('scripts')
 <script src="{{url('js/admin/roles.js')}}"></script>
+<script>
+    (function($) {
+
+        "use strict";
+
+        @if(isset($role))
+        @foreach($role['permissions'] as $permission)
+        $("#{{$permission['permission']['key']}}").prop('checked', true);
+        @endforeach
+        @endif
+
+    })(jQuery);
+
+</script>
 @endsection

@@ -9,9 +9,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
 class Role extends Model
 {
     use LogsActivity;
-
-
-
+    public $guarded = [];
     public function permissions()
     {
         return $this->hasMany(RolePermission::class, 'role_id', 'id');

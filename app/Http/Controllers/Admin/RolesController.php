@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BulkActionRequest;
+use App\Http\Requests\RoleRequest;
 use App\Models\Module;
 use App\Models\Permission;
 use App\Models\Role;
+use App\Models\RolePermission;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -48,7 +51,7 @@ class RolesController extends Controller
                 return view('admin.roles._action', compact('role'));
             })
             ->addColumn('bulk_checkbox', function ($item) {
-                return view('partials._bulk_checkbox', compact('item'));
+                return view('admin.partials._bulk_checkbox', compact('item'));
             })
             ->toJson();
     }

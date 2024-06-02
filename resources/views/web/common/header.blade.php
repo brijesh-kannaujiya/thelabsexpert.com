@@ -81,7 +81,7 @@
 
                         @auth
                         <li class="nav-item">
-                            <a href="{{ url('admin') }}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                            <a href="{{ url('admin/dashboard') }}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
                                 Dashboard
                             </a>
                         </li>
