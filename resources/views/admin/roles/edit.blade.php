@@ -5,7 +5,7 @@
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="{{url('css/select2.css')}}">
+<link rel="stylesheet" href="{{asset('css/select2.css')}}">
 @endsection
 
 @section('breadcrumb')

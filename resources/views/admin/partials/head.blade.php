@@ -46,9 +46,9 @@
 <link rel="stylesheet" href="{{asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('plugins/datatables-fixedheader/css/fixedHeader.bootstrap4.min.css')}}">
 <!-- toastr css -->
-<link rel="stylesheet" href="{{ URL::asset('css/toastr.min.css')}}">
+<link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
 <!-- select2 css -->
-<link rel="stylesheet" href="{{ url('css/select2.css')}}" type="text/css">
+<link rel="stylesheet" href="{{ asset('css/select2.css')}}" type="text/css">
 <!-- jquery ui -->
 <link rel="stylesheet" href="{{asset('plugins/jquery-ui/jquery-ui.min.css')}}">
 <!-- sweetalert -->
