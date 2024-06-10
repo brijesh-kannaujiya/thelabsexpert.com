@@ -14,32 +14,32 @@ class NewPermissionSeeder extends Seeder
      */
     public function run(): void
     {
-        $vials_module = Module::Create([
-            'name' => 'Vials'
+        $specimens_module = Module::Create([
+            'name' => 'Specimen'
         ]);
 
         Permission::insert(
             [
                 [
-                    'module_id' => $vials_module['id'],
-                    'key' => 'view_vials',
+                    'module_id' => $specimens_module['id'],
+                    'key' => 'view_specimen',
                     'name' => 'View'
                 ],
                 [
-                    'module_id' => $vials_module['id'],
-                    'key' => 'create_vials',
+                    'module_id' => $specimens_module['id'],
+                    'key' => 'create_specimen',
                     'name' => 'Create'
                 ],
                 [
-                    'module_id' => $vials_module['id'],
-                    'key' => 'edit_vials',
+                    'module_id' => $specimens_module['id'],
+                    'key' => 'edit_specimen',
                     'name' => 'Edit'
                 ],
                 [
-                    'module_id' => $vials_module['id'],
-                    'key' => 'delete_vials',
+                    'module_id' => $specimens_module['id'],
+                    'key' => 'delete_specimen',
                     'name' => 'Delete'
-                ],
+                ]
             ]
         );
     }

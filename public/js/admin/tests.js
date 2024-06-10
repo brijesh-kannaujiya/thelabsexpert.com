@@ -20,33 +20,7 @@ var count_comments = $("#count_comments").val();
             "<'row'<'col-sm-4'l><'col-sm-4'B><'col-sm-4'f>>" +
             "<'row'<'col-sm-12'tr>>" +
             "<'row'<'col-sm-4'i><'col-sm-8'p>>",
-        buttons: [
-            {
-                extend: "copyHtml5",
-                text: '<i class="fas fa-copy"></i> ' + trans("Copy"),
-                titleAttr: "Copy",
-            },
-            {
-                extend: "excelHtml5",
-                text: '<i class="fas fa-file-excel"></i> ' + trans("Excel"),
-                titleAttr: "Excel",
-            },
-            {
-                extend: "csvHtml5",
-                text: '<i class="fas fa-file-csv"></i> ' + trans("CVS"),
-                titleAttr: "CSV",
-            },
-            {
-                extend: "pdfHtml5",
-                text: '<i class="fas fa-file-pdf"></i> ' + trans("PDF"),
-                titleAttr: "PDF",
-            },
-            {
-                extend: "colvis",
-                text: '<i class="fas fa-eye"></i>',
-                titleAttr: "colvis",
-            },
-        ],
+        buttons: [],
         processing: true,
         serverSide: true,
         ajax: {
@@ -61,11 +35,22 @@ var count_comments = $("#count_comments").val();
                 orderable: false,
             },
             { data: "id", sortable: true, orderable: true },
-            { data: "category.name", sortable: false, orderable: false },
-            { data: "name", sortable: true, orderable: true },
-            { data: "shortcut", sortable: false, orderable: false },
-            { data: "sample_type", sortable: false, orderable: false },
+            { data: "test_name", sortable: true, orderable: true },
+            { data: "test_code", sortable: true, orderable: true },
+            { data: "mrp_price", sortable: false, orderable: false },
             { data: "price", sortable: false, orderable: false },
+            { data: "report_date", sortable: false, orderable: false },
+            { data: "fasting", sortable: false, orderable: false },
+            {
+                data: "customer_instructions",
+                sortable: false,
+                orderable: false,
+            },
+            { data: "phlebo_instructions", sortable: false, orderable: false },
+            { data: "short_desc", sortable: false, orderable: false },
+            { data: "category.name", sortable: false, orderable: false },
+            { data: "vial.name", sortable: false, orderable: false },
+            { data: "specimen.name", sortable: false, orderable: false },
             {
                 data: "action",
                 searchable: false,
@@ -329,17 +314,17 @@ var count_comments = $("#count_comments").val();
     });
 
     //check if selected components
-    $("#test_form").on("submit", function () {
-        var count_components = $(".components tbody tr").length;
+    // $("#test_form").on("submit", function () {
+    //     var count_components = $(".components tbody tr").length;
 
-        if (count_components == 0) {
-            toastr.error(
-                trans("Please select at least one test component"),
-                trans("Failed")
-            );
-            return false;
-        }
-    });
+    //     if (count_components == 0) {
+    //         toastr.error(
+    //             trans("Please select at least one test component"),
+    //             trans("Failed")
+    //         );
+    //         return false;
+    //     }
+    // });
 
     //delete test
     $(document).on("click", ".delete_test", function (e) {
@@ -631,6 +616,59 @@ var count_comments = $("#count_comments").val();
                 $(".loader").show();
             },
             url: ajax_url("get_categories"),
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.name,
+                            id: item.id,
+                        };
+                    }),
+                };
+            },
+            complete: function () {
+                $(".preloader").hide();
+                $(".loader").hide();
+            },
+        },
+    });
+
+    //get category select2 intialize
+    $("#vial").select2({
+        width: "100%",
+        placeholder: trans("Vials"),
+        ajax: {
+            beforeSend: function () {
+                $(".preloader").show();
+                $(".loader").show();
+            },
+            url: ajax_url("get_vials"),
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.name,
+                            id: item.id,
+                        };
+                    }),
+                };
+            },
+            complete: function () {
+                $(".preloader").hide();
+                $(".loader").hide();
+            },
+        },
+    });
+
+    $("#specimens").select2({
+        width: "100%",
+        placeholder: trans("Specimen"),
+        ajax: {
+            beforeSend: function () {
+                $(".preloader").show();
+                $(".loader").show();
+            },
+            url: ajax_url("get_specimens"),
             processResults: function (data) {
                 return {
                     results: $.map(data, function (item) {

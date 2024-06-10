@@ -52,14 +52,5 @@ class UserSeeder extends Seeder
             'role_id' => $role['id'],
             'user_id' => $user['id']
         ]);
-
-        //asign branches to user
-        // $branches = Branch::all();
-        // foreach ($branches as $branch) {
-        //     UserBranch::create([
-        //         'branch_id' => $branch['id'],
-        //         'user_id' => $user['id']
-        //     ]);
-        // }
     }
 }

@@ -55,6 +55,8 @@
 <link rel="stylesheet" href="{{asset('plugins/sweet-alert/sweetalert.css')}}">
 <!-- Flatpickr -->
 <link rel="stylesheet" href="{{asset('plugins/flatpickr/flatpickr.min.css')}}">
+
+<link rel="stylesheet" href="{{asset('assets/css/flaticon.css')}}">
 <!-- RTL -->
 @if(session('rtl'))
 <link rel="stylesheet" href="{{asset('css/rtl.css')}}">

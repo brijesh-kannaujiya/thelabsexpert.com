@@ -667,7 +667,6 @@ function url(url = "") {
 //ajax url
 function ajax_url(url = "") {
     var base_url = location.origin;
-
     return base_url + "/ajax/" + url;
 }
 

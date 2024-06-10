@@ -429,10 +429,20 @@
         @can('view_vials')
         <li class="nav-item">
             <a href="{{route('admin.vials.index')}}" class="nav-link" id="vials">
-                {{-- <i class="nav-icon far fa-vial"></i> --}}
                 <i class="nav-icon fas fa-vial"></i>
                 <p>
                     {{__('Vials')}}
+                </p>
+            </a>
+        </li>
+        @endcan
+
+        @can('view_specimen')
+        <li class="nav-item">
+            <a href="{{route('admin.specimens.index')}}" class="nav-link" id="specimen">
+                <i class="nav-icon fas fa-vial"></i>
+                <p>
+                    {{__('Specimen')}}
                 </p>
             </a>
         </li>

@@ -1,11 +1,14 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\AjaxController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\SpecimenController;
+use App\Http\Controllers\Admin\TestController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\VialsController;
 use App\Http\Controllers\AppointmentController;
@@ -48,6 +51,10 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => '
     Route::resource('vials', VialsController::class);
     Route::post('vials/bulk/delete', [VialsController::class, 'bulk_delete'])->name('vials.bulk_delete');
 
+    // vials
+    Route::resource('specimens', SpecimenController::class);
+    Route::post('specimens/bulk/delete', [SpecimenController::class, 'bulk_delete'])->name('specimens.bulk_delete');
+
 
     // roles
     Route::resource('roles', RolesController::class);
@@ -58,6 +65,16 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => '
     Route::resource('users', UsersController::class);
     Route::get('get_users', [UsersController::class, 'ajax'])->name('get_users');
     Route::post('users/bulk/delete', [UsersController::class, 'bulk_delete'])->name('users.bulk_delete');
+
+    // users
+    Route::resource('tests', TestController::class);
+    Route::get('get_tests', [TestController::class, 'ajax'])->name('get_tests'); // Datatable
+    Route::get('tests/consumptions/{id}', [TestController::class, 'consumptions'])->name('tests.consumptions'); // Consumptions
+    Route::post('tests/consumptions', [TestController::class, 'consumptions_submit'])->name('tests.consumptions.submit'); // Consumptions Submit
+    Route::get('tests_export', [TestController::class, 'export'])->name('tests.export');
+    Route::get('tests_download_template', [TestController::class, 'download_template'])->name('tests.download_template');
+    Route::post('tests_import', [TestController::class, 'import'])->name('tests.import');
+    Route::post('tests/bulk/delete', [TestController::class, 'bulk_delete'])->name('tests.bulk_delete');
 
 
     Route::prefix('settings')->name('settings.')->group(function () {
@@ -70,4 +87,9 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => '
         Route::post('api_keys', [SettingsController::class, 'api_keys_submit'])->name('api_keys_submit');
         Route::post('barcode', [SettingsController::class, 'barcode_submit'])->name('barcode_submit');
     });
+});
+Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'ajax', 'as' => 'ajax.'], function () {
+    Route::get('get_categories', [AjaxController::class, 'get_categories'])->name('get_categories');
+    Route::get('get_vials', [AjaxController::class, 'get_vials'])->name('get_vials');
+    Route::get('get_specimens', [AjaxController::class, 'get_specimens'])->name('get_specimens');
 });

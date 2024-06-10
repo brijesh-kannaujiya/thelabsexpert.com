@@ -133,35 +133,64 @@ class PermissionSeeder extends Seeder
             ]
         );
 
-        //tests
-        // $tests_module = Module::Create([
-        //     'name' => 'tests'
-        // ]);
+        $specimens_module = Module::Create([
+            'name' => 'Specimen'
+        ]);
 
-        // Permission::insert(
-        //     [
-        //         [
-        //             'module_id' => $tests_module['id'],
-        //             'key' => 'view_test',
-        //             'name' => 'View'
-        //         ],
-        //         [
-        //             'module_id' => $tests_module['id'],
-        //             'key' => 'create_test',
-        //             'name' => 'Create'
-        //         ],
-        //         [
-        //             'module_id' => $tests_module['id'],
-        //             'key' => 'edit_test',
-        //             'name' => 'Edit'
-        //         ],
-        //         [
-        //             'module_id' => $tests_module['id'],
-        //             'key' => 'delete_test',
-        //             'name' => 'Delete'
-        //         ],
-        //     ]
-        // );
+        Permission::insert(
+            [
+                [
+                    'module_id' => $specimens_module['id'],
+                    'key' => 'view_specimen',
+                    'name' => 'View'
+                ],
+                [
+                    'module_id' => $specimens_module['id'],
+                    'key' => 'create_specimen',
+                    'name' => 'Create'
+                ],
+                [
+                    'module_id' => $specimens_module['id'],
+                    'key' => 'edit_specimen',
+                    'name' => 'Edit'
+                ],
+                [
+                    'module_id' => $specimens_module['id'],
+                    'key' => 'delete_specimen',
+                    'name' => 'Delete'
+                ]
+            ]
+        );
+
+        // tests
+        $tests_module = Module::Create([
+            'name' => 'tests'
+        ]);
+
+        Permission::insert(
+            [
+                [
+                    'module_id' => $tests_module['id'],
+                    'key' => 'view_test',
+                    'name' => 'View'
+                ],
+                [
+                    'module_id' => $tests_module['id'],
+                    'key' => 'create_test',
+                    'name' => 'Create'
+                ],
+                [
+                    'module_id' => $tests_module['id'],
+                    'key' => 'edit_test',
+                    'name' => 'Edit'
+                ],
+                [
+                    'module_id' => $tests_module['id'],
+                    'key' => 'delete_test',
+                    'name' => 'Delete'
+                ],
+            ]
+        );
 
         //cultures
         // $cultures_module = Module::Create([
@@ -998,5 +1027,7 @@ class PermissionSeeder extends Seeder
         //         ],
         //     ]
         // );
+
+
     }
 }
