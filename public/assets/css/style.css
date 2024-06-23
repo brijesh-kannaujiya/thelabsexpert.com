@@ -656,7 +656,7 @@ Navbar Area CSS
   z-index: 999;
   -webkit-box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
           box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
-  background-color: #ffffff !important;
+  background-color: #7da3ca !important;
   -webkit-animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
           animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
 }
@@ -1120,7 +1120,7 @@ Navbar Area CSS
     max-width: 100px !important;
   }
   .navbar-area {
-    background-color: #ffffff;
+    background-color: #7da3ca;
     padding-top: 15px;
     padding-bottom: 15px;
   }
@@ -1335,7 +1335,7 @@ Top Services Area CSS
 About Area CSS
 =================================================*/
 .about-area {
-  background-color: #f9fbfc;
+  background-color: #7da3ca;
   position: relative;
   z-index: 1;
 }
@@ -1455,7 +1455,7 @@ About Area CSS
 Services Area CSS
 =================================================*/
 .services-area {
-  background-color: #efe9fb;
+  background-color: #7da3ca;
   position: relative;
   z-index: 1;
 }
@@ -2819,7 +2819,7 @@ Blog Area CSS
 Partner Area CSS
 =================================================*/
 .partner-area {
-  background-color: #fafaff;
+  background-color: #7da3ca;
 }
 
 .partner-slider .partner-item {
@@ -5859,3 +5859,7 @@ Buy Now Btn
   }
 }
 /*# sourceMappingURL=style.css.map */
+
+body { 
+  background-color: #7da3ca !important; 
+}
