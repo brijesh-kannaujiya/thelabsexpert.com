@@ -75,5 +75,5 @@
     var can_delete = @can('delete_package') true @else false @endcan
 
 </script>
-<script src="{{assets('js/admin/packages.js')}}"></script>
+<script src="{{asset('js/admin/packages.js')}}"></script>
 @endsection
