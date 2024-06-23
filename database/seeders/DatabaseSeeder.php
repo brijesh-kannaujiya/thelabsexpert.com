@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             // CategorySeeder::class,
             // TestSeeder::class,
             PackageSeeder::class,
-            // NewPermissionSeeder::class,
+            NewPermissionSeeder::class,
         ]);
 
         DB::table('activity_log')->truncate();

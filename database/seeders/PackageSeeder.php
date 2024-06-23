@@ -13,7 +13,7 @@ class PackageSeeder extends Seeder
      */
     public function run(): void
     {
-        // Package::truncate();
+        Package::truncate();
         $package = Package::create([
             'name' => 'Package 4',
             'price' => 100,
