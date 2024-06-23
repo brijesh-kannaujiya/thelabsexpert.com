@@ -11,6 +11,7 @@ class Test extends Model
     use SoftDeletes;
     use HasFactory;
     public $guarded = [];
+    public $with = ['category', 'vial', 'specimen'];
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id', 'id');

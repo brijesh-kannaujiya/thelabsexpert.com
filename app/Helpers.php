@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Package;
 use App\Models\Setting;
 
 if (!function_exists("setting")) {
@@ -13,16 +14,23 @@ if (!function_exists("setting")) {
 
         return null;
     }
-
-    if (!function_exists("formated_price")) {
-        function formated_price($price)
-        {
-            $setting = Setting::where("key", "info")->first()["value"];
-            $setting = json_decode($setting, true);
-            if (isset($setting["currency"])) {
-                cache()->put("currency", $setting["currency"]);
-            }
-            return $price . " " . cache()->get("currency");
+}
+if (!function_exists("formated_price")) {
+    function formated_price($price)
+    {
+        $setting = Setting::where("key", "info")->first()["value"];
+        $setting = json_decode($setting, true);
+        if (isset($setting["currency"])) {
+            cache()->put("currency", $setting["currency"]);
         }
+        return $price . " " . cache()->get("currency");
+    }
+}
+
+if (!function_exists("get_Packeges")) {
+
+    function get_Packeges()
+    {
+        return Package::with(['tests'])->take(20)->get();
     }
 }

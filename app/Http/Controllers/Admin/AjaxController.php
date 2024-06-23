@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Specimen;
+use App\Models\Test;
 use App\Models\Vial;
 use Illuminate\Http\Request;
 
@@ -39,5 +40,15 @@ class AjaxController extends Controller
         }
 
         return response()->json($specimens);
+    }
+
+    public function get_tests(Request $request)
+    {
+        if (isset($request->term)) {
+            $tests = Test::where('test_name', 'like', '%' . $request->term . '%')->take(20)->get();
+        } else {
+            $tests = Test::take(20)->get();
+        }
+        return response()->json($tests);
     }
 }
