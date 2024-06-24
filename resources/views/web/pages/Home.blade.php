@@ -1,7 +1,7 @@
 @extends('web.common.app')
 
 @section('content')
-<div class="home-slides owl-carousel owl-theme">
+<div class="home-slides owl-carousel owl-theme pb-70">
     <div class="main-slider-item">
         <div class="d-table">
             <div class="d-table-cell">
@@ -21,12 +21,6 @@
             </div>
         </div>
 
-        <div class="slider-shape">
-            <img src="{{ asset('assets/img/slides/slider-shape.png') }}" alt="image">
-        </div>
-        <div class="slider-shape-2">
-            <img src="{{ asset('assets/img/slides/slider-shape-2.png') }}" alt="image">
-        </div>
     </div>
 
     <div class="main-slider-item item-two">
@@ -48,12 +42,7 @@
             </div>
         </div>
 
-        <div class="slider-shape">
-            <img src="{{ asset('assets/img/slides/slider-shape.png') }}" alt="image">
-        </div>
-        <div class="slider-shape-2">
-            <img src="{{ asset('assets/img/slides/slider-shape-2.png') }}" alt="image">
-        </div>
+
     </div>
 
     <div class="main-slider-item item-three">
@@ -75,76 +64,80 @@
             </div>
         </div>
 
-        <div class="slider-shape">
-            <img src="{{ asset('assets/img/slides/slider-shape.png') }}" alt="image">
-        </div>
-        <div class="slider-shape-2">
-            <img src="{{ asset('assets/img/slides/slider-shape-2.png') }}" alt="image">
-        </div>
     </div>
 </div>
 
-<section class="top-services-area pb-70">
+<section class="top-services-area">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="top-services-item">
-                    <div class="icon">
-                        <i class="flaticon-lab-tool"></i>
-                    </div>
-                    <h3>
-                        <a href="{{ url('/services-details') }}">Chemical Research</a>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut
-                        labore</p>
-                </div>
-            </div>
+
+            @foreach (get_Categoryes() as $category)
 
             <div class="col-lg-3 col-md-6">
-                <div class="top-services-item top1">
+                <a href="{{ url('/services-details') }}">
+                    <div class="top-services-item">
+                        <div class="icon">
+                            <img src="{{url($category->icon)}}" /> {{-- <i class="flaticon-lab-tool"></i> --}} </div>
+                        <h3>
+                            {{ Str::words($category->name, 3, '...')}}
+                        </h3>
+                        <p>{{ Str::words($category->description, 18, '...') }}
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            @endforeach
+
+
+
+
+
+            {{-- <div class="col-lg-3 col-md-6">
+                <div class="top-services-item">
                     <div class="icon">
                         <i class="flaticon-laboratory"></i>
                     </div>
                     <h3>
                         <a href="{{ url('/services-details') }}">
-                            Advanced Microscopy
-                        </a>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut
-                        labore</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="top-services-item">
-                    <div class="icon">
-                        <i class="flaticon-biological"></i>
-                    </div>
-                    <h3>
-                        <a href="{{ url('/services-details') }}">
-                            Molecular Biology
-                        </a>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut
-                        labore</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="top-services-item top2">
-                    <div class="icon">
-                        <i class="flaticon-test"></i>
-                    </div>
-                    <h3>
-                        <a href="{{ url('/services-details') }}">
-                            Pathology Testing
-                        </a>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut
-                        labore</p>
-                </div>
-            </div>
+            Advanced Microscopy
+            </a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut
+                labore</p>
         </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+        <div class="top-services-item">
+            <div class="icon">
+                <i class="flaticon-biological"></i>
+            </div>
+            <h3>
+                <a href="{{ url('/services-details') }}">
+                    Molecular Biology
+                </a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut
+                labore</p>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+        <div class="top-services-item ">
+            <div class="icon">
+                <i class="flaticon-test"></i>
+            </div>
+            <h3>
+                <a href="{{ url('/services-details') }}">
+                    Pathology Testing
+                </a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut
+                labore</p>
+        </div>
+    </div> --}}
+    </div>
     </div>
 </section>
 
@@ -201,7 +194,7 @@
     </div>
 </section>
 
-<section class="services-area pt-100 pb-70">
+{{-- <section class="services-area pt-100 pb-70">
     <div class="container">
         <div class="section-title">
             <span>Services</span>
@@ -220,92 +213,92 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                     </p>
                     <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
-                </div>
-            </div>
+</div>
+</div>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="single-services">
-                    <div class="icon">
-                        <i class="flaticon-laboratory"></i>
-                    </div>
-                    <h3>
-                        <a href="{{ url('/services-details') }}">Molecular Biology</a>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                    </p>
-                    <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-services">
-                    <div class="icon">
-                        <i class="flaticon-sugar-blood-level"></i>
-                    </div>
-                    <h3>
-                        <a href="{{ url('/services-details') }}">Diabetes Testing</a>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                    </p>
-                    <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-services">
-                    <div class="icon">
-                        <i class="flaticon-lab-tool"></i>
-                    </div>
-                    <h3>
-                        <a href="{{ url('/services-details') }}">Chemical Research</a>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                    </p>
-                    <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-services">
-                    <div class="icon">
-                        <i class="flaticon-lungs"></i>
-                    </div>
-                    <h3>
-                        <a href="{{ url('/services-details') }}">Anatomical Pathology</a>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                    </p>
-                    <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-services">
-                    <div class="icon">
-                        <i class="flaticon-heart"></i>
-                    </div>
-                    <h3>
-                        <a href="{{ url('/services-details') }}">Heart Disease</a>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                    </p>
-                    <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
-                </div>
-            </div>
+<div class="col-lg-4 col-md-6">
+    <div class="single-services">
+        <div class="icon">
+            <i class="flaticon-laboratory"></i>
         </div>
+        <h3>
+            <a href="{{ url('/services-details') }}">Molecular Biology</a>
+        </h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+        </p>
+        <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
     </div>
+</div>
 
-    <div class="services-shape">
-        <div class="shape1">
-            <img src="{{ asset('assets/img/services-shape/shape1.png') }}" alt="image">
+<div class="col-lg-4 col-md-6">
+    <div class="single-services">
+        <div class="icon">
+            <i class="flaticon-sugar-blood-level"></i>
         </div>
-        <div class="shape2">
-            <img src="{{ asset('assets/img/services-shape/shape2.png') }}" alt="image">
-        </div>
+        <h3>
+            <a href="{{ url('/services-details') }}">Diabetes Testing</a>
+        </h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+        </p>
+        <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
     </div>
-</section>
+</div>
 
-<section class="pricing-area pt-100 pb-70">
+<div class="col-lg-4 col-md-6">
+    <div class="single-services">
+        <div class="icon">
+            <i class="flaticon-lab-tool"></i>
+        </div>
+        <h3>
+            <a href="{{ url('/services-details') }}">Chemical Research</a>
+        </h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+        </p>
+        <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
+    </div>
+</div>
+
+<div class="col-lg-4 col-md-6">
+    <div class="single-services">
+        <div class="icon">
+            <i class="flaticon-lungs"></i>
+        </div>
+        <h3>
+            <a href="{{ url('/services-details') }}">Anatomical Pathology</a>
+        </h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+        </p>
+        <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
+    </div>
+</div>
+
+<div class="col-lg-4 col-md-6">
+    <div class="single-services">
+        <div class="icon">
+            <i class="flaticon-heart"></i>
+        </div>
+        <h3>
+            <a href="{{ url('/services-details') }}">Heart Disease</a>
+        </h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+        </p>
+        <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="services-shape">
+    <div class="shape1">
+        <img src="{{ asset('assets/img/services-shape/shape1.png') }}" alt="image">
+    </div>
+    <div class="shape2">
+        <img src="{{ asset('assets/img/services-shape/shape2.png') }}" alt="image">
+    </div>
+</div>
+</section> --}}
+
+<section class="pricing-area">
     <div class="container">
         <div class="section-title">
             <span>Our Packages</span>

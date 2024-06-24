@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Package;
 use App\Models\Setting;
 
@@ -32,5 +33,13 @@ if (!function_exists("get_Packeges")) {
     function get_Packeges()
     {
         return Package::with(['tests'])->take(20)->get();
+    }
+}
+
+if (!function_exists("get_Categoryes")) {
+
+    function get_Categoryes()
+    {
+        return Category::take(20)->get();
     }
 }

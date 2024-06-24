@@ -21,10 +21,10 @@ class DatabaseSeeder extends Seeder
             // LanguageSeeder::class,
             // VialSeeder::class,
             // SpecimenSeeder::class,
-            // CategorySeeder::class,
+            CategorySeeder::class,
             // TestSeeder::class,
-            PackageSeeder::class,
-            NewPermissionSeeder::class,
+            // PackageSeeder::class,
+            // NewPermissionSeeder::class,
         ]);
 
         DB::table('activity_log')->truncate();

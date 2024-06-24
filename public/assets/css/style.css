@@ -1262,7 +1262,7 @@ Top Services Area CSS
 .top-services-area {
   position: relative;
   z-index: 1;
-  margin-top: -200px;
+  /* margin-top: -200px; */
 }
 
 .top-services-item {
@@ -5862,4 +5862,9 @@ Buy Now Btn
 
 body { 
   background-color: #7da3ca !important; 
+}
+
+.top-services-item img {
+  height: 100px;
+  width: 100px;
 }
