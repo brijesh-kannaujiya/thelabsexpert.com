@@ -77,9 +77,16 @@
                 <a href="{{ url('/services-details') }}">
                     <div class="top-services-item">
                         <div class="icon">
-                            <img src="{{url($category->icon)}}" /> {{-- <i class="flaticon-lab-tool"></i> --}} </div>
+                            @if (request()->getHost() == 'http://127.0.0.1/')
+                            <img src="{{url($category->icon)}}" />
+                            @else
+                            <img src="{{url('public/'.$category->icon)}}" />
+                            @endif
+                            {{-- <i class="flaticon-lab-tool"></i> --}} </div>
+
                         <h3>
                             {{ Str::words($category->name, 3, '...')}}
+                            {{ }}
                         </h3>
                         <p>{{ Str::words($category->description, 18, '...') }}
                         </p>
