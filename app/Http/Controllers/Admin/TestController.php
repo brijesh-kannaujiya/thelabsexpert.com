@@ -70,7 +70,19 @@ class TestController extends Controller
         $categories = Category::select('name', 'id')->get();
         $vials = Vial::select('name', 'id')->get();
         $specimens = Specimen::select('name', 'id')->get();
-        return view('admin.tests.create', compact('categories', 'vials', 'specimens'));
+        // $tests = Test::whereHas('tests', function ($query) {
+        //     $query->whereColumn('testable_id', '!=', 'tests.id');
+        // })->select('test_name', 'id')->get();
+        // dd($tests);
+        // $testsWithoutPackage = Test::join('test_packages', 'package_id', '!=', 'tests.id')
+        //     ->get('tests.id');
+        $testsWithoutPackages = Test::leftJoin('test_packages', 'tests.id', '=', 'test_packages.test_id')
+            // ->whereNull('test_packages.package_id')
+            ->where('tests.id', '!=', 'test_packages.package_id')
+            ->select('tests.*')
+            ->get();
+        dd($testsWithoutPackages);
+        return view('admin.tests.create', compact('categories', 'vials', 'specimens', 'test'));
     }
 
     /**

@@ -2,8 +2,24 @@
 
     <div class="col-lg-3">
         <div class="form-group">
-            <label for="name">{{__('Test Name')}}</label>
+            <label for="name">{{__('Name')}}</label>
             <input type="text" class="form-control" name="test_name" id="test_name" @if(isset($test)) value="{{$test->test_name}}" @endif required>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="form-group">
+            <label for="select_tests">{{__('Tests')}}</label>
+
+            <select class="form-control" name="tests[]" id="select_tests" placeholder="{{__('Tests')}}" multiple>
+                @if(isset($package))
+
+                @foreach($package['tests'] as $test)
+
+                <option value="{{$test['test']['id']}}" selected> {{$test['test']['test_name']}}</option>
+                @endforeach
+                @endif
+            </select>
         </div>
     </div>
 

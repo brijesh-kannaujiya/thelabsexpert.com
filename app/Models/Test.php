@@ -24,4 +24,14 @@ class Test extends Model
     {
         return $this->belongsTo(Specimen::class, 'specimen_id', 'id');
     }
+    public function tests()
+    {
+        return $this->hasMany(PackageTest::class, 'package_id', 'id')
+            ->where('testable_type', Test::class);
+    }
+
+    public function testPackages()
+    {
+        return $this->hasMany(TestPackage::class, 'test_id');
+    }
 }
