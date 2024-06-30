@@ -1,5 +1,13 @@
 <div class="row">
 
+    @php
+    $testIDs = [];
+    if ($test->tests) {
+    $testIDs = $test->tests->pluck('test_id')->toArray();
+    }
+
+    @endphp
+    {{-- @dd($testsWithoutPackages); --}}
     <div class="col-lg-3">
         <div class="form-group">
             <label for="name">{{__('Name')}}</label>
@@ -7,18 +15,13 @@
         </div>
     </div>
 
-    <div class="col-lg-4">
+    <div class="col-lg-3">
         <div class="form-group">
             <label for="select_tests">{{__('Tests')}}</label>
-
             <select class="form-control" name="tests[]" id="select_tests" placeholder="{{__('Tests')}}" multiple>
-                @if(isset($package))
-
-                @foreach($package['tests'] as $test)
-
-                <option value="{{$test['test']['id']}}" selected> {{$test['test']['test_name']}}</option>
+                @foreach($testsWithoutPackages as $testdata)
+                <option value="{{$testdata->id}}" @if (in_array($testdata->id, $testIDs)) selected @endif> {{$testdata->test_name}}</option>
                 @endforeach
-                @endif
             </select>
         </div>
     </div>
@@ -60,8 +63,6 @@
             </select>
         </div>
     </div>
-
-
 
     <div class="col-lg-3">
         <div class="form-group">

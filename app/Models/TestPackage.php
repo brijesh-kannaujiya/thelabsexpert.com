@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class TestPackage extends Model
 {
     use HasFactory;
+    public $guarded = [];
+    public $with = ['test'];
     public function test()
     {
-        return $this->belongsTo(Test::class);
+        return $this->hasOne(Test::class, 'id', 'test_id');
     }
 }

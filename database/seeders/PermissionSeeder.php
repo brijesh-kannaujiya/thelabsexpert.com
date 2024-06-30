@@ -194,34 +194,34 @@ class PermissionSeeder extends Seeder
 
 
         //packages
-        $packages_module = Module::Create([
-            'name' => 'packages'
-        ]);
+        // $packages_module = Module::Create([
+        //     'name' => 'packages'
+        // ]);
 
-        Permission::insert(
-            [
-                [
-                    'module_id' => $packages_module['id'],
-                    'key' => 'view_package',
-                    'name' => 'View'
-                ],
-                [
-                    'module_id' => $packages_module['id'],
-                    'key' => 'create_package',
-                    'name' => 'Create'
-                ],
-                [
-                    'module_id' => $packages_module['id'],
-                    'key' => 'edit_package',
-                    'name' => 'Edit'
-                ],
-                [
-                    'module_id' => $packages_module['id'],
-                    'key' => 'delete_package',
-                    'name' => 'Delete'
-                ],
-            ]
-        );
+        // Permission::insert(
+        //     [
+        //         [
+        //             'module_id' => $packages_module['id'],
+        //             'key' => 'view_package',
+        //             'name' => 'View'
+        //         ],
+        //         [
+        //             'module_id' => $packages_module['id'],
+        //             'key' => 'create_package',
+        //             'name' => 'Create'
+        //         ],
+        //         [
+        //             'module_id' => $packages_module['id'],
+        //             'key' => 'edit_package',
+        //             'name' => 'Edit'
+        //         ],
+        //         [
+        //             'module_id' => $packages_module['id'],
+        //             'key' => 'delete_package',
+        //             'name' => 'Delete'
+        //         ],
+        //     ]
+        // );
 
         //cultures
         // $cultures_module = Module::Create([

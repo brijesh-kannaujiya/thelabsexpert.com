@@ -1,5 +1,5 @@
 <ul class="p-1">
-    @foreach($package['tests'] as $test)
+    @foreach($tests['tests'] as $test)
     <li>
         {{$test['test']['test_name']}}
     </li>

@@ -23,7 +23,6 @@ class DatabaseSeeder extends Seeder
             SpecimenSeeder::class,
             CategorySeeder::class,
             TestSeeder::class,
-            // PackageSeeder::class,
             // NewPermissionSeeder::class,
         ]);
 

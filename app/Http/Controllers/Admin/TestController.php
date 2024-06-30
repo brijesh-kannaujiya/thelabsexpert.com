@@ -8,9 +8,11 @@ use App\Http\Requests\TestRequest;
 use App\Models\Category;
 use App\Models\Specimen;
 use App\Models\Test;
+use App\Models\TestPackage;
 use App\Models\Vial;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
+use Str;
 
 class TestController extends Controller
 {
@@ -44,11 +46,20 @@ class TestController extends Controller
      */
     public function ajax(Request $request)
     {
-        $model = Test::with(['category', 'vial', 'specimen']);
-
+        $model = Test::with(['category', 'vial', 'specimen', 'tests']);
+        // dd($model);
         return DataTables::eloquent($model)
             ->editColumn('price', function ($test) {
                 return formated_price($test['price']);
+            })
+            ->editColumn('customer_instructions', function ($test) {
+                return  Str::words($test['customer_instructions'], 5, '...');
+            })
+            ->editColumn('phlebo_instructions', function ($test) {
+                return  Str::words($test['phlebo_instructions'], 5, '...');
+            })
+            ->addColumn('tests', function ($tests) {
+                return view('admin.tests._tests', compact('tests'));
             })
             ->addColumn('action', function ($test) {
                 return view('admin.tests._action', compact('test'));
@@ -70,19 +81,10 @@ class TestController extends Controller
         $categories = Category::select('name', 'id')->get();
         $vials = Vial::select('name', 'id')->get();
         $specimens = Specimen::select('name', 'id')->get();
-        // $tests = Test::whereHas('tests', function ($query) {
-        //     $query->whereColumn('testable_id', '!=', 'tests.id');
-        // })->select('test_name', 'id')->get();
-        // dd($tests);
-        // $testsWithoutPackage = Test::join('test_packages', 'package_id', '!=', 'tests.id')
-        //     ->get('tests.id');
-        $testsWithoutPackages = Test::leftJoin('test_packages', 'tests.id', '=', 'test_packages.test_id')
-            // ->whereNull('test_packages.package_id')
-            ->where('tests.id', '!=', 'test_packages.package_id')
-            ->select('tests.*')
+        $testsWithoutPackages = Test::leftJoin('test_packages', 'tests.id', '=', 'test_packages.package_id')
+            ->whereNull('test_packages.package_id')
             ->get();
-        dd($testsWithoutPackages);
-        return view('admin.tests.create', compact('categories', 'vials', 'specimens', 'test'));
+        return view('admin.tests.create', compact('categories', 'vials', 'specimens', 'testsWithoutPackages'));
     }
 
     /**
@@ -94,7 +96,8 @@ class TestController extends Controller
     public function store(TestRequest $request)
     {
 
-        $data = $request->except('_token', '_method', 'icon', 'files', 'banner');
+        $data = $request->except('_token', '_method', 'icon', 'files', 'banner', 'tests');
+
         $lastRecord = Test::latest()->withTrashed()->first();
         if ($lastRecord) {
             $lastId = $lastRecord->id;
@@ -102,8 +105,6 @@ class TestController extends Controller
         } else {
             $data['test_code'] = 'EXP0001';
         }
-
-
 
         if ($request->hasFile('icon')) {
             $extension = $request->file('icon')->getClientOriginalExtension();
@@ -120,7 +121,15 @@ class TestController extends Controller
         } else {
             $data['banner'] = 'admin/test/banner/banner.png';
         }
-        $test = Test::create($data);
+        $NewTest = Test::create($data);
+        if ($request->has('tests')) {
+            foreach ($request['tests'] as $test_id) {
+                TestPackage::create([
+                    'package_id' => $NewTest->id,
+                    'test_id' => $test_id
+                ]);
+            }
+        }
         session()->flash('success', __('Test created successfully'));
         return redirect()->route('admin.tests.index');
     }
@@ -148,41 +157,15 @@ class TestController extends Controller
         $vials = Vial::select('name', 'id')->get();
         $specimens = Specimen::select('name', 'id')->get();
         $test = Test::with(['category', 'vial', 'specimen'])->where('id', $id)->firstOrFail();
-        return view('admin.tests.edit', compact('test', 'categories', 'vials', 'specimens'));
+        $testsWithoutPackages = Test::leftJoin('test_packages', 'tests.id', '=', 'test_packages.package_id')
+            ->whereNull('test_packages.package_id')
+            ->where('tests.id', '!=', $id)
+            ->select('tests.id', 'tests.test_name')
+            ->get();
+        return view('admin.tests.edit', compact('test', 'categories', 'vials', 'specimens', 'testsWithoutPackages'));
     }
 
-    public function consumptions($id)
-    {
-        $tests = Test::where('id', $id)->orWhere([
-            ['parent_id', $id],
-            ['separated', true]
-        ])->get();
 
-        return view('admin.tests.consumptions', compact('tests'));
-    }
-
-    public function consumptions_submit(Request $request)
-    {
-        if ($request->has('consumption')) {
-            foreach ($request['consumption'] as $test_id => $consumptions) {
-                $test = Test::find($test_id);
-
-                if (isset($test)) {
-                    $test->consumptions()->delete();
-
-                    foreach ($consumptions as $consumption) {
-                        $test->consumptions()->create([
-                            'product_id' => $consumption['product_id'],
-                            'quantity' => $consumption['quantity']
-                        ]);
-                    }
-                }
-            }
-        }
-
-        session()->flash('success', __('Consumptions assigned successfully'));
-        return redirect()->route('admin.tests.index');
-    }
 
     /**
      * Update the specified resource in storage.
@@ -194,7 +177,7 @@ class TestController extends Controller
     public function update(TestRequest $request, $id)
     {
         $test = Test::findOrFail($id);
-        $data = $request->except('_token', '_method', 'icon', 'files', 'banner');
+        $data = $request->except('_token', '_method', 'icon', 'files', 'banner', 'tests');
         if ($request->hasFile('icon')) {
             $extension = $request->file('icon')->getClientOriginalExtension();
             $request->file('icon')->move('admin/test/icon', 'icon_' . time() . '.' . $extension);
@@ -212,6 +195,15 @@ class TestController extends Controller
             }
         }
         $test->update($data);
+        TestPackage::where('package_id', $id)->delete();
+        if ($request->has('tests')) {
+            foreach ($request['tests'] as $test_id) {
+                TestPackage::create([
+                    'package_id' => $id,
+                    'test_id' => $test_id
+                ]);
+            }
+        }
         session()->flash('success', __('Test updated successfully'));
         return redirect()->route('admin.tests.index');
     }
@@ -225,6 +217,7 @@ class TestController extends Controller
     public function destroy($id)
     {
         $test = Test::findOrFail($id);
+        TestPackage::where('package_id', $id)->delete();
         $test->delete();
         session()->flash('success', __('Test deleted successfully'));
 
@@ -241,6 +234,7 @@ class TestController extends Controller
     {
         foreach ($request['ids'] as $id) {
             $test = Test::find($id);
+            TestPackage::where('package_id', $id)->delete();
             $test->delete();
         }
         session()->flash('success', __('Bulk deleted successfully'));

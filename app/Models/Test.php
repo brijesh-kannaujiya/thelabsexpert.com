@@ -11,7 +11,7 @@ class Test extends Model
     use SoftDeletes;
     use HasFactory;
     public $guarded = [];
-    public $with = ['category', 'vial', 'specimen'];
+    public $with = ['category', 'vial', 'specimen', 'tests'];
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id', 'id');
@@ -26,12 +26,11 @@ class Test extends Model
     }
     public function tests()
     {
-        return $this->hasMany(PackageTest::class, 'package_id', 'id')
-            ->where('testable_type', Test::class);
+        return $this->hasMany(TestPackage::class, 'package_id');
     }
 
-    public function testPackages()
+    public function testPackage()
     {
-        return $this->hasMany(TestPackage::class, 'test_id');
+        return $this->belongsTo(TestPackage::class, 'package_id');
     }
 }

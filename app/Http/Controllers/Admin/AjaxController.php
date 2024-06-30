@@ -51,4 +51,26 @@ class AjaxController extends Controller
         }
         return response()->json($tests);
     }
+
+    public function tests(Request $request)
+    {
+        if (isset($request->term)) {
+            $tests = Test::leftJoin('test_packages', 'tests.id', '=', 'test_packages.package_id')
+                ->whereNull('test_packages.package_id')->where('tests.test_name', 'like', '%' . $request->term . '%')
+                ->when($request->id, function ($query, $id) {
+                    return $query->where('tests.id', '!=', $id);
+                })
+                ->select('tests.test_name', 'tests.id')
+                ->get();
+        } else {
+            $tests = Test::leftJoin('test_packages', 'tests.id', '=', 'test_packages.package_id')
+                ->whereNull('test_packages.package_id')
+                ->when($request->id, function ($query, $id) {
+                    return $query->where('tests.id', '!=', $id);
+                })
+                ->select('tests.test_name', 'tests.id')
+                ->get();
+        }
+        return response()->json($tests);
+    }
 }
