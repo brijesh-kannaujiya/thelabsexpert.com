@@ -305,6 +305,11 @@
 </div>
 </section> --}}
 
+@php
+$packages = get_Packeges();
+@endphp
+
+@if (!$packages)
 <section class="pricing-area">
     <div class="container">
         <div class="section-title">
@@ -314,7 +319,7 @@
 
         <div class="row">
 
-            @foreach (get_Packeges() as $package)
+            @foreach ($packages as $package)
             {{-- @json($package) --}}
 
             <div class="col-lg-4 col-md-6">
@@ -449,7 +454,7 @@
         </div>
     </div>
 </section>
-
+@endif
 <section class="projects-area ptb-100">
     <div class="container">
         <div class="section-title">
