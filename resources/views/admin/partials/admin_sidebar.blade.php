@@ -77,6 +77,17 @@
         </li>
         @endcan
 
+        @can('view_booking')
+        <li class="nav-item">
+            <a href="{{route('admin.booking.index')}}" class="nav-link" id="booking">
+                <i class="nav-icon fas fa-vial"></i>
+                <p>
+                    {{__('Booking')}}
+                </p>
+            </a>
+        </li>
+        @endcan
+
         @can('view_antibiotic')
         <li class="nav-item">
             <a href="{{route('admin.antibiotics.index')}}" class="nav-link" id="antibiotics">
@@ -88,16 +99,7 @@
         </li>
         @endcan
 
-        @can('view_package')
-        <li class="nav-item">
-            <a href="{{route('admin.packages.index')}}" class="nav-link" id="packages">
-                <i class="nav-icon fas fa-box"></i>
-                <p>
-                    {{__('Packages')}}
-                </p>
-            </a>
-        </li>
-        @endcan
+        
 
         @canany(['view_test_prices','view_culture_prices','view_package_prices'])
         <li class="nav-item has-treeview" id="prices">

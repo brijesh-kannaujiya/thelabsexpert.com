@@ -191,6 +191,38 @@ class PermissionSeeder extends Seeder
                 ],
             ]
         );
+ 
+
+        $booking_module = Module::Create([
+            'name' => 'booking'
+        ]);
+
+        Permission::insert(
+            [
+                [
+                    'module_id' => $booking_module['id'],
+                    'key' => 'view_booking',
+                    'name' => 'View'
+                ],
+                [
+                    'module_id' => $booking_module['id'],
+                    'key' => 'create_booking',
+                    'name' => 'Create'
+                ],
+                [
+                    'module_id' => $booking_module['id'],
+                    'key' => 'edit_booking',
+                    'name' => 'Edit'
+                ],
+                [
+                    'module_id' => $booking_module['id'],
+                    'key' => 'delete_booking',
+                    'name' => 'Delete'
+                ],
+            ]
+        );
+
+
 
 
         //packages

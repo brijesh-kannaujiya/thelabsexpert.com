@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.common.app')
 
 @section('title')
 {{ __('Edit User') }}

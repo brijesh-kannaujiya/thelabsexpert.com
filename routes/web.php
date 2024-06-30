@@ -74,6 +74,10 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => '
     Route::get('get_tests', [TestController::class, 'ajax'])->name('get_tests'); // Datatable
     Route::post('tests/bulk/delete', [TestController::class, 'bulk_delete'])->name('tests.bulk_delete');
 
+    //booking
+    Route::resource('booking', TestController::class);
+   
+    Route::post('booking/bulk/delete', [TestController::class, 'bulk_delete'])->name('booking.bulk_delete');
 
     Route::prefix('settings')->name('settings.')->group(function () {
         Route::get('/', [SettingsController::class, 'index'])->name('index');
