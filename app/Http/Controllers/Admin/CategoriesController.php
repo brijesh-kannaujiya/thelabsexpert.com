@@ -8,6 +8,7 @@ use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
+use Str;
 
 class CategoriesController extends Controller
 {
@@ -36,6 +37,9 @@ class CategoriesController extends Controller
             return DataTables::eloquent($model)
                 ->addColumn('action', function ($category) {
                     return view('admin.categories._action', compact('category'));
+                })
+                ->editColumn('description', function ($category) {
+                    return  Str::words($category['description'], 5, '...');
                 })
                 ->addColumn('bulk_checkbox', function ($item) {
                     return view('admin.partials._bulk_checkbox', compact('item'));

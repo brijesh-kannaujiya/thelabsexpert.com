@@ -4,6 +4,8 @@ use App\Models\Category;
 use App\Models\Package;
 use App\Models\Setting;
 use App\Models\Test;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 if (!function_exists("setting")) {
     function setting($key)
@@ -42,5 +44,36 @@ if (!function_exists("get_Categoryes")) {
     function get_Categoryes()
     {
         return Category::take(20)->get();
+    }
+}
+
+
+
+if (!function_exists("encryptWithPasscode")) {
+    function encryptWithPasscode($value)
+    {
+        $passcode = 'T!#&HEB67@#$';
+        $key = substr(hash('sha256', $passcode), 0, 32);
+        $cipher = 'AES-256-CBC';
+
+        $encryptedValue = openssl_encrypt($value, $cipher, $key, 0, $iv = random_bytes(16));
+        return base64_encode($iv . $encryptedValue);
+    }
+}
+
+
+if (!function_exists("decryptWithPasscode")) {
+
+    function decryptWithPasscode($encryptedValue)
+    {
+        $passcode = 'T!#&HEB67@#$';
+        $key = substr(hash('sha256', $passcode), 0, 32);
+        $cipher = 'AES-256-CBC';
+
+        $decodedValue = base64_decode($encryptedValue);
+        $iv = substr($decodedValue, 0, 16);
+        $encryptedValue = substr($decodedValue, 16);
+
+        return openssl_decrypt($encryptedValue, $cipher, $key, 0, $iv);
     }
 }
