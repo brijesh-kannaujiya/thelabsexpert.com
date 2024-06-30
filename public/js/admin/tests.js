@@ -47,10 +47,11 @@ var count_comments = $("#count_comments").val();
                 orderable: false,
             },
             { data: "phlebo_instructions", sortable: false, orderable: false },
-            { data: "short_desc", sortable: false, orderable: false },
+
             { data: "category.name", sortable: false, orderable: false },
             { data: "vial.name", sortable: false, orderable: false },
             { data: "specimen.name", sortable: false, orderable: false },
+            { data: "tests", sortable: false, orderable: false },
             {
                 data: "action",
                 searchable: false,
@@ -648,6 +649,46 @@ var count_comments = $("#count_comments").val();
                     results: $.map(data, function (item) {
                         return {
                             text: item.name,
+                            id: item.id,
+                        };
+                    }),
+                };
+            },
+            complete: function () {
+                $(".preloader").hide();
+                $(".loader").hide();
+            },
+        },
+    });
+
+    //get category select2 intialize
+    $("#select_tests").select2({
+        width: "100%",
+        placeholder: trans("Tests"),
+        ajax: {
+            beforeSend: function () {
+                $(".preloader").show();
+                $(".loader").show();
+            },
+            url: ajax_url("tests"),
+            data: function (params) {
+                console.log(params);
+                var id = $("#test_id").val();
+                var query = {};
+                if (id) {
+                    query.id = id;
+                }
+                if (params.term) {
+                    query.term = params.term;
+                }
+                return query;
+            },
+
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.test_name,
                             id: item.id,
                         };
                     }),

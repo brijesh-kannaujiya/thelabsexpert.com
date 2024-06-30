@@ -315,7 +315,7 @@
         <div class="row">
 
             @foreach (get_Packeges() as $package)
-            {{-- @json($package->tests) --}}
+            {{-- @json($package) --}}
 
             <div class="col-lg-4 col-md-6">
                 <div class="single-pricing-box">
@@ -325,18 +325,20 @@
                     </div>
 
                     <div class="pricing-header">
-                        <h3>{{$package->name}}</h3>
+                        <h3> {{ Str::words($package->test_name, 5, '...')}}</h3>
                     </div>
 
                     <ul class="pricing-features">
-
+                        {{-- @dd($package) --}}
                         @foreach ($package->tests as $test)
-                        {{-- @json($test->test) --}}
+
                         <li>
                             <i class="las la-check"></i>
                             {{$test->test->test_name}}
                         </li>
                         @endforeach
+
+
 
                     </ul>
 

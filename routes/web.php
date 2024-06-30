@@ -81,13 +81,11 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => '
         Route::post('api_keys', [SettingsController::class, 'api_keys_submit'])->name('api_keys_submit');
         Route::post('barcode', [SettingsController::class, 'barcode_submit'])->name('barcode_submit');
     });
-
-    Route::resource('packages', PackagesController::class);
-    Route::post('packages/bulk/delete', [PackagesController::class, 'bulk_delete'])->name('packages.bulk_delete');
 });
 Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'ajax', 'as' => 'ajax.'], function () {
     Route::get('get_categories', [AjaxController::class, 'get_categories'])->name('get_categories');
     Route::get('get_vials', [AjaxController::class, 'get_vials'])->name('get_vials');
     Route::get('get_specimens', [AjaxController::class, 'get_specimens'])->name('get_specimens');
     Route::get('get_tests', [AjaxController::class, 'get_tests'])->name('get_tests');
+    Route::get('tests', [AjaxController::class, 'tests'])->name('tests');
 });

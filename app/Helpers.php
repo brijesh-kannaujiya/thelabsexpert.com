@@ -3,6 +3,7 @@
 use App\Models\Category;
 use App\Models\Package;
 use App\Models\Setting;
+use App\Models\Test;
 
 if (!function_exists("setting")) {
     function setting($key)
@@ -32,7 +33,7 @@ if (!function_exists("get_Packeges")) {
 
     function get_Packeges()
     {
-        return Package::with(['tests'])->take(20)->get();
+        return $testsWithoutPackages = Test::has('tests')->get();
     }
 }
 

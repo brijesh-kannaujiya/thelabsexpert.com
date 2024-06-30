@@ -61,10 +61,10 @@
                             <th>{{__('Fasting')}}</th>
                             <th>{{__('Customer Instructions')}}</th>
                             <th>{{__('Phlebo Instructions')}}</th>
-                            <th>{{__('Short Desc')}}</th>
                             <th>{{__('Category')}}</th>
                             <th>{{__('Vial')}}</th>
                             <th>{{__('Specimen')}}</th>
+                            <th>{{__('Includes')}}</th>
                             <th width="120px">{{__('Action')}}</th>
                         </tr>
                     </thead>

@@ -32,11 +32,13 @@
         <h3 class="card-title">{{__('Edit Test')}}</h3>
     </div>
     <!-- /.card-header -->
+    <input type="hidden" id="test_id" value="{{$test['id']}}">
     <form method="POST" action="{{route('admin.tests.update',$test['id'])}}" id="test_form">
         <!-- /.card-header -->
         <div class="card-body">
             @csrf
             @method('put')
+
             @include('admin.tests._form')
         </div>
         <!-- /.card-body -->
