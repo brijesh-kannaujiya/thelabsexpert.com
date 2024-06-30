@@ -27,16 +27,20 @@
                 <div class="row">
                     <div class="col-lg-8 col-md-12">
                         <div class="services-details-image">
-                            <img src="{{url($test->banner)}}" alt="image">
+                               @if (request()->getHost() == '127.0.0.1')
+                                <img src="{{url($test->banner)}}" />
+                                @else
+                                <img src="{{url('public/'.$test->banner)}}" />
+                                @endif 
                         </div>
 
                         <div class="services-details-desc">
                         <!-- <h3>Short Description</h3> -->
-                           <p class="pt-5">{{$test->short_desc}}</p>
+                           <p class="pt-5 text-white">{{$test->short_desc}}</p>
                            <!-- <h3>Description 1</h3> -->
-                           <p class="pb-5">{!! $test->desc_1 !!}</p>
+                           <p class="pb-5 text-white">{!! $test->desc_1 !!}</p>
                            <!-- <h3>Description 2</h3> -->
-                           <p class="pb-5">{!! $test->desc_2 !!}</p>
+                           <p class="pb-5 text-white">{!! $test->desc_2 !!}</p>
 
                             <div class="services-details-faq">
                                 <ul class="accordion">
@@ -76,7 +80,7 @@
                             </section> -->
 
                             <section class="widget widget_services_list">
-                                <h3 class="widget-title">Our Research</h3>
+                                <!-- <h3 class="widget-title">Our Research</h3> -->
 
                                 <ul>
                                     @forelse($tests as $test)
