@@ -32,6 +32,7 @@ Route::get('/services', [ServiceController::class, 'index']);
 Route::get('/services-details', [ServiceController::class, 'ServiceDetails']);
 Route::get('/test/{categoryId}', [TestsController::class, 'getTest']);
 Route::get('/test-detail/{testId}', [TestsController::class, 'getTestDetails']);
+Route::get('/book-appointment/{id}', [TestsController::class, 'testDetail']);
 Route::get('/faq', [FaqController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 

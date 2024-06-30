@@ -101,7 +101,7 @@
                             <ul>
                                 @forelse($tests as $test)
                                 <li>
-                                    <a href="{{url('test-detail')}}/{{$test->id}}">
+                                <a href="{{url('test-detail')}}/{{encryptWithPasscode($test->id)}}">
                                         {{$test->test_name}}
                                         <i class="las la-arrow-right"></i>
                                     </a>

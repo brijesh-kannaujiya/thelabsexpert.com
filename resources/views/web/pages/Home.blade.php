@@ -74,7 +74,7 @@
             @foreach (get_Categoryes() as $category)
 
             <div class="col-lg-3 col-md-6">
-                <a href="{{ url('/test') }}/{{$category->id}}">
+                <a href="{{ url('/test') }}/{{encryptWithPasscode($category->id)}}">
                     <div class="top-services-item">
                         <div class="icon">
                             @if (request()->getHost() == '127.0.0.1')

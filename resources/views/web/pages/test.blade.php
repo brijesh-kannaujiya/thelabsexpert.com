@@ -27,24 +27,25 @@
             <div class="row">
                 @forelse ($tests as $test)
                 <div class="col-lg-4 col-md-6">
-                    <a href="{{ url('/test-detail') }}/{{$test->id}}">
-                        <div class="single-services-item">
+                    <div class="single-services-item">
+                        <a href="{{ url('/test-detail') }}/{{encryptWithPasscode($test->id)}}">
                             <div class="icon">
                                 @if (request()->getHost() == '127.0.0.1')
                                 <img src="{{url($test->icon)}}" />
                                 @else
                                 <img src="{{url('public/'.$test->icon)}}" />
                                 @endif
-                                
-                            </div>
 
-                            <h3>
-                                <a href="{{ url('/test-detail') }}/{{$test->id}}"> {{ Str::words($test->test_name, 3, '...')}}</a>
-                            </h3>
-                            <p>{{ Str::words($test->short_desc,18, '...') }}</p>
-                            <a href="{{ url('/services-details') }}" class="read-more-btn">Book Order</a>
-                        </div>
-                    </a>
+                            </div>
+                        </a>
+
+                        <h3>
+                            <a href="{{ url('/test-detail') }}/{{encryptWithPasscode($test->id)}}"> {{ Str::words($test->test_name, 3, '...')}}</a>
+                        </h3>
+                        <p>{{ Str::words($test->short_desc,18, '...') }}</p>
+                        <a href="{{ url('/book-appointment') }}/{{encryptWithPasscode($test->id)}}" class="read-more-btn">Book Now</a>
+                    </div>
+
                 </div>
                 @empty
                 <div class="col-md-12">
