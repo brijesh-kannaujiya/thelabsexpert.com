@@ -17,6 +17,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TestsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,11 +25,13 @@ use Illuminate\Support\Facades\Route;
 //     include('admin.php');
 //     Route::get('/create', [HomeController::class, 'create']);
 // });
-Route::get('/', [HomeController::class, 'Home']);
+Route::get('/', [HomeController::class, 'Home']); 
 Route::get('/appointment', [AppointmentController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/services', [ServiceController::class, 'index']);
 Route::get('/services-details', [ServiceController::class, 'ServiceDetails']);
+Route::get('/test/{categoryId}', [TestsController::class, 'getTest']);
+Route::get('/test-detail/{testId}', [TestsController::class, 'getTestDetails']);
 Route::get('/faq', [FaqController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 

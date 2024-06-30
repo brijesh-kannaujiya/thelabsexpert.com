@@ -5868,3 +5868,8 @@ body {
   height: 100px;
   width: 100px;
 }
+
+.single-services-item img {
+  height: 80px;
+  width: 80px;
+}
