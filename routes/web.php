@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AjaxController;
+use App\Http\Controllers\Admin\Booking;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PackagesController;
@@ -25,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 //     include('admin.php');
 //     Route::get('/create', [HomeController::class, 'create']);
 // });
-Route::get('/', [HomeController::class, 'Home']); 
+Route::get('/', [HomeController::class, 'Home']);
 Route::get('/appointment', [AppointmentController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/services', [ServiceController::class, 'index']);
@@ -75,9 +76,9 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => '
     Route::post('tests/bulk/delete', [TestController::class, 'bulk_delete'])->name('tests.bulk_delete');
 
     //booking
-    Route::resource('booking', TestController::class);
-   
-    Route::post('booking/bulk/delete', [TestController::class, 'bulk_delete'])->name('booking.bulk_delete');
+    Route::resource('booking', Booking::class);
+
+    Route::post('booking/bulk/delete', [Booking::class, 'bulk_delete'])->name('booking.bulk_delete');
 
     Route::prefix('settings')->name('settings.')->group(function () {
         Route::get('/', [SettingsController::class, 'index'])->name('index');
@@ -96,4 +97,5 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'ajax', 'as' => 'a
     Route::get('get_specimens', [AjaxController::class, 'get_specimens'])->name('get_specimens');
     Route::get('get_tests', [AjaxController::class, 'get_tests'])->name('get_tests');
     Route::get('tests', [AjaxController::class, 'tests'])->name('tests');
+    Route::get('create_patient', [AjaxController::class, 'create_patient'])->name('create_patient');
 });
