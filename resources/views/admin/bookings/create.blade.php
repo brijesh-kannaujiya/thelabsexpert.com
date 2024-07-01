@@ -29,7 +29,7 @@
 @section('content')
 
 <!-- Form -->
-<form action="{{route('admin.booking.store')}}" method="POST" id="group_form">
+<form action="{{route('admin.booking.store')}}" method="POST" id="booking_form">
     @csrf
     @include('admin.bookings._form')
 </form>
@@ -91,4 +91,5 @@
     })(jQuery);
 
 </script>
+<script src="{{asset('js/admin/booking.js')}}"></script>
 @endsection

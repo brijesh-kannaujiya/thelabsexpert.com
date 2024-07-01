@@ -44,6 +44,12 @@
     <div class="row">
         <div class="col-lg-3">
             <div class="form-group">
+                <label>{{__('Phone')}}</label>
+                <input class="form-control" id="phone" onkeyup="getPhoneNo()" name="phone" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['phone']}}" @endif >
+            </div>
+        </div>
+        <!-- <div class="col-lg-3">
+            <div class="form-group">
                 <label>{{__('Code')}}</label>
                 <select id="code" name="patient_id" class="form-control" required>
                     @if(isset($group)&&isset($group['patient']))
@@ -51,72 +57,85 @@
                     @endif
                 </select>
             </div>
-        </div>
+        </div> -->
         <div class="col-lg-3">
             <div class="form-group">
                 <label>{{__('Name')}}</label>
-                <select id="name" name="patient_id" class="form-control" required>
-                    @if(isset($group)&&isset($group['patient']))
-                    <option value="{{$group['patient']['id']}}" selected>{{$group['patient']['name']}}</option>
-                    @endif
-                </select>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="form-group">
-                <label>{{__('Nationality')}}</label>
-                <input class="form-control" id="nationality" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['country']['nationality']}}" @endif readonly>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="form-group">
-                <label>{{__('National ID')}}</label>
-                <input class="form-control" id="national_id" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['national_id']}}" @endif readonly>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="form-group">
-                <label>{{__('Passport No.')}}</label>
-                <input class="form-control" id="passport_no" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['passport_no']}}" @endif readonly>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="form-group">
-                <label>{{__('Date of birth')}}</label>
-                <input class="form-control" id="dob" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['dob']}}" @endif readonly>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="form-group">
-                <label>{{__('Age')}}</label>
-                <input class="form-control" id="age" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['age']}}" @endif readonly>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="form-group">
-                <label>{{__('Phone')}}</label>
-                <input class="form-control" id="phone" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['phone']}}" @endif readonly>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="form-group">
-                <label>{{__('Email')}}</label>
-                <input class="form-control" id="email" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['email']}}" @endif readonly>
+                <input class="form-control" id="name"  name="name" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['age']}}" @endif >
+                
             </div>
         </div>
         <div class="col-lg-3">
             <div class="form-group">
                 <label>{{__('Gender')}}</label>
-                <input class="form-control" id="gender" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['gender']}}" @endif readonly>
+                <select class="form-control" name="gender" id="gender">
+                    <option value="m" >Male</option>
+                    <option value="f" >Female</option>
+                    <option value="o" >Other</option>
+                  
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label>{{__('Age')}}</label>
+                <input class="form-control" id="age"  name="age" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['age']}}" @endif >
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label>{{__('Email')}}</label>
+                <input class="form-control" id="email" name="email" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['email']}}" @endif >
             </div>
         </div>
         <div class="col-lg-3">
             <div class="form-group">
                 <label>{{__('Address')}}</label>
-                <input class="form-control" id="address" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['address']}}" @endif readonly>
+                <input class="form-control" id="address" name="address" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['address']}}" @endif >
             </div>
         </div>
         <div class="col-lg-3">
+            <div class="form-group">
+                <label>{{__('Pincode')}}</label>
+                <input class="form-control" id="pincode" name="pincode" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['pincode']}}" @endif >
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label>{{__('Aadhar No.')}}</label>
+                <input class="form-control" id="aadhar_number" name="aadhar_number" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['aadhar_no']}}" @endif >
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label>{{__('Passport No.')}}</label>
+                <input class="form-control" id="passport_number" name="passport_number" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['passport_no']}}" @endif >
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label>{{__('Comment')}}</label>
+                <input class="form-control" id="comment" name="comment" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['country']['comment']}}" @endif >
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label>{{__('Phlebo Comment')}}</label>
+                <input class="form-control" id="phlebo_comment" name="phlebo_comment" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['national_id']}}" @endif >
+            </div>
+        </div>
+       
+        <!-- <div class="col-lg-3">
+            <div class="form-group">
+                <label>{{__('Date of birth')}}</label>
+                <input class="form-control" id="dob" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['dob']}}" @endif readonly>
+            </div>
+        </div> -->
+       
+       
+        
+        <!-- <div class="col-lg-3">
             <div class="form-group">
                 <label>{{__('Doctor')}}</label>
                 @can('create_doctor')
@@ -128,27 +147,15 @@
                     @endif
                 </select>
             </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="form-group">
-                <label>{{__('Contract')}}</label>
-                <button type="button" class="btn btn-danger btn-xs float-right cancel_contract @if(!isset($group)||!isset($group['contract'])) disabled @endif">
-                    {{__('Cancel')}}
-                </button>
-                <button type="button" class="btn btn-success btn-xs float-right mr-1 ml-1 apply_contract @if(!isset($group)||isset($group['contract'])) disabled @endif">
-                    {{__('Apply')}}
-                </button>
-                <input type="hidden" name="contract_id" id="contract_id" @if(isset($group)&&isset($group['contract'])&&!$group->contract->trashed()) value="{{$group['contract']['id']}}" @endif readonly>
-                <input type="text" class="form-control" id="contract_title" @if(isset($group)&&isset($group['contract'])&&!$group->contract->trashed()) value="{{$group['contract']['title']}}" @endif readonly>
-            </div>
-        </div>
-        <div class="col-lg-3">
+        </div> -->
+       
+        <!-- <div class="col-lg-3">
             <div class="form-group">
                 <label>{{__('Sample collection date')}}</label>
 
                 {{-- <input type="text" class="form-control flatpickr" name="sample_collection_date" id="sample_collection_date" @if(isset($group)) value="{{$group['sample_collection_date']}}" @else value="{{get_system_date()}}" @endif> --}}
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 </div>
@@ -471,7 +478,7 @@
                                 <tr>
                                     <td width="100px">{{__('Subtotal')}}</td>
                                     <td width="300px">
-                                        <input type="number" id="subtotal" name="subtotal" @if(isset($group)) value="{{$group['subtotal']}}" @else value="0" @endif readonly class="form-control">
+                                        <input type="number" id="subtotal"  @if(isset($group)) value="{{$group['subtotal']}}" @else value="0" @endif readonly class="form-control">
                                     </td>
                                     <td>
                                         {{-- {{get_currency()}} --}}
@@ -481,7 +488,7 @@
                                 <tr>
                                     <td>{{__('Discount')}}</td>
                                     <td>
-                                        <input type="number" class="form-control" id="discount" name="discount" @if(isset($group)) value="{{$group['discount']}}" @else value="0" @endif>
+                                        <input type="number" class="form-control" id="discount"  @if(isset($group)) value="{{$group['discount']}}" @else value="0" @endif>
                                     </td>
                                     <td>
                                         {{-- {{get_currency()}} --}}
@@ -491,7 +498,7 @@
                                 <tr>
                                     <td>{{__('Total')}}</td>
                                     <td>
-                                        <input type="number" id="total" name="total" class="form-control" @if(isset($group)) value="{{$group['total']}}" @else value="0" @endif readonly>
+                                        <input type="number" id="total" class="form-control" @if(isset($group)) value="{{$group['total']}}" @else value="0" @endif readonly>
                                     </td>
                                     <td>
                                         {{-- {{get_currency()}} --}}
@@ -500,7 +507,7 @@
                                 <tr>
                                     <td>{{__('Paid')}}</td>
                                     <td>
-                                        <input type="number" id="paid" name="paid" min="0" class="form-control" @if(isset($group)) value="{{$group['paid']}}" @else value="0" @endif readonly required>
+                                        <input type="number" id="paid"  min="0" class="form-control" @if(isset($group)) value="{{$group['paid']}}" @else value="0" @endif readonly required>
                                     </td>
                                     <td>
                                         {{-- {{get_currency()}} --}}
@@ -509,7 +516,7 @@
                                 <tr>
                                     <td>{{__('Due')}}</td>
                                     <td>
-                                        <input type="number" id="due" name="due" class="form-control" @if(isset($group)) value="{{$group['due']}}" @else value="0" @endif readonly>
+                                        <input type="number" id="due" class="form-control" @if(isset($group)) value="{{$group['due']}}" @else value="0" @endif readonly>
                                     </td>
                                     <td>
                                         {{-- {{get_currency()}} --}}

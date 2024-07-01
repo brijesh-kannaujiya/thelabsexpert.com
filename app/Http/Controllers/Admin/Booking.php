@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BookingRequest;
+use App\Models\Patient;
 use Illuminate\Http\Request;
 
 class Booking extends Controller
@@ -23,5 +25,20 @@ class Booking extends Controller
     public function create()
     {
         return view('admin.bookings.create');
+    }
+
+     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(BookingRequest $request)
+    {
+        // dd($request->all());
+        $data = $request->except('_token', '_method');
+        $booking = Patient::create($data);
+        session()->flash('success', __('Booking created successfully'));
+        return redirect()->route('admin.booking.index');
     }
 }

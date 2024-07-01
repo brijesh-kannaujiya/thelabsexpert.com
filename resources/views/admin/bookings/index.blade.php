@@ -82,6 +82,6 @@
     var can_view = @can('view_booking') true @else false @endcan;
 
 </script>
+<script src="{{asset('js/admin/group.js')}}"></script>
 <script src="{{asset('js/select2.js')}}"></script>
-<script src="{{asset('js/admin/groups.js')}}"></script>
 @endsection

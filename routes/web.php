@@ -98,4 +98,5 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'ajax', 'as' => 'a
     Route::get('get_tests', [AjaxController::class, 'get_tests'])->name('get_tests');
     Route::get('tests', [AjaxController::class, 'tests'])->name('tests');
     Route::get('create_patient', [AjaxController::class, 'create_patient'])->name('create_patient');
+    Route::get('patient_details', [AjaxController::class, 'patient_details'])->name('patient_details');
 });
