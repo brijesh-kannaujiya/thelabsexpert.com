@@ -41,6 +41,10 @@ class CategoriesController extends Controller
                 ->editColumn('description', function ($category) {
                     return  Str::words($category['description'], 5, '...');
                 })
+                ->editColumn('icon', function ($category) {
+                    $icon = $category->icon;
+                    return view('admin.partials._icon', compact('icon'));
+                })
                 ->addColumn('bulk_checkbox', function ($item) {
                     return view('admin.partials._bulk_checkbox', compact('item'));
                 })
