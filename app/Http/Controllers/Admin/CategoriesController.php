@@ -79,9 +79,6 @@ class CategoriesController extends Controller
     {
         $data = $request->except('_token', '_method', 'icon', 'files');
         if ($request->hasFile('icon')) {
-            // $extension = $request->file('icon')->getClientOriginalExtension();
-            // $request->file('icon')->move('admin/category', 'icon_' . time() . '.' . $extension);
-            // $data['icon'] =  'admin/category/icon_' . time() . '.' . $extension;
             $extension = $request->file('icon')->getClientOriginalExtension();
             $filename = 'icon_' . time() . '.' . $extension;
             $request->file('icon')->move(public_path('admin/category'), $filename);
@@ -128,8 +125,9 @@ class CategoriesController extends Controller
         $data = $request->except('_token', '_method', 'files');
         if ($request->hasFile('icon')) {
             $extension = $request->file('icon')->getClientOriginalExtension();
-            $request->file('icon')->move('admin/category', 'icon_' . time() . '.' . $extension);
-            $data['icon'] =  'admin/category/icon_' . time() . '.' . $extension;
+            $filename = 'icon_' . time() . '.' . $extension;
+            $request->file('icon')->move(public_path('admin/category'), $filename);
+            $data['icon'] = 'admin/category/' . $filename;
             if ($category->icon) {
                 @unlink($category->icon);
             }
