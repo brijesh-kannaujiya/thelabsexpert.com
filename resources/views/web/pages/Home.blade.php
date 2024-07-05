@@ -67,13 +67,74 @@
     </div>
 </div>
 
+@php
+$packages = get_Packeges();
+
+@endphp
+
+@empty(!$packages)
+<section class="pricing-area">
+    <div class="container">
+        <div class="section-title">
+            <span>Our Packages</span>
+            <h2>Our Pricing Plan</h2>
+        </div>
+
+        <div class="row">
+
+            @foreach ($packages as $package)
+            {{-- @json($package) --}}
+
+            <div class="col-lg-4 col-md-6">
+                <div class="single-pricing-box">
+                    <div class="price">
+                        <span style="  text-decoration: line-through; ">₹{{$package->mrp_price}}</span>
+                        ₹{{$package->price}}
+                    </div>
+
+                    <div class="pricing-header">
+                        <h3> {{ Str::words($package->test_name, 5, '...')}}</h3>
+                    </div>
+
+                    <ul class="pricing-features">
+                        {{-- @dd($package) --}}
+                        @foreach ($package->tests as $test)
+
+                        <li>
+                            <i class="las la-check"></i>
+                            {{$test->test->test_name}}
+                        </li>
+                        @endforeach
+
+
+
+                    </ul>
+
+                    <div class="pricing-btn">
+                        <a href="{{url('services-details/')}}/" class="default-btn">
+                            Choose Plan
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            @endforeach
+
+        </div>
+    </div>
+</section>
+@endempty
+
+
+
 <section class="top-services-area">
     <div class="container">
         <div class="row">
 
             @foreach (get_Categoryes() as $category)
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6 col-4">
                 <a href="{{ url('/test') }}/{{encryptWithPasscode($category->id)}}">
                     <div class="top-services-item">
                         <div class="icon">
@@ -88,7 +149,7 @@
                             {{ Str::words($category->name, 3, '...')}}
 
                         </h3>
-                        <p>{{ Str::words($category->description, 18, '...') }}
+                        {{-- <p>{{ Str::words($category->description, 18, '...') }} --}}
                         </p>
                     </div>
                 </a>
@@ -305,156 +366,7 @@
 </div>
 </section> --}}
 
-@php
-$packages = get_Packeges();
-@endphp
 
-@if (!$packages)
-<section class="pricing-area">
-    <div class="container">
-        <div class="section-title">
-            <span>Our Packages</span>
-            <h2>Our Pricing Plan</h2>
-        </div>
-
-        <div class="row">
-
-            @foreach ($packages as $package)
-            {{-- @json($package) --}}
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-pricing-box">
-                    <div class="price">
-                        <span style="  text-decoration: line-through; ">₹{{$package->mrp_price}}</span>
-                        ₹{{$package->price}}
-                    </div>
-
-                    <div class="pricing-header">
-                        <h3> {{ Str::words($package->test_name, 5, '...')}}</h3>
-                    </div>
-
-                    <ul class="pricing-features">
-                        {{-- @dd($package) --}}
-                        @foreach ($package->tests as $test)
-
-                        <li>
-                            <i class="las la-check"></i>
-                            {{$test->test->test_name}}
-                        </li>
-                        @endforeach
-
-
-
-                    </ul>
-
-                    <div class="pricing-btn">
-                        <a href="{{url('services-details/')}}/" class="default-btn">
-                            Choose Plan
-                            <span></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            @endforeach
-
-
-
-            {{-- <div class="col-lg-4 col-md-6">
-                <div class="single-pricing-box">
-                    <div class="price">
-                        $150
-                    </div>
-
-                    <div class="pricing-header">
-                        <h3>Essential Care</h3>
-                    </div>
-
-                    <ul class="pricing-features">
-                        <li>
-                            <i class="las la-check"></i>
-                            Complete Blood Count
-                        </li>
-                        <li>
-                            <i class="las la-check"></i>
-                            Liver Function Blood Test
-                        </li>
-                        <li>
-                            <i class="las la-check"></i>
-                            Comprehensive Metabolic
-                        </li>
-                        <li>
-                            <i class="las la-check"></i>
-                            Female general Health Panel
-                        </li>
-                        <li>
-                            <i class="las la-check"></i>
-                            Transmitted Diaseases
-                        </li>
-                        <li>
-                            <i class="las la-check"></i>
-                            Cholesterol Lipid Levels
-                        </li>
-                    </ul>
-
-                    <div class="pricing-btn">
-                        <a href="#" class="default-btn">
-                            Choose Plan
-                            <span></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-pricing-box">
-                    <div class="price">
-                        $220
-                    </div>
-
-                    <div class="pricing-header">
-                        <h3>Total Care</h3>
-                    </div>
-
-                    <ul class="pricing-features">
-                        <li>
-                            <i class="las la-check"></i>
-                            Complete Blood Count
-                        </li>
-                        <li>
-                            <i class="las la-check"></i>
-                            Liver Function Blood Test
-                        </li>
-                        <li>
-                            <i class="las la-check"></i>
-                            Comprehensive Metabolic
-                        </li>
-                        <li>
-                            <i class="las la-check"></i>
-                            Female general Health Panel
-                        </li>
-                        <li>
-                            <i class="las la-check"></i>
-                            Transmitted Diaseases
-                        </li>
-                        <li>
-                            <i class="las la-check"></i>
-                            Cholesterol Lipid Levels
-                        </li>
-                    </ul>
-
-                    <div class="pricing-btn">
-                        <a href="#" class="default-btn">
-                            Choose Plan
-                            <span></span>
-                        </a>
-                    </div>
-                </div>
-            </div> --}}
-        </div>
-    </div>
-</section>
-@endif
 <section class="projects-area ptb-100">
     <div class="container">
         <div class="section-title">
