@@ -33,7 +33,7 @@
     </div>
     <!-- /.card-header -->
     <input type="hidden" id="test_id" value="{{$test['id']}}">
-    <form method="POST" action="{{route('admin.tests.update',$test['id'])}}" id="test_form">
+    <form method="POST" action="{{route('admin.tests.update',$test['id'])}}" id="test_form" enctype="multipart/form-data">
         <!-- /.card-header -->
         <div class="card-body">
             @csrf

@@ -2,7 +2,7 @@
 
     @php
     $testIDs = [];
-    if ($test->tests) {
+    if (isset($test->tests) && $test->tests) {
     $testIDs = $test->tests->pluck('test_id')->toArray();
     }
 
