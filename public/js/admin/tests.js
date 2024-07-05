@@ -51,6 +51,7 @@ var count_comments = $("#count_comments").val();
             { data: "category.name", sortable: false, orderable: false },
             { data: "vial.name", sortable: false, orderable: false },
             { data: "specimen.name", sortable: false, orderable: false },
+            { data: "icon", sortable: false, orderable: false },
             { data: "tests", sortable: false, orderable: false },
             {
                 data: "action",

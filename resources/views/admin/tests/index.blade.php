@@ -64,6 +64,7 @@
                             <th>{{__('Category')}}</th>
                             <th>{{__('Vial')}}</th>
                             <th>{{__('Specimen')}}</th>
+                            <th>{{__('Icon')}}</th>
                             <th>{{__('Includes')}}</th>
                             <th width="120px">{{__('Action')}}</th>
                         </tr>

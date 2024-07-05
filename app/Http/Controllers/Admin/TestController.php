@@ -58,6 +58,10 @@ class TestController extends Controller
             ->editColumn('phlebo_instructions', function ($test) {
                 return  Str::words($test['phlebo_instructions'], 5, '...');
             })
+            ->editColumn('icon', function ($test) {
+                $icon = $test->icon;
+                return view('admin.partials._icon', compact('icon'));
+            })
             ->addColumn('tests', function ($tests) {
                 return view('admin.tests._tests', compact('tests'));
             })
@@ -108,7 +112,7 @@ class TestController extends Controller
 
         if ($request->hasFile('icon')) {
             $extension = $request->file('icon')->getClientOriginalExtension();
-            $request->file('icon')->move('admin/test/icon', 'icon_' . time() . '.' . $extension);
+            $request->file('icon')->move(public_path('admin/test/icon'), 'icon_' . time() . '.' . $extension);
             $data['icon'] =  'admin/test/icon/icon_' . time() . '.' . $extension;
         } else {
             $data['icon'] =  'admin/test/icon/icon.png';
@@ -116,7 +120,7 @@ class TestController extends Controller
 
         if ($request->hasFile('banner')) {
             $extension = $request->file('banner')->getClientOriginalExtension();
-            $request->file('banner')->move('admin/test/banner', 'banner_' . time() . '.' . $extension);
+            $request->file('banner')->move(public_path('admin/test/banner'), 'banner_' . time() . '.' . $extension);
             $data['banner'] =  'admin/test/banner/banner_' . time() . '.' . $extension;
         } else {
             $data['banner'] = 'admin/test/banner/banner.png';
@@ -180,7 +184,7 @@ class TestController extends Controller
         $data = $request->except('_token', '_method', 'icon', 'files', 'banner', 'tests');
         if ($request->hasFile('icon')) {
             $extension = $request->file('icon')->getClientOriginalExtension();
-            $request->file('icon')->move('admin/test/icon', 'icon_' . time() . '.' . $extension);
+            $request->file('icon')->move(public_path('admin/test/icon'), 'icon_' . time() . '.' . $extension);
             $data['icon'] =  'admin/test/icon/icon_' . time() . '.' . $extension;
             if ($test->icon) {
                 @unlink($test->icon);
@@ -188,7 +192,7 @@ class TestController extends Controller
         }
         if ($request->hasFile('banner')) {
             $extension = $request->file('banner')->getClientOriginalExtension();
-            $request->file('banner')->move('admin/test/banner', 'banner_' . time() . '.' . $extension);
+            $request->file('banner')->move(public_path('admin/test/banner'), 'banner_' . time() . '.' . $extension);
             $data['banner'] =  'admin/test/banner/banner_' . time() . '.' . $extension;
             if ($test->banner) {
                 @unlink($test->banner);
