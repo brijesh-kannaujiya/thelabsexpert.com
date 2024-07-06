@@ -77,6 +77,9 @@
     <link rel="stylesheet" href="{{asset('dist/css/light-theme.css')}}">
     @endif --}}
 </div>
+<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js"></script>
 
 
 @yield('css')

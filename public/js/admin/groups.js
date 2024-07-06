@@ -29,7 +29,7 @@ var current_date=$('#system_date').val();
       yearRange:"1900:"+current_year
    });
 
-   //admin groups datatable
+   //admin groups datatable 
    table=$('#groups_table').DataTable( {
       "lengthMenu": [[10, 25, 50,100,500,1000, -1], [10, 25, 50,100,500,1000 ,"All"]],
       dom: "<'row'<'col-sm-4'l><'col-sm-4'B><'col-sm-4'f>>" +

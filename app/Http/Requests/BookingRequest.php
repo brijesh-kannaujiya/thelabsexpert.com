@@ -26,14 +26,10 @@ class BookingRequest extends FormRequest
             'name' => 'required',
             'gender' => 'required',
             'age' => 'required',
-            'email' => 'required|unique:patients,email',
+            'email' => 'required',
             'address' => 'required',
             'pincode' => 'required',
             'aadhar_number' => 'required',
-            'passport_number' => 'required',
-            'comment' => 'required',
-            'phlebo_comment' => 'required',
-            
         ];
     }
 }

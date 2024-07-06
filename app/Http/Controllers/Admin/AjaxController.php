@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Patient;
+use App\Models\PaymentMethod;
 use App\Models\Specimen;
 use App\Models\Test;
 use App\Models\Vial;
@@ -75,15 +76,26 @@ class AjaxController extends Controller
         return response()->json($tests);
     }
 
-    public function patient_details(Request $request){
-        $data = Patient::where('phone',$request->phone_no)->first();
-        if($data){
-            return response()->json(['data'=>$data,'status'=>true]);
+    public function patient_details(Request $request)
+    {
+        $data = Patient::where('phone', $request->phone_no)->first();
+        if ($data) {
+            return response()->json(['data' => $data, 'status' => true]);
+        } else {
+            return response()->json(['data' => 'No record found', 'status' => false]);
         }
-        else {
-            return response()->json(['data'=>'No record found','status'=>false]); 
-        }
-        // dd($data);
+    }
 
+    public function GetTest(Request $request)
+    {
+        $tests = Test::where('id', $request->test_id)->first();
+        return response()->json($tests);
+    }
+
+
+    public function getPaymentMethods()
+    {
+        $data = PaymentMethod::get();
+        return response()->json($data);
     }
 }

@@ -33,4 +33,9 @@ class Test extends Model
     {
         return $this->belongsTo(TestPackage::class, 'package_id');
     }
+
+    public function bookings()
+    {
+        return $this->belongsToMany(Booking::class);
+    }
 }

@@ -72,7 +72,7 @@ $packages = get_Packeges();
 
 @endphp
 
-@empty(!$packages)
+@empty($packages)
 <section class="pricing-area">
     <div class="container">
         <div class="section-title">

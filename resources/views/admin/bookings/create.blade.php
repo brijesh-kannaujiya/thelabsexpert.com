@@ -11,14 +11,14 @@
             <div class="col-sm-6">
                 <h1 class="m-0 text-dark">
                     <i class="nav-icon fas fa-file-invoice-dollar"></i>
-                    {{__('Invoices')}}
+                    {{__('Create Booking')}}
                 </h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{route('admin.index')}}">{{__('Home')}}</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('admin.booking.index')}}">{{__('Invoices')}}</a></li>
-                    <li class="breadcrumb-item active">{{__('Create invoice')}}</li>
+                    <li class="breadcrumb-item active"><a href="{{route('admin.booking.index')}}">{{__(' Booking')}}</a></li>
+                    <li class="breadcrumb-item active">{{__('Create Booking')}}</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -29,24 +29,24 @@
 @section('content')
 
 <!-- Form -->
-<form action="{{route('admin.booking.store')}}" method="POST" id="booking_form">
+<form action="{{route('admin.booking.store')}}" method="POST" id="booking_form" enctype="multipart/form-data">
     @csrf
     @include('admin.bookings._form')
 </form>
 <!-- \Form -->
 
 <!-- Models -->
-@include('admin.bookings.modals.patient_modal')
+{{-- @include('admin.bookings.modals.patient_modal')
 @include('admin.bookings.modals.edit_patient_modal')
 @include('admin.bookings.modals.doctor_modal')
-@include('admin.bookings.modals.payment_method_modal')
+@include('admin.bookings.modals.payment_method_modal') --}}
 <!--\Models-->
 
 
 @endsection
 
 @section('scripts')
-<script>
+{{-- <script>
     var test_arr = [];
     var culture_arr = [];
     var package_arr = [];
@@ -60,36 +60,36 @@
         //selected tests
         @foreach($visit['tests'] as $test)
         test_arr.push('{{$test["testable_id"]}}');
-        @endforeach
+@endforeach
 
 
 
 
 
-        @endif
+@endif
 
-    })(jQuery);
+})(jQuery);
 
-</script>
-<script src="{{url('js/admin/groups.js')}}"></script>
-<script>
+</script> --}}
+{{-- <script src="{{url('js/admin/groups.js')}}"></script> --}}
+{{-- <script>
     (function($) {
         "use strict";
 
         @if(isset($visit) && isset($visit['patient']))
         $('#code').append('<option value="{{$visit["patient_id"]}}" selected>{{$visit["patient"]["code"]}}</option>');
-        $('#code').trigger({
-            type: 'select2:select'
-            , params: {
-                data: {
-                    id: "{{$visit['patient_id']}}"
-                    , text: "{{$visit['patient']['code']}}"
-                }
-            }
-        });
-        @endif
-    })(jQuery);
+$('#code').trigger({
+type: 'select2:select'
+, params: {
+data: {
+id: "{{$visit['patient_id']}}"
+, text: "{{$visit['patient']['code']}}"
+}
+}
+});
+@endif
+})(jQuery);
 
-</script>
+</script> --}}
 <script src="{{asset('js/admin/booking.js')}}"></script>
 @endsection

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AjaxController;
 use App\Http\Controllers\Admin\Booking;
+use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PackagesController;
@@ -76,9 +77,10 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => '
     Route::post('tests/bulk/delete', [TestController::class, 'bulk_delete'])->name('tests.bulk_delete');
 
     //booking
-    Route::resource('booking', Booking::class);
+    Route::resource('booking', BookingController::class);
+    Route::get('get_booking', [BookingController::class, 'ajax'])->name('get_booking');
 
-    Route::post('booking/bulk/delete', [Booking::class, 'bulk_delete'])->name('booking.bulk_delete');
+    Route::post('booking/bulk/delete', [BookingController::class, 'bulk_delete'])->name('booking.bulk_delete');
 
     Route::prefix('settings')->name('settings.')->group(function () {
         Route::get('/', [SettingsController::class, 'index'])->name('index');
@@ -99,4 +101,6 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'ajax', 'as' => 'a
     Route::get('tests', [AjaxController::class, 'tests'])->name('tests');
     Route::get('create_patient', [AjaxController::class, 'create_patient'])->name('create_patient');
     Route::get('patient_details', [AjaxController::class, 'patient_details'])->name('patient_details');
+    Route::get('get_test', [AjaxController::class, 'GetTest'])->name('get_test');
+    Route::get('get_payment_methods', [AjaxController::class, 'getPaymentMethods'])->name('get_payment_methods');
 });

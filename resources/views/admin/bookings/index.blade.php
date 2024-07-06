@@ -45,23 +45,24 @@
                 <table id="groups_table" class="table table-striped table-bordered" width="100%">
                     <thead>
                         <tr>
-                            <th width="10px">
-                                <input type="checkbox" class="check_all" name="" id="">
-                            </th>
+
                             <th width="10px">#</th>
-                            <th width="10px">{{__('Created By')}}</th>
-                            <th width="10px">{{__('Barcode')}}</th>
-                            <th width="100px">{{__('Patient Code')}}</th>
-                            <th width="150px">{{__('Patient Name')}}</th>
-                            <th>{{__('Contract')}}</th>
-                            <th width="100px">{{__('Subtotal')}}</th>
-                            <th width="100px">{{__('Discount')}}</th>
+                            <th>{{__('Sample / Phlebo Status')}}</th>
+                            <th>{{__('reportDataTime')}}</th>
+                            <th width="10px">{{__('Name')}}</th>
+                            <th width="10px">{{__('Contacts/Emails')}}</th>
+                            {{-- <th width="100px">{{__('Patient Code')}}</th> --}}
+                            {{-- <th width="150px">{{__('Patient Name')}}</th> --}}
+                            {{-- <th>{{__('Contract')}}</th> --}}
+                            {{-- <th width="100px">{{__('Subtotal')}}</th> --}}
+                            {{-- <th width="100px">{{__('Discount')}}</th> --}}
                             <th width="100px">{{__('Total')}}</th>
-                            <th width="100px">{{__('Paid')}}</th>
-                            <th width="100px">{{__('Due')}}</th>
-                            <th width="100px">{{__('Date')}}</th>
+                            <th width="100px">{{__('Payment')}}</th>
+                            <th width="100px">{{__('Barcode')}}</th>
+                            <th width="100px">{{__('Update Info')}}</th>
+                            {{-- <th width="100px">{{__('Date')}}</th>
                             <th width="10px">{{__('Status')}}</th>
-                            <th width="50px">{{__('Action')}}</th>
+                            <th width="50px">{{__('Action')}}</th> --}}
                         </tr>
                     </thead>
                     <tbody>
@@ -82,6 +83,6 @@
     var can_view = @can('view_booking') true @else false @endcan;
 
 </script>
-<script src="{{asset('js/admin/group.js')}}"></script>
+<script src="{{asset('js/admin/booking.js')}}"></script>
 <script src="{{asset('js/select2.js')}}"></script>
 @endsection
