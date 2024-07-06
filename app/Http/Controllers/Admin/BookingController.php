@@ -8,6 +8,7 @@ use App\Models\Booking;
 use App\Models\BookingStatus;
 use App\Models\BookingTest;
 use App\Models\Patient;
+use App\Models\PaymentMethod;
 use App\Models\Status;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -97,7 +98,8 @@ class BookingController extends Controller
                 return view('admin.bookings._contacts', compact('booking'));
             })
             ->addColumn('payments', function ($booking) {
-                return view('admin.bookings._payments', compact('booking'));
+                $peymentMethod = PaymentMethod::get();
+                return view('admin.bookings._payments', compact('booking', 'peymentMethod'));
             })
             ->addColumn('UpdateInfo', function ($booking) {
                 return view('admin.bookings._updateInfo', compact('booking'));
