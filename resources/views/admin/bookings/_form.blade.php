@@ -432,11 +432,11 @@
                         </div>
                         <div class=" col-md-12">
                             <label for="payment_amount">{{__('Amount')}}</label>
-                            <input type="number" class="form-control amount" name="payment_amount" value="0" id="payment_amount" required>
+                            <input type="number" class="form-control amount" name="payment_amount" value="0" id="payment_amount">
                         </div>
                         <div class=" col-md-12">
                             <label for="payment_method">{{__('Payment Method')}}</label>
-                            <select name="payment_method_id" id="payment_method_id" class="form-control payment_method_id" required>
+                            <select name="payment_method_id" id="payment_method_id" class="form-control payment_method_id">
                                 <option value="" selected>{{__('Select payment method')}}</option>
                             </select>
                         </div>
