@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AjaxController;
 use App\Http\Controllers\Admin\Booking;
 use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Admin\CouponController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PackagesController;
 use App\Http\Controllers\Admin\ProfileController;
@@ -59,6 +60,10 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => '
     // vials
     Route::resource('specimens', SpecimenController::class);
     Route::post('specimens/bulk/delete', [SpecimenController::class, 'bulk_delete'])->name('specimens.bulk_delete');
+
+    // coupon
+    Route::resource('coupon', CouponController::class);
+    Route::post('coupon/bulk/delete', [CouponController::class, 'bulk_delete'])->name('coupon.bulk_delete');
 
 
     // roles

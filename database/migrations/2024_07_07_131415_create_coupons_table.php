@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('bookings', function (Blueprint $table) {
-            // $table->dropForeign(['payment_method_id']);
-            // $table->dropColumn('payment_method_id');
-            // $table->bigInteger('payment_method_id')->nullable();
+        Schema::create('coupons', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->bigInteger('value');
+            $table->timestamps();
         });
     }
 
@@ -23,8 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('bookings', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('coupons');
     }
 };
