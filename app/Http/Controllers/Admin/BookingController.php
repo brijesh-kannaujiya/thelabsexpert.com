@@ -64,7 +64,7 @@ class BookingController extends Controller
             $extension = $request->file('payment_photo')->getClientOriginalExtension();
             $filename = 'payment_photo_' . time() . '.' . $extension;
             $request->file('payment_photo')->move(public_path('admin/payment_photo'), $filename);
-            $bookingData['payment_photo'] = 'admin/payment/' . $filename;
+            $bookingData['payment_photo'] = 'admin/payment_photo/' . $filename;
         }
         $booking  = Booking::create($bookingData);
         foreach ($request->tests_id as $key => $value) {
@@ -78,8 +78,6 @@ class BookingController extends Controller
     public function ajax(Request $request)
     {
         $model = Booking::with('patient', 'paymentMethod');
-
-
         return DataTables::eloquent($model)
             ->editColumn('id', function ($booking) {
                 return view('admin.bookings._id', compact('booking'));
@@ -104,33 +102,66 @@ class BookingController extends Controller
             ->addColumn('UpdateInfo', function ($booking) {
                 return view('admin.bookings._updateInfo', compact('booking'));
             })
-            // ->editColumn('subtotal',function($group){
-            //     return formated_price($group['subtotal']);
-            // })
-            // ->editColumn('discount',function($group){
-            //     return formated_price($group['discount']);
-            // })
-            // ->editColumn('total',function($group){
-            //     return formated_price($group['total']);
-            // })
-            // ->editColumn('paid',function($group){
-            //     return formated_price($group['paid']);
-            // })
-            // ->editColumn('due',function($group){
-            //     return view('admin.groups._due',compact('group'));
-            // })
-            // ->editColumn('done', function ($group) {
-            //     return view('admin.bookings._status', compact('group'));
-            // })
-            // ->addColumn('action', function ($group) {
-            //     return view('admin.bookings._action', compact('group'));
-            // })
-            // ->addColumn('bulk_checkbox', function ($item) {
-            //     return view('partials._bulk_checkbox', compact('item'));
-            // })
-            // ->editColumn('created_at', function ($group) {
-            //     return date('Y-m-d H:i', strtotime($group['created_at']));
-            // })
             ->toJson();
+    }
+
+    public function UpdateStatus(Request $request)
+    {
+        $booking = new BookingStatus;
+        $booking->booking_id = $request->booking_id;
+        $booking->status_id = $request->status_id;
+        $booking->save();
+        return response()->json(['message' => 'Status updated successfully']);
+    }
+
+
+    public function UpdatePayment(Request $request)
+    {
+        $booking = Booking::find($request->booking_id);
+        $booking->payment_method_id = $request->payment_method_id;
+        $payment_amount = $booking->due - $request->payment_amount;
+        if ($payment_amount < 0) {
+            $payment_amount = 0;
+        }
+        $booking->paid = $booking->paid + $request->payment_amount;
+        $booking->due = $payment_amount;
+        if ($request->hasFile('payment_photo')) {
+            $extension = $request->file('payment_photo')->getClientOriginalExtension();
+            $filename = 'payment_photo_' . time() . '.' . $extension;
+            $request->file('payment_photo')->move(public_path('admin/payment_photo'), $filename);
+            $booking->payment_photo = 'admin/payment_photo/' . $filename;
+        }
+        $booking->save();
+        return response()->json(['message' => 'Payment updated successfully']);
+    }
+
+    public function updatePatientInfo(Request $request, $booking_id)
+    {
+        // Find the booking by ID
+        $booking = Booking::find($booking_id);
+        if (!$booking) {
+            return response()->json(['error' => 'Booking not found'], 404);
+        }
+
+        // Find the patient related to the booking
+        // $patient = $booking->patient_id;
+        $patient = Patient::find($booking->patient_id);
+        if (!$patient) {
+            return response()->json(['error' => 'Patient not found'], 404);
+        }
+        $patient->name = $request->name;
+        $patient->age = $request->age;
+        $patient->email_secondary = $request->email_secondary;
+        $patient->address = $request->address;
+        $patient->pincode = $request->pincode;
+        $patient->aadhar_number = $request->aadhar_number;
+        $patient->passport_number = $request->passport_number;
+        $patient->srf_id = $request->srf_id;
+        $patient->comment = $request->comment;
+        $patient->phlebo_comment = $request->phlebo_comment;
+        $patient->save();
+        $booking->barcode = $request->barcode;
+        $booking->save();
+        return response()->json(['success' => 'Patient information updated successfully']);
     }
 }

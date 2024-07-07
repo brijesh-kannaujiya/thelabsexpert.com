@@ -1,7 +1,7 @@
 @extends('admin.common.app')
 
 @section('title')
-{{__('Invoices')}}
+{{__('Booking')}}
 @endsection
 
 @section('breadcrumb')
@@ -11,7 +11,7 @@
             <div class="col-sm-6">
                 <h1 class="m-0 text-dark">
                     <i class="nav-icon fas fa-file-invoice-dollar"></i>
-                    {{__('Invoices')}}
+                    {{__('Booking')}}
                 </h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
@@ -57,6 +57,7 @@
                             {{-- <th width="100px">{{__('Subtotal')}}</th> --}}
                             {{-- <th width="100px">{{__('Discount')}}</th> --}}
                             <th width="100px">{{__('Total')}}</th>
+                            <th width="100px">{{__('Due')}}</th>
                             <th width="100px">{{__('Payment')}}</th>
                             <th width="100px">{{__('Barcode')}}</th>
                             <th width="100px">{{__('Update Info')}}</th>

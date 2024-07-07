@@ -427,30 +427,15 @@ $("#timeslot_from").on("change", function () {
 
 //admin groups datatable
 table = $("#groups_table").DataTable({
-    lengthMenu: [
-        [10, 25, 50, 100, 500, 1000, -1],
-        [10, 25, 50, 100, 500, 1000, "All"],
-    ],
-    dom:
-        "<'row'<'col-sm-4'l><'col-sm-4'B><'col-sm-4'f>>" +
-        "<'row'<'col-sm-12'tr>>" +
-        "<'row'<'col-sm-4'i><'col-sm-8'p>>",
     buttons: [],
     processing: true,
     serverSide: true,
     order: [[1, "desc"]],
+    select: false,
     ajax: {
         url: url("admin/get_booking"),
-        data: function (data) {
-            data.filter_status = $("#filter_status").val();
-            data.filter_barcode = $("#filter_barcode").val();
-            data.filter_date = $("#filter_date").val();
-            data.filter_created_by = $("#filter_created_by").val();
-            data.filter_contract = $("#filter_contract").val();
-        },
     },
-    // orderCellsTop: true,
-    fixedHeader: true,
+    fixedHeader: false,
     columns: [
         { data: "id", sortable: true, orderable: true },
         { data: "status", sortable: true, orderable: true },
@@ -458,129 +443,145 @@ table = $("#groups_table").DataTable({
         { data: "nameAndAge", sortable: false, orderable: false },
         { data: "contacts", sortable: false, orderable: false },
         { data: "total", orderable: false, sortable: false },
+        { data: "due", orderable: false, sortable: false },
         { data: "payments", orderable: false, sortable: false },
         { data: "barcode", orderable: false, sortable: false },
         { data: "UpdateInfo", orderable: false, sortable: false },
-        // { data: "subtotal", orderable: false, sortable: false },
-        // { data: "discount", orderable: false, sortable: false },
-
-        // { data: "paid", orderable: false, sortable: false },
-        // { data: "due", orderable: false, sortable: false },
-        // { data: "created_at", sortable: true, orderable: true },
-        // { data: "done", searchable: false, orderable: false, sortable: false }, //done
-        // {
-        //     data: "action",
-        //     searchable: false,
-        //     orderable: false,
-        //     sortable: false,
-        // }, //action
     ],
-    // footerCallback: function (row, data, start, end, display) {
-    //     var api = this.api(),
-    //         data;
-
-    //     // Remove the formatting to get integer data for summation
-    //     var intVal = function (i) {
-    //         return typeof i === "string"
-    //             ? i.replace(/[\$,]/g, "") * 1
-    //             : typeof i === "number"
-    //             ? i
-    //             : 0;
-    //     };
-
-    //     // Summary
-    //     var subtotal = api
-    //         .column(7)
-    //         .data()
-    //         .reduce(function (a, b) {
-    //             return intVal(a) + intVal(b);
-    //         }, 0);
-
-    //     var discount = api
-    //         .column(8)
-    //         .data()
-    //         .reduce(function (a, b) {
-    //             return intVal(a) + intVal(b);
-    //         }, 0);
-
-    //     var total = api
-    //         .column(9)
-    //         .data()
-    //         .reduce(function (a, b) {
-    //             return intVal(a) + intVal(b);
-    //         }, 0);
-
-    //     var paid = api
-    //         .column(10)
-    //         .data()
-    //         .reduce(function (a, b) {
-    //             return intVal(a) + intVal(b);
-    //         }, 0);
-
-    //     var due = api
-    //         .column(11)
-    //         .data()
-    //         .reduce(function (a, b) {
-    //             return intVal(a) + intVal(b);
-    //         }, 0);
-
-    //     console.log(subtotal, total, discount);
-
-    //     // Total over this page
-    //     $("#summary_subtotal").html(formated_price(Math.round(subtotal, 2)));
-    //     $("#summary_discount").html(formated_price(Math.round(discount, 2)));
-    //     $("#summary_total").html(formated_price(Math.round(total, 2)));
-    //     $("#summary_paid").html(formated_price(Math.round(paid, 2)));
-    //     $("#summary_due").html(formated_price(Math.round(due, 2)));
-    // },
-    drawCallback: function (settings) {
-        var row_id = [];
-        this.api()
-            .cells(null, 0)
-            .every(function () {
-                row_id.push(this.data());
-            });
-    },
-    language: {
-        sEmptyTable: trans("No data available in table"),
-        sInfo:
-            trans("Showing") +
-            " _START_ " +
-            trans("to") +
-            " _END_ " +
-            trans("of") +
-            " _TOTAL_ " +
-            trans("records"),
-        sInfoEmpty:
-            trans("Showing") +
-            " 0 " +
-            trans("to") +
-            " 0 " +
-            trans("of") +
-            " 0 " +
-            trans("records"),
-        sInfoFiltered:
-            "(" +
-            trans("filtered") +
-            " " +
-            trans("from") +
-            " _MAX_ " +
-            trans("total") +
-            " " +
-            trans("records") +
-            ")",
-        sInfoPostFix: "",
-        sInfoThousands: ",",
-        sLengthMenu: trans("Show") + " _MENU_ " + trans("records"),
-        sLoadingRecords: trans("Loading..."),
-        sProcessing: trans("Processing..."),
-        sSearch: trans("Search") + ":",
-        sZeroRecords: trans("No matching records found"),
-        oPaginate: {
-            sFirst: trans("First"),
-            sLast: trans("Last"),
-            sNext: trans("Next"),
-            sPrevious: trans("Previous"),
-        },
-    },
 });
+
+table.on("draw", function () {
+    $(".select2").select2();
+});
+function UpadteStatus(booking_id, status_id) {
+    $.ajax({
+        beforeSend: function () {
+            $(".preloader").show();
+            $(".loader").show();
+        },
+        url: url("admin/update_booking/status"),
+        method: "POST",
+        data: {
+            booking_id: booking_id,
+            status_id: status_id,
+        },
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+        success: function (response) {
+            console.log("Status updated successfully", response);
+            // Assuming table variable is already defined and initialized
+            $("#groups_table").DataTable().ajax.reload();
+        },
+        error: function (xhr, status, error) {
+            console.error("Failed to update status", xhr, status, error);
+        },
+        complete: function () {
+            $(".preloader").hide();
+            $(".loader").hide();
+        },
+    });
+}
+
+function SubmitPaymentForm(booking_id) {
+    var FormId = "PaymentForm_" + booking_id;
+    var formElement = document.getElementById(FormId);
+    if (!formElement) {
+        console.error("Form element not found with id: " + FormId);
+        return;
+    }
+    // Validation
+    var paymentPhoto = formElement.querySelector('input[name="payment_photo"]');
+    var paymentAmount = formElement.querySelector(
+        'input[name="payment_amount"]'
+    );
+    var paymentMethod = formElement.querySelector(
+        'select[name="payment_method_id"]'
+    );
+
+    if (!paymentPhoto.files.length) {
+        alert("Please select a payment photo.");
+        return;
+    }
+
+    if (!paymentAmount.value || paymentAmount.value <= 0) {
+        alert("Please enter a valid payment amount.");
+        return;
+    }
+
+    if (!paymentMethod.value) {
+        alert("Please select a payment method.");
+        return;
+    }
+    var formData = new FormData(formElement);
+    formData.append("booking_id", booking_id);
+    $.ajax({
+        beforeSend: function () {
+            $(".preloader").show();
+            $(".loader").show();
+        },
+        url: url("admin/update_booking/payment"),
+        method: "POST",
+        data: formData,
+        processData: false,
+        contentType: false,
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+        success: function (response) {
+            console.log("Payment information updated successfully", response);
+            $("#groups_table").DataTable().ajax.reload();
+            // alert("Payment information updated successfully!");
+        },
+        error: function (xhr, status, error) {
+            console.error(
+                "Failed to update payment information",
+                xhr,
+                status,
+                error
+            );
+            alert("Failed to update payment information. Please try again.");
+        },
+        complete: function () {
+            $(".preloader").hide();
+            $(".loader").hide();
+        },
+    });
+}
+
+function SubmitUserInfoForm(booking_id) {
+    var formElement = document.getElementById("UserInfoForm_" + booking_id);
+
+    if (!formElement.checkValidity()) {
+        formElement.reportValidity();
+        return;
+    }
+
+    var formData = new FormData(formElement);
+
+    $.ajax({
+        beforeSend: function () {
+            $(".preloader").show();
+            $(".loader").show();
+        },
+        url: url("admin/update_booking/update_patient_info/") + booking_id,
+        method: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+        success: function (response) {
+            console.log("Booking info updated successfully", response);
+            $("#groups_table").DataTable().ajax.reload();
+        },
+        error: function (xhr, status, error) {
+            console.error("Failed to update booking info", xhr, status, error);
+        },
+        complete: function () {
+            $(".preloader").hide();
+            $(".loader").hide();
+        },
+    });
+}

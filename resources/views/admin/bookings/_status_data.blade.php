@@ -31,7 +31,7 @@
 
         <div class="form-group">
             <label>Set Status</label>
-            <select class="form-control select2" required="required" name="status" id="status">
+            <select class="form-control select2" required="required" onchange="UpadteStatus({{$booking->id}},this.value)" name="status" id="status">
                 @foreach ($statuses as $status)
                 <option value="{{$status->id}}" @if ($booking->status[0]->id == $status->id) selected
 
