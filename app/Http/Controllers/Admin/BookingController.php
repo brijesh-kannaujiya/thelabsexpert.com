@@ -164,4 +164,64 @@ class BookingController extends Controller
         $booking->save();
         return response()->json(['success' => 'Patient information updated successfully']);
     }
+
+    function Edit($id)
+    {
+        $booking = Booking::find($id);
+        if (!$booking) {
+            return Redirect::route('admin.booking.index')->with('error', __('Booking not found'));
+        }
+        $PaymentMethodes = PaymentMethod::get();
+        return view('admin.bookings.edit', compact('booking', 'PaymentMethodes'));
+    }
+
+    public function update(BookingRequest $request, $id)
+    {
+        $booking = Booking::findOrFail($id);
+        if (!$booking) {
+            return Redirect::route('admin.booking.index')->with('error', __('Booking not found'));
+        }
+        $patientData = $request->except('_token', '_method', 'barcode', 'date', 'from_time', 'to_time', 'tests_id', 'tests', 'payment_photo', 'payment_amount', 'payment_method_id', 'phone', 'prescriptions', 'subtotal', 'discount', 'hardcopy', 'logistics_charges', 'total', 'paid', 'due');
+
+        if ($request->hasFile('prescriptions')) {
+            $extension = $request->file('prescriptions')->getClientOriginalExtension();
+            $imagePath = 'prescriptions_' . time() . '.' . $extension;
+            $request->file('prescriptions')->move(public_path('admin/bookingdata'), $imagePath);
+            $patientData['prescriptions'] = 'admin/bookingdata/' . $imagePath;
+        }
+
+        $patient = Patient::where('phone', $request->phone)->first();
+        if ($patient) {
+            $patient->update($patientData);
+        } else {
+            $patient = new Patient;
+            $patientData['phone'] = $request->phone;
+            $patient = $patient->create($patientData);
+        }
+
+        // Update booking data
+        $bookingData = $request->only('barcode', 'date', 'from_time', 'to_time', 'payment_method_id', 'subtotal', 'discount', 'hardcopy', 'logistics_charges', 'total', 'paid', 'due');
+        $bookingData['patient_id'] = $patient->id;
+
+        if ($request->hasFile('payment_photo')) {
+            $extension = $request->file('payment_photo')->getClientOriginalExtension();
+            $filename = 'payment_photo_' . time() . '.' . $extension;
+            $request->file('payment_photo')->move(public_path('admin/payment_photo'), $filename);
+            $bookingData['payment_photo'] = 'admin/payment_photo/' . $filename;
+        }
+
+        $booking->update($bookingData);
+
+        // Update associated tests
+        BookingTest::where('booking_id', $booking->id)->delete();
+        foreach ($request->tests_id as $key => $value) {
+            BookingTest::create(['test_id' => $value, 'booking_id' => $booking->id]);
+        }
+
+        // Update booking status
+        BookingStatus::where('booking_id', $booking->id)->update(['status_id' => 1]);
+
+        session()->flash('success', __('Booking updated successfully'));
+        return Redirect::route('admin.booking.index');
+    }
 }

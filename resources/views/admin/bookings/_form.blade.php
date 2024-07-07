@@ -13,7 +13,7 @@
             <div class="col-lg-3">
                 <div class="form-group">
                     <label>{{__('Contact (Primary)')}}</label>
-                    <input type="number" class="form-control" id="phone" onkeyup="getPhoneNo()" name="phone" value="{{ old('phone') }}" required="required">
+                    <input type="number" class="form-control" id="phone" onkeyup="getPhoneNo()" name="phone" @if(isset($booking)&&isset($booking->patient)) value="{{$booking->patient->phone}}" @else value=" {{ old('phone') }}" @endif required="required">
                 </div>
             </div>
 
@@ -21,7 +21,7 @@
                 <div class="form-group">
                     <label>{{__("Patient's Full Name")}}</label>
 
-                    <input type="text" class="form-control" id="name" name="name" required="required" value="{{ old('name') }}">
+                    <input type="text" class="form-control" id="name" name="name" required="required" @if(isset($booking)&&isset($booking->patient)) value="{{$booking->patient->name}}" @else value="{{ old('name') }}" @endif>
 
 
                 </div>
@@ -30,24 +30,48 @@
                 <div class="form-group">
                     <label>{{__('Gender')}}</label>
                     <select class="form-control select2" required="required" name="gender" id="gender">
-                        <option value="Male" {{ old('gender') == 'Male' ? 'selected' : '' }}>Male</option>
-                        <option value="Female" {{ old('gender') == 'Female' ? 'selected' : '' }}>Female</option>
-                        <option value="Other" {{ old('gender') == 'Other' ? 'selected' : '' }}>Other</option>
+                        <option value="Male" @if(isset($booking) && isset($booking->patient) && $booking->patient->gender == 'Male')
+                            selected
+                            @elseif(old('gender') == 'Male')
+                            selected
+                            @endif
+                            >Male</option>
+                        <option value="Female" @if(isset($booking) && isset($booking->patient) && $booking->patient->gender == 'Female')
+                            selected
+                            @elseif(old('gender') == 'Female')
+                            selected
+                            @endif
+                            >Female</option>
+                        <option value="Other" @if(isset($booking) && isset($booking->patient) && $booking->patient->gender == 'Other')
+                            selected
+                            @elseif(old('gender') == 'Other')
+                            selected
+                            @endif
+                            >Other</option>
                     </select>
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="form-group">
                     <label>{{__('Age')}}</label>
-                    <input type="number" class="form-control" id="age" required="required" name="age" value="{{ old('age') }}">
-
+                    <input type="number" class="form-control" id="age" required="required" name="age" @if(isset($booking) && isset($booking->patient))
+                    value="{{ $booking->patient->age }}"
+                    @else
+                    value="{{ old('age') }}"
+                    @endif
+                    >
                 </div>
             </div>
 
             <div class="col-lg-3">
                 <div class="form-group">
                     <label>{{__('Contact (Secondary)')}}</label>
-                    <input type="number" class="form-control" id="phone_secondary" name="phone_secondary" value="{{ old('phone_secondary') }}">
+                    <input type="number" class="form-control" id="phone_secondary" name="phone_secondary" @if(isset($booking) && isset($booking->patient))
+                    value="{{ $booking->patient->phone_secondary }}"
+                    @else
+                    value="{{ old('phone_secondary') }}"
+                    @endif
+                    >
 
                 </div>
             </div>
@@ -55,21 +79,36 @@
             <div class="col-lg-3">
                 <div class="form-group">
                     <label>{{__('Email (Primary)')}}</label>
-                    <input class="form-control" id="email" name="email" required="required" value="{{ old('email') }}">
+                    <input type="email" class="form-control" id="email" name="email" required="required" @if(isset($booking) && isset($booking->patient))
+                    value="{{ $booking->patient->email }}"
+                    @else
+                    value="{{ old('email') }}"
+                    @endif
+                    >
                 </div>
             </div>
 
             <div class="col-lg-3">
                 <div class="form-group">
                     <label>{{__('Email (Secondary)')}}</label>
-                    <input class="form-control" id="email_secondary" name="email_secondary" value="{{ old('email_secondary')}}">
+                    <input type="email" class="form-control" id="email_secondary" name="email_secondary" @if(isset($booking) && isset($booking->patient))
+                    value="{{ $booking->patient->email_secondary }}"
+                    @else
+                    value="{{ old('email_secondary') }}"
+                    @endif
+                    >
 
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="form-group">
                     <label>{{__('Area')}}</label>
-                    <input class="form-control" id="area" required="required" name="area" value="{{ old('area') }}">
+                    <input type="text" class="form-control" id="area" name="area" required="required" @if(isset($booking) && isset($booking->patient))
+                    value="{{ $booking->patient->area }}"
+                    @else
+                    value="{{ old('area') }}"
+                    @endif
+                    >
 
                 </div>
             </div>
@@ -77,100 +116,380 @@
                 <div class="form-group ">
                     <label>{{__('City')}}</label>
                     <select name="city" id="city" required="required" class="form-control select2">
-                        <option data-select2-id="11">Select City</option>
-                        <option value="Greater Noida"> Greater Noida </option>
-                        <option value="Greater Noida West"> Greater Noida West </option>
-                        <option value="Sirhind">Sirhind</option>
-                        <option value="Noida">Noida</option>
-                        <option value="Faridabad">Faridabad</option>
-                        <option value="Shahdara">Shahdara</option>
-                        <option value="Gurugram">Gurugram</option>
-                        <option value="Patiala">Patiala</option>
-                        <option value="Rajpura">Rajpura</option>
-                        <option value="Chandigarh">Chandigarh</option>
-                        <option value="Mohali">Mohali</option>
-                        <option value="Panchkula">Panchkula</option>
-                        <option value="Kharar">Kharar</option>
-                        <option value="Zirakpur">Zirakpur</option>
-                        <option value="Ambala">Ambala</option>
-                        <option value="Fatehgarh Sahib">Fatehgarh Sahib</option>
-                        <option value="Patran">Patran</option>
-                        <option value="Samana">Samana</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="Ludhiana">Ludhiana</option>
-                        <option value="Amritsar">Amritsar</option>
-                        <option value="Jalandhar">Jalandhar</option>
-                        <option value="Phagwara">Phagwara</option>
-                        <option value="Jaipur">Jaipur</option>
-                        <option value="Panipat">Panipat</option>
-                        <option value="Sonipat">Sonipat</option>
-                        <option value="Meerut">Meerut</option>
-                        <option value="Nabha">Nabha</option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Pune">Pune</option>
-                        <option value="Bulandshahr">Bulandshahr</option>
-                        <option value="Dera Bassi">Dera Bassi</option>
-                        <option value="Manimajra">Manimajra</option>
-                        <option value="Sangrur">Sangrur</option>
-                        <option value="Thane">Thane</option>
-                        <option value="Hapur">Hapur</option>
-                        <option value="Pinjore">Pinjore</option>
-                        <option value="Bangalore">Bangalore</option>
-                        <option value="Parwanoo">Parwanoo</option>
-                        <option value="Banur">Banur</option>
-                        <option value="Bahadurgarh">Bahadurgarh</option>
-                        <option value="Palwal">Palwal</option>
-                        <option value="Sikandrabad">Sikandrabad</option>
-                        <option value="Bhawanigarh">Bhawanigarh</option>
-                        <option value="Ballabhgarh">Ballabhgarh</option>
-                        <option value="Greater Noida Camp">Greater Noida Camp</option>
-                        <option value="Hyderabad">Hyderabad</option>
-                        <option value="Mathura">Mathura</option>
-                        <option value="Vrindavan">Vrindavan</option>
-                        <option value="Barsana">Barsana</option>
-                        <option value="Ghaziabad">Ghaziabad</option>
+                        <option value="" data-select2-id="11">Select City</option>
+                        <option value="Greater Noida" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Greater Noida')
+                            selected
+                            @elseif(old('city') == 'Greater Noida')
+                            selected
+                            @endif
+                            >Greater Noida</option>
+                        <option value="Greater Noida West" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Greater Noida West')
+                            selected
+                            @elseif(old('city') == 'Greater Noida West')
+                            selected
+                            @endif
+                            >Greater Noida West</option>
+                        <option value="Sirhind" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Sirhind')
+                            selected
+                            @elseif(old('city') == 'Sirhind')
+                            selected
+                            @endif
+                            >Sirhind</option>
+                        <option value="Noida" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Noida')
+                            selected
+                            @elseif(old('city') == 'Noida')
+                            selected
+                            @endif
+                            >Noida</option>
+                        <option value="Faridabad" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Faridabad')
+                            selected
+                            @elseif(old('city') == 'Faridabad')
+                            selected
+                            @endif
+                            >Faridabad</option>
+                        <option value="Shahdara" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Shahdara')
+                            selected
+                            @elseif(old('city') == 'Shahdara')
+                            selected
+                            @endif
+                            >Shahdara</option>
+                        <option value="Gurugram" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Gurugram')
+                            selected
+                            @elseif(old('city') == 'Gurugram')
+                            selected
+                            @endif
+                            >Gurugram</option>
+                        <option value="Patiala" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Patiala')
+                            selected
+                            @elseif(old('city') == 'Patiala')
+                            selected
+                            @endif
+                            >Patiala</option>
+                        <option value="Rajpura" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Rajpura')
+                            selected
+                            @elseif(old('city') == 'Rajpura')
+                            selected
+                            @endif
+                            >Rajpura</option>
+                        <option value="Chandigarh" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Chandigarh')
+                            selected
+                            @elseif(old('city') == 'Chandigarh')
+                            selected
+                            @endif
+                            >Chandigarh</option>
+                        <option value="Mohali" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Mohali')
+                            selected
+                            @elseif(old('city') == 'Mohali')
+                            selected
+                            @endif
+                            >Mohali</option>
+                        <option value="Panchkula" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Panchkula')
+                            selected
+                            @elseif(old('city') == 'Panchkula')
+                            selected
+                            @endif
+                            >Panchkula</option>
+                        <option value="Kharar" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Kharar')
+                            selected
+                            @elseif(old('city') == 'Kharar')
+                            selected
+                            @endif
+                            >Kharar</option>
+                        <option value="Zirakpur" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Zirakpur')
+                            selected
+                            @elseif(old('city') == 'Zirakpur')
+                            selected
+                            @endif
+                            >Zirakpur</option>
+                        <option value="Ambala" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Ambala')
+                            selected
+                            @elseif(old('city') == 'Ambala')
+                            selected
+                            @endif
+                            >Ambala</option>
+                        <option value="Fatehgarh Sahib" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Fatehgarh Sahib')
+                            selected
+                            @elseif(old('city') == 'Fatehgarh Sahib')
+                            selected
+                            @endif
+                            >Fatehgarh Sahib</option>
+                        <option value="Patran" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Patran')
+                            selected
+                            @elseif(old('city') == 'Patran')
+                            selected
+                            @endif
+                            >Patran</option>
+                        <option value="Samana" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Samana')
+                            selected
+                            @elseif(old('city') == 'Samana')
+                            selected
+                            @endif
+                            >Samana</option>
+                        <option value="Delhi" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Delhi')
+                            selected
+                            @elseif(old('city') == 'Delhi')
+                            selected
+                            @endif
+                            >Delhi</option>
+                        <option value="Ludhiana" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Ludhiana')
+                            selected
+                            @elseif(old('city') == 'Ludhiana')
+                            selected
+                            @endif
+                            >Ludhiana</option>
+                        <option value="Amritsar" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Amritsar')
+                            selected
+                            @elseif(old('city') == 'Amritsar')
+                            selected
+                            @endif
+                            >Amritsar</option>
+                        <option value="Jalandhar" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Jalandhar')
+                            selected
+                            @elseif(old('city') == 'Jalandhar')
+                            selected
+                            @endif
+                            >Jalandhar</option>
+                        <option value="Phagwara" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Phagwara')
+                            selected
+                            @elseif(old('city') == 'Phagwara')
+                            selected
+                            @endif
+                            >Phagwara</option>
+                        <option value="Jaipur" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Jaipur')
+                            selected
+                            @elseif(old('city') == 'Jaipur')
+                            selected
+                            @endif
+                            >Jaipur</option>
+                        <option value="Panipat" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Panipat')
+                            selected
+                            @elseif(old('city') == 'Panipat')
+                            selected
+                            @endif
+                            >Panipat</option>
+                        <option value="Sonipat" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Sonipat')
+                            selected
+                            @elseif(old('city') == 'Sonipat')
+                            selected
+                            @endif
+                            >Sonipat</option>
+                        <option value="Meerut" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Meerut')
+                            selected
+                            @elseif(old('city') == 'Meerut')
+                            selected
+                            @endif
+                            >Meerut</option>
+                        <option value="Nabha" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Nabha')
+                            selected
+                            @elseif(old('city') == 'Nabha')
+                            selected
+                            @endif
+                            >Nabha</option>
+                        <option value="Mumbai" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Mumbai')
+                            selected
+                            @elseif(old('city') == 'Mumbai')
+                            selected
+                            @endif
+                            >Mumbai</option>
+                        <option value="Pune" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Pune')
+                            selected
+                            @elseif(old('city') == 'Pune')
+                            selected
+                            @endif
+                            >Pune</option>
+                        <option value="Bulandshahr" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Bulandshahr')
+                            selected
+                            @elseif(old('city') == 'Bulandshahr')
+                            selected
+                            @endif
+                            >Bulandshahr</option>
+                        <option value="Dera Bassi" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Dera Bassi')
+                            selected
+                            @elseif(old('city') == 'Dera Bassi')
+                            selected
+                            @endif
+                            >Dera Bassi</option>
+                        <option value="Manimajra" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Manimajra')
+                            selected
+                            @elseif(old('city') == 'Manimajra')
+                            selected
+                            @endif
+                            >Manimajra</option>
+                        <option value="Sangrur" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Sangrur')
+                            selected
+                            @elseif(old('city') == 'Sangrur')
+                            selected
+                            @endif
+                            >Sangrur</option>
+                        <option value="Thane" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Thane')
+                            selected
+                            @elseif(old('city') == 'Thane')
+                            selected
+                            @endif
+                            >Thane</option>
+                        <option value="Hapur" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Hapur')
+                            selected
+                            @elseif(old('city') == 'Hapur')
+                            selected
+                            @endif
+                            >Hapur</option>
+                        <option value="Pinjore" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Pinjore')
+                            selected
+                            @elseif(old('city') == 'Pinjore')
+                            selected
+                            @endif
+                            >Pinjore</option>
+                        <option value="Bangalore" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Bangalore')
+                            selected
+                            @elseif(old('city') == 'Bangalore')
+                            selected
+                            @endif
+                            >Bangalore</option>
+                        <option value="Parwanoo" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Parwanoo')
+                            selected
+                            @elseif(old('city') == 'Parwanoo')
+                            selected
+                            @endif
+                            >Parwanoo</option>
+                        <option value="Banur" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Banur')
+                            selected
+                            @elseif(old('city') == 'Banur')
+                            selected
+                            @endif
+                            >Banur</option>
+                        <option value="Bahadurgarh" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Bahadurgarh')
+                            selected
+                            @elseif(old('city') == 'Bahadurgarh')
+                            selected
+                            @endif
+                            >Bahadurgarh</option>
+                        <option value="Palwal" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Palwal')
+                            selected
+                            @elseif(old('city') == 'Palwal')
+                            selected
+                            @endif
+                            >Palwal</option>
+                        <option value="Sikandrabad" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Sikandrabad')
+                            selected
+                            @elseif(old('city') == 'Sikandrabad')
+                            selected
+                            @endif
+                            >Sikandrabad</option>
+                        <option value="Bhawanigarh" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Bhawanigarh')
+                            selected
+                            @elseif(old('city') == 'Bhawanigarh')
+                            selected
+                            @endif
+                            >Bhawanigarh</option>
+                        <option value="Ballabhgarh" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Ballabhgarh')
+                            selected
+                            @elseif(old('city') == 'Ballabhgarh')
+                            selected
+                            @endif
+                            >Ballabhgarh</option>
+                        <option value="Greater Noida Camp" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Greater Noida Camp')
+                            selected
+                            @elseif(old('city') == 'Greater Noida Camp')
+                            selected
+                            @endif
+                            >Greater Noida Camp</option>
+                        <option value="Hyderabad" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Hyderabad')
+                            selected
+                            @elseif(old('city') == 'Hyderabad')
+                            selected
+                            @endif
+                            >Hyderabad</option>
+                        <option value="Mathura" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Mathura')
+                            selected
+                            @elseif(old('city') == 'Mathura')
+                            selected
+                            @endif
+                            >Mathura</option>
+                        <option value="Vrindavan" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Vrindavan')
+                            selected
+                            @elseif(old('city') == 'Vrindavan')
+                            selected
+                            @endif
+                            >Vrindavan</option>
+                        <option value="Barsana" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Barsana')
+                            selected
+                            @elseif(old('city') == 'Barsana')
+                            selected
+                            @endif
+                            >Barsana</option>
+                        <option value="Ghaziabad" @if(isset($booking) && isset($booking->patient) && $booking->patient->city == 'Ghaziabad')
+                            selected
+                            @elseif(old('city') == 'Ghaziabad')
+                            selected
+                            @endif
+                            >Ghaziabad</option>
                     </select>
+
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="form-group">
                     <label>{{__('Address')}}</label>
-                    <input class="form-control" id="address" required="required" name="address" value="{{ old('address') }}">
+                    <input class="form-control" id="address" required="required" name="address" @if(isset($booking) && isset($booking->patient))
+                    value="{{ $booking->patient->address }}"
+                    @else
+                    value="{{ old('address') }}"
+                    @endif>
 
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="form-group">
                     <label>{{__('Pincode')}}</label>
-                    <input type="number" class="form-control" required="required" id="pincode" name="pincode" value="{{ old('pincode') }}">
+                    <input type="number" class="form-control" required="required" id="pincode" name="pincode" @if(isset($booking) && isset($booking->patient))
+                    value="{{ $booking->patient->pincode }}"
+                    @else
+                    value="{{ old('pincode') }}"
+                    @endif>
 
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="form-group">
                     <label>{{__('Aadhar No.')}}</label>
-                    <input class="form-control" id="aadhar_number" name="aadhar_number" value="{{ old('aadhar_number') }}">
+                    <input class="form-control" id="aadhar_number" name="aadhar_number" @if(isset($booking) && isset($booking->patient))
+                    value="{{ $booking->patient->aadhar_number }}"
+                    @else
+                    value="{{ old('aadhar_number') }}"
+                    @endif>
 
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="form-group">
                     <label>{{__('Passport No.')}}</label>
-                    <input class="form-control" id="passport_number" name="passport_number" value="{{ old('passport_number') }}">
+                    <input class="form-control" id="passport_number" name="passport_number" @if(isset($booking) && isset($booking->patient))
+                    value="{{ $booking->patient->passport_number }}"
+                    @else
+                    value="{{ old('passport_number') }}"
+                    @endif>
 
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="form-group">
                     <label>{{__('Comment')}}</label>
-                    <input class="form-control" id="comment" name="comment" value="{{ old('comment') }}">
+                    <input class="form-control" id="comment" name="comment" @if(isset($booking) && isset($booking->patient))
+                    value="{{ $booking->patient->comment }}"
+                    @else
+                    value="{{ old('comment') }}"
+                    @endif>
 
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="form-group">
                     <label>{{__('Phlebo Comment')}}</label>
-                    <input class="form-control" id="phlebo_comment" name="phlebo_comment" value="{{ old('phlebo_comment') }}">
+                    <input class="form-control" id="phlebo_comment" name="phlebo_comment" @if(isset($booking) && isset($booking->patient))
+                    value="{{ $booking->patient->phlebo_comment }}"
+                    @else
+                    value="{{ old('phlebo_comment') }}"
+                    @endif>
 
                 </div>
             </div>
@@ -184,15 +503,22 @@
             <div class="col-lg-3">
                 <div class="form-group">
                     <label>{{__('Barcode')}}</label>
-                    <input class="form-control" id="barcode" required="required" name="barcode" value="{{ old('barcode') }}">
-
+                    <input class="form-control" id="barcode" required="required" name="barcode" @if(isset($booking) && isset($booking->barcode))
+                    value="{{ $booking->barcode }}"
+                    @else
+                    value="{{ old('barcode') }}"
+                    @endif>
                 </div>
             </div>
 
             <div class="col-lg-3">
                 <div class="form-group">
                     <label for="date">Date</label>
-                    <input type="text" required="required" value="" name="date" id="date" aria-describedby="date" placeholder="Select Booking Date" onkeydown="return false" class="form-control">
+                    <input type="text" required="required" name="date" id="date" aria-describedby="date" placeholder="Select Booking Date" onkeydown="return false" class="form-control" @if(isset($booking) && isset($booking->date))
+                    value="{{ $booking->date }}"
+                    @else
+                    value="{{ old('date') }}"
+                    @endif>
                     <span class="text-danger"></span>
                 </div>
             </div>
@@ -201,44 +527,45 @@
                     <label for="timeslot_from">Select from Time</label>
                     <select name="from_time" id="timeslot_from" required="required" aria-describedby="timeslot_from" placeholder="Select from Time" class="form-control select2" data-select2-id="timeslot_from" tabindex="-1" aria-hidden="true">
                         <option value="">Select From Time</option>
-                        <option value="05:00 am">05:00 am</option>
-                        <option value="05:30 am">05:30 am</option>
-                        <option value="06:00 am">06:00 am</option>
-                        <option value="06:30 am">06:30 am</option>
-                        <option value="07:00 am">07:00 am</option>
-                        <option value="07:30 am">07:30 am</option>
-                        <option value="08:00 am">08:00 am</option>
-                        <option value="08:30 am">08:30 am</option>
-                        <option value="09:00 am">09:00 am</option>
-                        <option value="09:30 am">09:30 am</option>
-                        <option value="10:00 am">10:00 am</option>
-                        <option value="10:30 am">10:30 am</option>
-                        <option value="11:00 am">11:00 am</option>
-                        <option value="11:30 am">11:30 am</option>
-                        <option value="12:00 pm">12:00 pm</option>
-                        <option value="12:30 pm">12:30 pm</option>
-                        <option value="01:00 pm">01:00 pm</option>
-                        <option value="01:30 pm">01:30 pm</option>
-                        <option value="02:00 pm">02:00 pm</option>
-                        <option value="02:30 pm">02:30 pm</option>
-                        <option value="03:00 pm">03:00 pm</option>
-                        <option value="03:30 pm">03:30 pm</option>
-                        <option value="04:00 pm">04:00 pm</option>
-                        <option value="04:30 pm">04:30 pm</option>
-                        <option value="05:00 pm">05:00 pm</option>
-                        <option value="05:30 pm">05:30 pm</option>
-                        <option value="06:00 pm">06:00 pm</option>
-                        <option value="06:30 pm">06:30 pm</option>
-                        <option value="07:00 pm">07:00 pm</option>
-                        <option value="07:30 pm">07:30 pm</option>
-                        <option value="08:00 pm">08:00 pm</option>
-                        <option value="08:30 pm">08:30 pm</option>
-                        <option value="09:00 pm">09:00 pm</option>
-                        <option value="09:30 pm">09:30 pm</option>
-                        <option value="10:00 pm">10:00 pm</option>
-                        <option value="10:30 pm">10:30 pm</option>
-                        <option value="11:00 pm">11:00 pm</option>
-                        <option value="11:30 pm">11:30 pm</option>
+                        <option value="05:00 am" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '05:00 am') selected @endif>05:00 am</option>
+                        <option value="05:30 am" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '05:30 am') selected @endif>05:30 am</option>
+                        <option value="06:00 am" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '06:00 am') selected @endif>06:00 am</option>
+                        <option value="06:30 am" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '06:30 am') selected @endif>06:30 am</option>
+                        <option value="07:00 am" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '07:00 am') selected @endif>07:00 am</option>
+                        <option value="07:30 am" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '07:30 am') selected @endif>07:30 am</option>
+                        <option value="08:00 am" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '08:00 am') selected @endif>08:00 am</option>
+                        <option value="08:30 am" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '08:30 am') selected @endif>08:30 am</option>
+                        <option value="09:00 am" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '09:00 am') selected @endif>09:00 am</option>
+                        <option value="09:30 am" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '09:30 am') selected @endif>09:30 am</option>
+                        <option value="10:00 am" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '10:00 am') selected @endif>10:00 am</option>
+                        <option value="10:30 am" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '10:30 am') selected @endif>10:30 am</option>
+                        <option value="11:00 am" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '11:00 am') selected @endif>11:00 am</option>
+                        <option value="11:30 am" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '11:30 am') selected @endif>11:30 am</option>
+                        <option value="12:00 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '12:00 pm') selected @endif>12:00 pm</option>
+                        <option value="12:30 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '12:30 pm') selected @endif>12:30 pm</option>
+                        <option value="01:00 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '01:00 pm') selected @endif>01:00 pm</option>
+                        <option value="01:30 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '01:30 pm') selected @endif>01:30 pm</option>
+                        <option value="02:00 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '02:00 pm') selected @endif>02:00 pm</option>
+                        <option value="02:30 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '02:30 pm') selected @endif>02:30 pm</option>
+                        <option value="03:00 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '03:00 pm') selected @endif>03:00 pm</option>
+                        <option value="03:30 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '03:30 pm') selected @endif>03:30 pm</option>
+                        <option value="04:00 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '04:00 pm') selected @endif>04:00 pm</option>
+                        <option value="04:30 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '04:30 pm') selected @endif>04:30 pm</option>
+                        <option value="05:00 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '05:00 pm') selected @endif>05:00 pm</option>
+                        <option value="05:30 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '05:30 pm') selected @endif>05:30 pm</option>
+                        <option value="06:00 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '06:00 pm') selected @endif>06:00 pm</option>
+                        <option value="06:30 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '06:30 pm') selected @endif>06:30 pm</option>
+                        <option value="07:00 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '07:00 pm') selected @endif>07:00 pm</option>
+                        <option value="07:30 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '07:30 pm') selected @endif>07:30 pm</option>
+                        <option value="08:00 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '08:00 pm') selected @endif>08:00 pm</option>
+                        <option value="08:30 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '08:30 pm') selected @endif>08:30 pm</option>
+                        <option value="09:00 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '09:00 pm') selected @endif>09:00 pm</option>
+                        <option value="09:30 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '09:30 pm') selected @endif>09:30 pm</option>
+                        <option value="10:00 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '10:00 pm') selected @endif>10:00 pm</option>
+                        <option value="10:30 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '10:30 pm') selected @endif>10:30 pm</option>
+                        <option value="11:00 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '11:00 pm') selected @endif>11:00 pm</option>
+                        <option value="11:30 pm" @if(isset($booking) && isset($booking->from_time) && $booking->from_time == '11:30 pm') selected @endif>11:30 pm</option>
+
                     </select>
                     <span class="text-danger"></span>
                 </div>
@@ -248,6 +575,45 @@
                     <label for="timeslot_to">Select to Time</label>
                     <select name="to_time" id="timeslot_to" required="required" aria-describedby="timeslot_from" placeholder="Select to Time" class="form-control select2" data-select2-id="timeslot_to" tabindex="-1" aria-hidden="true">
                         <option value="" data-select2-id="7">Select To Time</option>
+                        <option value="05:00 am" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '05:00 am') selected @endif>05:00 am</option>
+                        <option value="05:30 am" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '05:30 am') selected @endif>05:30 am</option>
+                        <option value="06:00 am" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '06:00 am') selected @endif>06:00 am</option>
+                        <option value="06:30 am" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '06:30 am') selected @endif>06:30 am</option>
+                        <option value="07:00 am" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '07:00 am') selected @endif>07:00 am</option>
+                        <option value="07:30 am" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '07:30 am') selected @endif>07:30 am</option>
+                        <option value="08:00 am" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '08:00 am') selected @endif>08:00 am</option>
+                        <option value="08:30 am" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '08:30 am') selected @endif>08:30 am</option>
+                        <option value="09:00 am" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '09:00 am') selected @endif>09:00 am</option>
+                        <option value="09:30 am" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '09:30 am') selected @endif>09:30 am</option>
+                        <option value="10:00 am" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '10:00 am') selected @endif>10:00 am</option>
+                        <option value="10:30 am" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '10:30 am') selected @endif>10:30 am</option>
+                        <option value="11:00 am" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '11:00 am') selected @endif>11:00 am</option>
+                        <option value="11:30 am" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '11:30 am') selected @endif>11:30 am</option>
+                        <option value="12:00 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '12:00 pm') selected @endif>12:00 pm</option>
+                        <option value="12:30 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '12:30 pm') selected @endif>12:30 pm</option>
+                        <option value="01:00 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '01:00 pm') selected @endif>01:00 pm</option>
+                        <option value="01:30 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '01:30 pm') selected @endif>01:30 pm</option>
+                        <option value="02:00 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '02:00 pm') selected @endif>02:00 pm</option>
+                        <option value="02:30 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '02:30 pm') selected @endif>02:30 pm</option>
+                        <option value="03:00 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '03:00 pm') selected @endif>03:00 pm</option>
+                        <option value="03:30 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '03:30 pm') selected @endif>03:30 pm</option>
+                        <option value="04:00 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '04:00 pm') selected @endif>04:00 pm</option>
+                        <option value="04:30 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '04:30 pm') selected @endif>04:30 pm</option>
+                        <option value="05:00 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '05:00 pm') selected @endif>05:00 pm</option>
+                        <option value="05:30 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '05:30 pm') selected @endif>05:30 pm</option>
+                        <option value="06:00 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '06:00 pm') selected @endif>06:00 pm</option>
+                        <option value="06:30 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '06:30 pm') selected @endif>06:30 pm</option>
+                        <option value="07:00 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '07:00 pm') selected @endif>07:00 pm</option>
+                        <option value="07:30 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '07:30 pm') selected @endif>07:30 pm</option>
+                        <option value="08:00 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '08:00 pm') selected @endif>08:00 pm</option>
+                        <option value="08:30 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '08:30 pm') selected @endif>08:30 pm</option>
+                        <option value="09:00 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '09:00 pm') selected @endif>09:00 pm</option>
+                        <option value="09:30 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '09:30 pm') selected @endif>09:30 pm</option>
+                        <option value="10:00 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '10:00 pm') selected @endif>10:00 pm</option>
+                        <option value="10:30 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '10:30 pm') selected @endif>10:30 pm</option>
+                        <option value="11:00 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '11:00 pm') selected @endif>11:00 pm</option>
+                        <option value="11:30 pm" @if(isset($booking) && isset($booking->to_time) && $booking->to_time == '11:30 pm') selected @endif>11:30 pm</option>
+
                     </select>
                     <span class="text-danger"></span>
                 </div>
@@ -287,25 +653,28 @@
                             </tr>
                         </thead>
                         <tbody id="selected_tests">
-                            @if(isset($group))
-                            @foreach($group['tests'] as $test)
-                            <tr class="selected_test" id="test_{{$test['test_id']}}" default_price="{{$test['test']['test_price']['price']}}">
+                            @if(isset($booking))
+                            @foreach($booking->tests as $test)
+
+                            <tr class="selected_test" id="test_{{$test->id}}" default_price="{{$test->price}}">
                                 <td>
-                                    {{$test['test']['name']}}
-                                    <input type="hidden" class="tests_id" name="tests[{{$test['test_id']}}][id]" value="{{$test['test_id']}}">
+                                    {{$test->test_name}}
+                                    <input type="hidden" class="tests_id" name="tests_id[]" value="{{$test->id}}">
                                 </td>
                                 <td>
-                                    {{$test['test']['category']['name']}}
+                                    {{-- @dd($test->); --}}
+                                    {{$test->category->name}}
+                                    <input type="hidden" class="tests_id" name="tests[{{ $test->id }}][id]" value="{{ $test->id }}">
+                                    <input type="hidden" class="price" name="tests[{{ $test->id }}][price]" value="{{ $test->price }}">
                                 </td>
                                 <td class="test_price">
-                                    {{$test['price']}}
+                                    {{$test->price}}
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger btn-sm delete_selected_row">
                                         <i class="fa fa-trash"></i>
                                     </button>
                                 </td>
-                                <input type="hidden" class="price" name="tests[{{$test['test_id']}}][price]" value="{{$test['price']}}">
                             </tr>
                             @endforeach
                             @endif
@@ -336,7 +705,10 @@
                                     <tr>
                                         <td width="100px">{{__('Subtotal')}}</td>
                                         <td width="300px">
-                                            <input type="number" id="subtotal" name="subtotal" value="0" readonly class="form-control">
+                                            <input type="number" id="subtotal" name="subtotal" readonly class="form-control" @if(isset($booking) && isset($booking->subtotal))
+                                            value="{{ $booking->subtotal }}"
+                                            @else
+                                            value="0" @endif>
                                         </td>
                                         <td>
 
@@ -346,7 +718,9 @@
                                     <tr>
                                         <td>{{__('Discount')}}</td>
                                         <td>
-                                            <input type="number" class="form-control" id="discount" name="discount" value="0">
+                                            <input type="number" class="form-control" id="discount" name="discount" @if(isset($booking) && isset($booking->discount))
+                                            value="{{ $booking->discount }}"
+                                            @else value="0" @endif>
                                         </td>
                                         <td>
 
@@ -356,7 +730,9 @@
                                     <tr>
                                         <td>{{__('Hardcopy')}}</td>
                                         <td>
-                                            <input type="number" class="form-control" id="Hardcopy" name="hardcopy" value="0">
+                                            <input type="number" class="form-control" id="Hardcopy" name="hardcopy" @if(isset($booking) && isset($booking->hardcopy))
+                                            value="{{ $booking->hardcopy }}"
+                                            @else value="0" @endif>
                                         </td>
                                         <td>
 
@@ -365,7 +741,9 @@
                                     <tr>
                                         <td>{{__('Logistics Charges')}}</td>
                                         <td>
-                                            <input type="number" class="form-control" id="logistics_charges" name="logistics_charges" value="0">
+                                            <input type="number" class="form-control" id="logistics_charges" name="logistics_charges" @if(isset($booking) && isset($booking->logistics_charges))
+                                            value="{{ $booking->logistics_charges }}"
+                                            @else value="0" @endif>
                                         </td>
                                         <td>
 
@@ -376,7 +754,9 @@
                                     <tr>
                                         <td>{{__('Total')}}</td>
                                         <td>
-                                            <input type="number" id="total" class="form-control" value="0" name="total" readonly>
+                                            <input type="number" id="total" class="form-control" @if(isset($booking) && isset($booking->total))
+                                            value="{{ $booking->total }}"
+                                            @else value="0" @endif name="total" readonly>
                                         </td>
                                         <td>
 
@@ -385,7 +765,9 @@
                                     <tr>
                                         <td>{{__('Paid')}}</td>
                                         <td>
-                                            <input type="number" id="paid" min="0" class="form-control" value="0" name="paid" readonly required>
+                                            <input type="number" id="paid" min="0" class="form-control" @if(isset($booking) && isset($booking->paid))
+                                            value="{{ $booking->paid }}"
+                                            @else value="0" @endif name="paid" readonly required>
                                         </td>
                                         <td>
 
@@ -394,7 +776,9 @@
                                     <tr>
                                         <td>{{__('Due')}}</td>
                                         <td>
-                                            <input type="number" id="due" class="form-control" value="0" name="due" readonly>
+                                            <input type="number" id="due" class="form-control" @if(isset($booking) && isset($booking->due))
+                                            value="{{ $booking->due }}"
+                                            @else value="0" @endif name="due" readonly>
                                         </td>
                                         <td>
 
@@ -432,7 +816,9 @@
                         </div>
                         <div class=" col-md-12">
                             <label for="payment_amount">{{__('Amount')}}</label>
-                            <input type="number" class="form-control amount" name="payment_amount" value="0" id="payment_amount">
+                            <input type="number" class="form-control amount" name="payment_amount" @if(isset($booking) && isset($booking->paid))
+                            value="{{ $booking->paid }}"
+                            @else value="0" @endif id="payment_amount">
                         </div>
                         <div class=" col-md-12">
                             <label for="payment_method">{{__('Payment Method')}}</label>

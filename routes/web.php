@@ -79,6 +79,7 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => '
     //booking
     Route::resource('booking', BookingController::class);
     Route::get('get_booking', [BookingController::class, 'ajax'])->name('get_booking');
+    Route::get('booking/edit/{id}', [BookingController::class, 'Edit'])->name('edit_booking');
     Route::post('update_booking/status', [BookingController::class, 'UpdateStatus'])->name('update_status');
     Route::post('update_booking/payment', [BookingController::class, 'UpdatePayment'])->name('update_payment');
     Route::post('update_booking/update_patient_info/{booking_id}', [BookingController::class, 'updatePatientInfo'])->name('update_patient_info');
