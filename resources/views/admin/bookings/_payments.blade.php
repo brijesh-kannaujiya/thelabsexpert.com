@@ -15,7 +15,13 @@
                 <tbody class="paymentHistoryTBody-716294">
                     <tr>
                         <td class="text-capitalize">
+                            @if (request()->getHost() == '127.0.0.1')
                             <a target="_blank" href="{{ url('/') }}/{{$booking->payment_photo}}">{{ $booking->paymentMethod->name }}</a>
+
+                            @else
+                            <a target="_blank" href="{{ url('public/') }}/{{$booking->payment_photo}}">{{ $booking->paymentMethod->name }}</a>
+
+                            @endif
                         </td>
                         <td> {{ $booking->paid}}</td>
 
