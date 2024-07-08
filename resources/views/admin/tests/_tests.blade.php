@@ -1,7 +1,11 @@
 <ul class="p-1">
-    @foreach($tests['tests'] as $test)
-    <li>
-        {{$test['test']['test_name']}}
-    </li>
-    @endforeach
+
+
+    @empty(!$tests['tests'])
+        @foreach ($tests['tests'] as $test)
+            <li>
+                {{ $test['test']['test_name'] }}
+            </li>
+        @endforeach
+    @endempty
 </ul>

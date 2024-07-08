@@ -1142,7 +1142,7 @@ Main Slider Area CSS
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 950px;
+  height: 650px;
 }
 
 .main-slider-item::before {
