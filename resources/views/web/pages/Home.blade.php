@@ -1,7 +1,9 @@
 @extends('web.common.app')
 
 @section('content')
-    <div class="home-slides owl-carousel owl-theme pb-70">
+
+
+    {{-- <div class="home-slides owl-carousel owl-theme pb-70">
         <div class="main-slider-item">
             <div class="d-table">
                 <div class="d-table-cell">
@@ -24,7 +26,7 @@
 
                                     <div class="form">
                                         <i class="fa fa-search"></i>
-                                        <input type="text" onfocus="GetTest()" class="form-control form-input"
+                                        <input type="text" onclick="GetTest()" class="form-control form-input"
                                             placeholder="Search for Test/Package( KFT, Full Body etc.)">
                                         <span class="left-pan"><i class=" flaticon-loupe" style=""></i></span>
                                         <div id="listofsearchresults"><a class="search_item search_active"
@@ -64,55 +66,70 @@
 
         </div>
 
-        {{-- <div class="main-slider-item item-two">
+    </div> --}}
+
+    {{-- assets/img/slides/bg1.jpg --}}
+    <div class="page-title-area item-bg-3 mb-5">
         <div class="d-table">
             <div class="d-table-cell">
                 <div class="container">
-                    <div class="main-slider-content">
-                        <h1>Science is Nothing But Perception</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt labore
-                            dolore magna aliqua. Quis ipsum suspendisse ultrices gravida risus</p>
-                        <div class="slider-btn">
+                    <div class="page-title-content">
+                        <div class="slider-btn mb-3">
+                            <a href="{{ url('/') }}" class="default-btn">
+                                Offers
+                                <span></span>
+                            </a>
+
+                            <a href="{{ url('/upload-prescription') }}" class="default-btn">
+                                Upload Prescription
+                                <span></span>
+                            </a>
+                        </div>
+                        <div class="row height d-flex justify-content-center align-items-center">
+
+                            <div class="col-md-9">
+
+                                <div class="form">
+                                    <i class="fa fa-search"></i>
+                                    <input type="text" onkeyup="GetTest(this.value)" class="form-control form-input"
+                                        placeholder="Search for Test/Package( KFT, Full Body etc.)">
+                                    <span class="left-pan"><i class=" flaticon-loupe" style=""></i></span>
+                                    <div id="listofsearchresults">
+                                        <a class="search_item search_active" href="/angular/default.asp">
+                                            <span class="span_search">A</span>ngul<span class="span_search">a</span>rJS
+                                            Tutori<span class="span_search">a</span>l</a><a class="search_item"
+                                            href="/asp/default.asp"><span class="span_search">A</span>SP Tutori<span
+                                                class="span_search">a</span>l</a><a class="search_item"
+                                            href="/accessibility/index.php"><span class="span_search">A</span>ccessibility
+                                            Tutori<span class="span_search">a</span>l</a><a class="search_item"
+                                            href="/appml/default.asp"><span class="span_search">A</span>ppML Tutori<span
+                                                class="span_search">a</span>l</a><a class="search_item"
+                                            href="/ai/default.asp"><span class="span_search">A</span>I Tutori<span
+                                                class="span_search">a</span>l</a><a class="search_item"
+                                            href="/aws/index.php"><span class="span_search">A</span>WS Cloud Tutori<span
+                                                class="span_search">a</span>l</a><a class="search_item"
+                                            href="/html/default.asp">HTML Tutori<span class="span_search">a</span>l</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="slider-btn mt-3">
                             <a href="{{ url('/appointment') }}" class="default-btn">
-    Book Appointment
-    <span></span>
-    </a>
-</div>
-</div>
-</div>
-</div>
-</div>
+                                Book Appointment
+                                <span></span>
+                            </a>
+                        </div>
 
-
-</div>
-
-<div class="main-slider-item item-three">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="main-slider-content">
-                    <h1>Surgical Lab With A Protective Layer</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt labore
-                        dolore magna aliqua. Quis ipsum suspendisse ultrices gravida risus</p>
-                    <div class="slider-btn">
-                        <a href="{{ url('/appointment') }}" class="default-btn">
-                            Book Appointment
-                            <span></span>
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-</div> --}}
 
-    </div>
-    <script type="text/javascript">
-        function GetTest() {
-            $('#listofsearchresults').show();
-        }
-    </script>
+
     <style>
         form.example {
             position: relative;

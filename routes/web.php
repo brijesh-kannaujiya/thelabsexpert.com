@@ -41,6 +41,7 @@ Route::get('/test-detail/{testId}', [TestsController::class, 'getTestDetails']);
 Route::get('/book-appointment/{id}', [TestsController::class, 'testDetail']);
 Route::get('/faq', [FaqController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
+Route::get('/getTests', [AjaxController::class, 'getTests'])->name('getTests');
 
 Auth::routes();
 

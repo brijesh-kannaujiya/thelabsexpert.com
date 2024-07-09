@@ -98,4 +98,15 @@ class AjaxController extends Controller
         $data = PaymentMethod::get();
         return response()->json($data);
     }
+
+    public  function getTests(Request $request)
+    {
+        $tests = Test::where('test_name', 'like', '%' . $request->test_name . '%')->get();
+        $html = '';
+        foreach ($tests as $test) {
+            $url = url('/test-detail/' . encryptWithPasscode($test->id));
+            $html .= '<a class="search_item" href="' . $url . '">' . $test->test_name . '</a>';
+        }
+        return response()->json(['html' => $html]);
+    }
 }
