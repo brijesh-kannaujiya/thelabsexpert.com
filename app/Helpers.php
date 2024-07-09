@@ -35,7 +35,7 @@ if (!function_exists("get_Packeges")) {
 
     function get_Packeges()
     {
-        return $testsWithoutPackages = Test::has('tests')->get();
+        return $testsWithoutPackages = Test::has('tests')->take(6)->get();
     }
 }
 
@@ -57,9 +57,9 @@ if (!function_exists("encryptWithPasscode")) {
         $secret_iv = 'dollersign!123';
         $output = false;
         $encrypt_method = "AES-256-CBC";
-        $key = hash( 'sha256', $secret_key );
-        $iv = substr( hash( 'sha256', $secret_iv ), 0, 16 );
-        $output = base64_encode( openssl_encrypt( $value, $encrypt_method, $key, 0, $iv ) );
+        $key = hash('sha256', $secret_key);
+        $iv = substr(hash('sha256', $secret_iv), 0, 16);
+        $output = base64_encode(openssl_encrypt($value, $encrypt_method, $key, 0, $iv));
         return $output;
     }
 }
@@ -71,9 +71,9 @@ if (!function_exists("decryptWithPasscode")) {
         $secret_iv = 'dollersign!123';
         $output = false;
         $encrypt_method = "AES-256-CBC";
-        $key = hash( 'sha256', $secret_key );
-        $iv = substr( hash( 'sha256', $secret_iv ), 0, 16 );
-        $output = openssl_decrypt( base64_decode( $encryptedValue ), $encrypt_method, $key, 0, $iv );
+        $key = hash('sha256', $secret_key);
+        $iv = substr(hash('sha256', $secret_iv), 0, 16);
+        $output = openssl_decrypt(base64_decode($encryptedValue), $encrypt_method, $key, 0, $iv);
         return $output;
     }
 }

@@ -44,18 +44,16 @@ class HomeController extends Controller
 
     public function savePrescription(UserPrescription $request)
     {
-        $data = $request->except('_token', '_method','fdd');
+        $data = $request->except('_token', '_method', 'prescription');
         if ($request->hasFile('prescription')) {
             $extension = $request->file('prescription')->getClientOriginalExtension();
             $filename = 'prescription_' . time() . '.' . $extension;
-            $request->file('prescription')->move(public_path('web/prescription'), $filename);
-            $data['prescription'] = 'web/prescription/' . $filename;
+            $request->file('prescription')->move(public_path('admin/prescription'), $filename);
+            $data['prescription'] = 'admin/prescription/' . $filename;
         }
-        // dd($data);
         $prescription = ModelsUserPrescription::create($data);
         session()->flash('success', __('Prescription uploaded successfully'));
         return redirect('/');
-        
     }
 
 

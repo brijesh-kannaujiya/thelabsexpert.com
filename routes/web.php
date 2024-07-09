@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\CouponController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PackagesController;
+use App\Http\Controllers\Admin\PrescriptionsController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\SettingsController;
@@ -79,6 +80,11 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => '
     Route::resource('users', UsersController::class);
     Route::get('get_users', [UsersController::class, 'ajax'])->name('get_users');
     Route::post('users/bulk/delete', [UsersController::class, 'bulk_delete'])->name('users.bulk_delete');
+
+    // prescriptions
+    Route::resource('prescriptions', PrescriptionsController::class);
+    //  Route::get('get_users', [UsersController::class, 'ajax'])->name('get_users');
+    Route::post('prescriptions/bulk/delete', [PrescriptionsController::class, 'bulk_delete'])->name('users.bulk_delete');
 
     // users
     Route::resource('tests', TestController::class);

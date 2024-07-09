@@ -191,7 +191,7 @@ class PermissionSeeder extends Seeder
                 ],
             ]
         );
- 
+
 
         $booking_module = Module::Create([
             'name' => 'booking'
@@ -223,6 +223,34 @@ class PermissionSeeder extends Seeder
         );
 
 
+        $Coupon_module = Module::Create([
+            'name' => 'Coupon'
+        ]);
+
+        Permission::insert(
+            [
+                [
+                    'module_id' => $Coupon_module['id'],
+                    'key' => 'view_coupon',
+                    'name' => 'View'
+                ],
+                [
+                    'module_id' => $Coupon_module['id'],
+                    'key' => 'create_coupon',
+                    'name' => 'Create'
+                ],
+                [
+                    'module_id' => $Coupon_module['id'],
+                    'key' => 'edit_coupon',
+                    'name' => 'Edit'
+                ],
+                [
+                    'module_id' => $Coupon_module['id'],
+                    'key' => 'delete_coupon',
+                    'name' => 'Delete'
+                ],
+            ]
+        );
 
 
         //packages
