@@ -13,7 +13,7 @@
                                     <span></span>
                                 </a>
 
-                                <a href="{{ url('/appointment') }}" class="default-btn">
+                                <a href="{{ url('/upload-prescription') }}" class="default-btn">
                                     Upload Prescription
                                     <span></span>
                                 </a>

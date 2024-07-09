@@ -34,6 +34,8 @@ Route::get('/about', [AboutController::class, 'index']);
 Route::get('/services', [ServiceController::class, 'index']);
 Route::get('/services-details', [ServiceController::class, 'ServiceDetails']);
 Route::get('/test', [TestsController::class, 'index']);
+Route::get('/upload-prescription', [HomeController::class, 'prescription']);
+Route::post('/upload-prescription', [HomeController::class, 'savePrescription']);
 Route::get('/test/{categoryId}', [TestsController::class, 'getTest']);
 Route::get('/test-detail/{testId}', [TestsController::class, 'getTestDetails']);
 Route::get('/book-appointment/{id}', [TestsController::class, 'testDetail']);
