@@ -57,6 +57,11 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ url('test') }}" class="nav-link {{ request()->is('test') ? 'active' : '' }}">
+                                test
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ url('appointment') }}" class="nav-link {{ request()->is('appointment') ? 'active' : '' }}">
                                 appointment
                             </a>

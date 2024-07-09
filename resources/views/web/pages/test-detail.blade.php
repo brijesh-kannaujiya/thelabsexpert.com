@@ -12,7 +12,7 @@
                     <div class="page-title-content">
                         <h2>{{$test->test_name}}</h2>
                         <ul>
-                            <li><a href="{{ url('/test') }}/{{encryptWithPasscode($test->category_id)}}">{{@$test->category->name}}</a></li>
+                            <li><a href="{{ url('/test') }}/{{encryptWithPasscode($test->category_id)}}">{{ $test->category->name ?? ''}}</a></li>
                             <li>{{$test->test_name}}</li>
                         </ul>
                         <div class="slider-btn mt-3">

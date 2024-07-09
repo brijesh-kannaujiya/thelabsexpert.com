@@ -9,6 +9,12 @@ use Illuminate\Http\Request;
 class TestsController extends Controller
 {
     //
+    public function index(){
+        $tests = Test::orderby('id','desc')->get();
+        // dd($tests);
+      return view('web.pages.tests',compact('tests'));
+    }
+
     public function getTest($categoryId){
         $categoryId = decryptWithPasscode($categoryId);
         $category = Category::find($categoryId);
@@ -20,7 +26,13 @@ class TestsController extends Controller
     public function getTestDetails($testId){
         $testId = decryptWithPasscode($testId);
         $test = Test::find($testId);
+        if($test->category_id)
+        {
         $tests = Test::where('category_id',$test->category_id)->inRandomOrder()->limit(6)->get();
+        }
+        else {
+        $tests = Test::inRandomOrder()->limit(6)->get(); 
+        }
         // dd($tests);
         return view('web.pages.test-detail',compact('test','tests'));
 
