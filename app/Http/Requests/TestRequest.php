@@ -23,8 +23,8 @@ class TestRequest extends FormRequest
     {
         return [
             'test_name' => 'required',
-            'vial_id' => 'required',
-            'specimen_id' => 'required',
+            // 'vial_id' => 'required',
+            // 'specimen_id' => 'required',
             'mrp_price' => 'required',
             'price' => 'required',
             'short_desc' => 'required',
