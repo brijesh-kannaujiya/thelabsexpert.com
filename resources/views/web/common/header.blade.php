@@ -74,12 +74,12 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ url('services') }}"
                                 class="nav-link {{ request()->is('services') ? 'active' : '' }}">
                                 Services
                             </a>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item">
                             <a href="{{ url('contact') }}"

@@ -109,7 +109,7 @@
             </div>
         </div>
     </section>
-    <section class="feedback-area pb-100">
+    {{-- <section class="feedback-area pb-100">
         <div class="container">
             <div class="section-title">
                 <span>Testimonial</span>
@@ -188,8 +188,93 @@
                 </div>
             </div>
         </div>
+    </section> --}}
+
+    <section class="services-area bg-white pb-70 pt-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <img src="{{ asset('assets/img/On-timeSampleCollection.png') }}" alt="" />
+                        </div>
+                        <h3>
+                            <a href="#">On-Time Free Home Simple Collection
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+
+                            <img src="{{ asset('assets/img/DOCTORCONSULTATION.jpg') }}" alt="" />
+                        </div>
+                        <h3>
+                            <a href="#">DOCTOR CONSULTATION</a>
+                        </h3>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+
+                            <img src="{{ asset('assets/img/NABL.png') }}" alt="" />
+                        </div>
+                        <h3>
+                            <a href="#">NABL Certified Labs</a>
+                        </h3>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <img src="{{ asset('assets/img/6179923.png') }}" alt="" />
+                        </div>
+                        <h3>
+                            <a href="#">24/7 Service
+                            </a>
+                        </h3>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <img src="{{ asset('assets/img/GUARANTEEDACCURACY.jpg') }}" alt="" />
+                        </div>
+                        <h3>
+                            <a href="#">GUARANTEED ACCURACY
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+
+                            <img src="{{ asset('assets/img/HONESTPRICES.png') }}" alt="" />
+                        </div>
+                        <h3>
+                            <a href="#">HONEST PRICES</a>
+                        </h3>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
-    <div class="newsletter-area pb-100">
+    <div class="newsletter-area pb-100 pt-100">
         <div class="container">
             <div class="newsletter-inner">
                 <div class="row align-items-center">

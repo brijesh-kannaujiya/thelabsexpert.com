@@ -70,7 +70,7 @@
         </div>
     </section>
 
-    <section class="team-area pt-100 pb-70">
+    {{-- <section class="team-area pt-100 pb-70">
         <div class="container">
             <div class="section-title">
                 <span>Expert Team</span>
@@ -223,7 +223,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="why-choose-area ptb-100">
         <div class="container">
@@ -282,7 +282,7 @@
         </div>
     </section>
 
-    <section class="pricing-area pt-100 pb-70">
+    {{-- <section class="pricing-area pt-100 pb-70">
         <div class="container">
             <div class="section-title">
                 <span>Our Packages</span>
@@ -429,9 +429,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
-    <section class="feedback-area pb-100">
+    {{-- <section class="feedback-area pb-100">
         <div class="container">
             <div class="section-title">
                 <span>Testimonial</span>
@@ -510,7 +510,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="fun-facts-area bg-ffffff pt-100 pb-70">
         <div class="container">
@@ -550,6 +550,90 @@
                         <p>Expertise</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="services-area bg-white pb-70 pt-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <img src="{{ asset('assets/img/On-timeSampleCollection.png') }}" alt="" />
+                        </div>
+                        <h3>
+                            <a href="#">On-Time Free Home Simple Collection
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+
+                            <img src="{{ asset('assets/img/DOCTORCONSULTATION.jpg') }}" alt="" />
+                        </div>
+                        <h3>
+                            <a href="#">DOCTOR CONSULTATION</a>
+                        </h3>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+
+                            <img src="{{ asset('assets/img/NABL.png') }}" alt="" />
+                        </div>
+                        <h3>
+                            <a href="#">NABL Certified Labs</a>
+                        </h3>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <img src="{{ asset('assets/img/6179923.png') }}" alt="" />
+                        </div>
+                        <h3>
+                            <a href="#">24/7 Service
+                            </a>
+                        </h3>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <img src="{{ asset('assets/img/GUARANTEEDACCURACY.jpg') }}" alt="" />
+                        </div>
+                        <h3>
+                            <a href="#">GUARANTEED ACCURACY
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+
+                            <img src="{{ asset('assets/img/HONESTPRICES.png') }}" alt="" />
+                        </div>
+                        <h3>
+                            <a href="#">HONEST PRICES</a>
+                        </h3>
+
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>

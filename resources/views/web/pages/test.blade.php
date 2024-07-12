@@ -65,7 +65,7 @@
 
 
         <!-- Start Newsletter Area -->
-        <div class="newsletter-area pb-100">
+        <div class="newsletter-area pb-100 pt-70">
             <div class="container">
                 <div class="newsletter-inner">
                     <div class="row align-items-center">

@@ -175,8 +175,8 @@
         <section class="pricing-area">
             <div class="container">
                 <div class="section-title">
-                    <span>Our Packages</span>
-                    <h2>Our Pricing Plan</h2>
+                    {{-- <span>Our Packages</span> --}}
+                    <h2>Top Health Packages</h2>
                 </div>
 
                 <div class="row">
@@ -257,54 +257,6 @@
                     </div>
                 @endforeach
 
-
-
-
-
-                {{-- <div class="col-lg-3 col-md-6">
-                <div class="top-services-item">
-                    <div class="icon">
-                        <i class="flaticon-laboratory"></i>
-                    </div>
-                    <h3>
-                        <a href="{{ url('/services-details') }}">
-            Advanced Microscopy
-            </a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut
-                labore</p>
-        </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6">
-        <div class="top-services-item">
-            <div class="icon">
-                <i class="flaticon-biological"></i>
-            </div>
-            <h3>
-                <a href="{{ url('/services-details') }}">
-                    Molecular Biology
-                </a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut
-                labore</p>
-        </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6">
-        <div class="top-services-item ">
-            <div class="icon">
-                <i class="flaticon-test"></i>
-            </div>
-            <h3>
-                <a href="{{ url('/services-details') }}">
-                    Pathology Testing
-                </a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut
-                labore</p>
-        </div>
-    </div> --}}
             </div>
         </div>
     </section>
@@ -362,281 +314,7 @@
         </div>
     </section>
 
-    {{-- <section class="services-area pt-100 pb-70">
-    <div class="container">
-        <div class="section-title">
-            <span>Services</span>
-            <h2>Our Core Services</h2>
-        </div>
 
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="single-services">
-                    <div class="icon">
-                        <i class="flaticon-microscope"></i>
-                    </div>
-                    <h3>
-                        <a href="#">Advanced Microscopy</a>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                    </p>
-                    <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-6">
-    <div class="single-services">
-        <div class="icon">
-            <i class="flaticon-laboratory"></i>
-        </div>
-        <h3>
-            <a href="{{ url('/services-details') }}">Molecular Biology</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-        </p>
-        <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
-    </div>
-</div>
-
-<div class="col-lg-4 col-md-6">
-    <div class="single-services">
-        <div class="icon">
-            <i class="flaticon-sugar-blood-level"></i>
-        </div>
-        <h3>
-            <a href="{{ url('/services-details') }}">Diabetes Testing</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-        </p>
-        <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
-    </div>
-</div>
-
-<div class="col-lg-4 col-md-6">
-    <div class="single-services">
-        <div class="icon">
-            <i class="flaticon-lab-tool"></i>
-        </div>
-        <h3>
-            <a href="{{ url('/services-details') }}">Chemical Research</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-        </p>
-        <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
-    </div>
-</div>
-
-<div class="col-lg-4 col-md-6">
-    <div class="single-services">
-        <div class="icon">
-            <i class="flaticon-lungs"></i>
-        </div>
-        <h3>
-            <a href="{{ url('/services-details') }}">Anatomical Pathology</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-        </p>
-        <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
-    </div>
-</div>
-
-<div class="col-lg-4 col-md-6">
-    <div class="single-services">
-        <div class="icon">
-            <i class="flaticon-heart"></i>
-        </div>
-        <h3>
-            <a href="{{ url('/services-details') }}">Heart Disease</a>
-        </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-        </p>
-        <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
-    </div>
-</div>
-</div>
-</div>
-
-<div class="services-shape">
-    <div class="shape1">
-        <img src="{{ asset('assets/img/services-shape/shape1.png') }}" alt="image">
-    </div>
-    <div class="shape2">
-        <img src="{{ asset('assets/img/services-shape/shape2.png') }}" alt="image">
-    </div>
-</div>
-</section> --}}
-
-
-    <section class="projects-area ptb-100">
-        <div class="container">
-            <div class="section-title">
-                <span>Recent Project</span>
-                <h2>Our Recent Project Case</h2>
-            </div>
-
-            <div class="projects-slider owl-carousel owl-theme">
-                <div class="projects-item">
-                    <div class="image">
-                        <a href="#">
-                            <img src="{{ asset('assets/img/projects/projects1.jpg') }}" alt="image">
-                        </a>
-
-                        <div class="icon">
-                            <a href="#">
-                                <i class="las la-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>
-                            <a href="{{ url('/services-details') }}">Chemical Research</a>
-                        </h3>
-                        <span>Lab Research</span>
-                    </div>
-                </div>
-
-                <div class="projects-item">
-                    <div class="image">
-                        <a href="#">
-                            <img src="{{ asset('assets/img/projects/projects2.jpg') }}" alt="image">
-                        </a>
-
-                        <div class="icon">
-                            <a href="#">
-                                <i class="las la-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>
-                            <a href="#">Biochemistry Test</a>
-                        </h3>
-                        <span>Chemistry</span>
-                    </div>
-                </div>
-
-                <div class="projects-item">
-                    <div class="image">
-                        <a href="#">
-                            <img src="{{ asset('assets/img/projects/projects3.jpg') }}" alt="image">
-                        </a>
-
-                        <div class="icon">
-                            <a href="#">
-                                <i class="las la-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>
-                            <a href="#">Microbiology Test</a>
-                        </h3>
-                        <span>Microbiology</span>
-                    </div>
-                </div>
-
-                <div class="projects-item">
-                    <div class="image">
-                        <a href="#">
-                            <img src="{{ asset('assets/img/projects/projects4.jpg') }}" alt="image">
-                        </a>
-
-                        <div class="icon">
-                            <a href="#">
-                                <i class="las la-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>
-                            <a href="#">Histopathology Test</a>
-                        </h3>
-                        <span>Genetic</span>
-                    </div>
-                </div>
-
-                <div class="projects-item">
-                    <div class="image">
-                        <a href="#">
-                            <img src="{{ asset('assets/img/projects/projects1.jpg') }}" alt="image">
-                        </a>
-
-                        <div class="icon">
-                            <a href="#">
-                                <i class="las la-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>
-                            <a href="{{ url('/services-details') }}">Chemical Research</a>
-                        </h3>
-                        <span>Lab Research</span>
-                    </div>
-                </div>
-
-                <div class="projects-item">
-                    <div class="image">
-                        <a href="#">
-                            <img src="{{ asset('assets/img/projects/projects2.jpg') }}" alt="image">
-                        </a>
-
-                        <div class="icon">
-                            <a href="#">
-                                <i class="las la-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>
-                            <a href="#">Biochemistry Test</a>
-                        </h3>
-                        <span>Chemistry</span>
-                    </div>
-                </div>
-
-                <div class="projects-item">
-                    <div class="image">
-                        <a href="#">
-                            <img src="{{ asset('assets/img/projects/projects3.jpg') }}" alt="image">
-                        </a>
-
-                        <div class="icon">
-                            <a href="#">
-                                <i class="las la-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>
-                            <a href="#">Microbiology Test</a>
-                        </h3>
-                        <span>Microbiology</span>
-                    </div>
-                </div>
-
-                <div class="projects-item">
-                    <div class="image">
-                        <a href="#">
-                            <img src="{{ asset('assets/img/projects/projects5.jpg') }}" alt="image">
-                        </a>
-
-                        <div class="icon">
-                            <a href="#">
-                                <i class="las la-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>
-                            <a href="#">Histopathology Test</a>
-                        </h3>
-                        <span>Genetic</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="why-choose-area ptb-100">
         <div class="container">
@@ -695,297 +373,6 @@
         </div>
     </section>
 
-    <section class="team-area pt-100 pb-70">
-        <div class="container">
-            <div class="section-title">
-                <span>Expert Team</span>
-                <h2>Our Expert Scientist</h2>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-team">
-                        <div class="image">
-                            <img src="{{ asset('assets/img/team/team1.jpg') }}" alt="image">
-
-                            <ul class="social">
-                                <li>
-                                    <a href="https://www.twitter.com/" target="_blank">
-                                        <i class="lab la-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.linkedin.com/" target="_blank">
-                                        <i class="lab la-linkedin-in"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.facebook.com/" target="_blank">
-                                        <i class="lab la-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/" target="_blank">
-                                        <i class="lab la-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h3>Dr. Ken Morris</h3>
-                            <span>Senior Scientist</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-team">
-                        <div class="image">
-                            <img src="{{ asset('assets/img/team/team2.jpg') }}" alt="image">
-
-                            <ul class="social">
-                                <li>
-                                    <a href="https://www.twitter.com/" target="_blank">
-                                        <i class="lab la-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.linkedin.com/" target="_blank">
-                                        <i class="lab la-linkedin-in"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.facebook.com/" target="_blank">
-                                        <i class="lab la-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/" target="_blank">
-                                        <i class="lab la-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h3>Dr. Johansen Lisa</h3>
-                            <span>Assistant Scientist</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-team">
-                        <div class="image">
-                            <img src="{{ asset('assets/img/team/team3.jpg') }}" alt="image">
-
-                            <ul class="social">
-                                <li>
-                                    <a href="https://www.twitter.com/" target="_blank">
-                                        <i class="lab la-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.linkedin.com/" target="_blank">
-                                        <i class="lab la-linkedin-in"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.facebook.com/" target="_blank">
-                                        <i class="lab la-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/" target="_blank">
-                                        <i class="lab la-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h3>Dr. Lodi Kheda</h3>
-                            <span>Senior Scientist</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-team">
-                        <div class="image">
-                            <img src="{{ asset('assets/img/team/team4.jpg') }}" alt="image">
-
-                            <ul class="social">
-                                <li>
-                                    <a href="https://www.twitter.com/" target="_blank">
-                                        <i class="lab la-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.linkedin.com/" target="_blank">
-                                        <i class="lab la-linkedin-in"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.facebook.com/" target="_blank">
-                                        <i class="lab la-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/" target="_blank">
-                                        <i class="lab la-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h3>Dr. Jacinda Pawten</h3>
-                            <span>Assistant Scientist</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="appointment-area ptb-100">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="appointment-content">
-                        <h3>Testing by Our Expert Lab Scientists</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
-                    </div>
-
-                    <div class="skill-bar" data-percentage="78%">
-                        <p class="progress-title-holder">
-                            <span class="progress-title">Sample professional</span>
-                            <span class="progress-number-wrapper">
-                                <span class="progress-number-mark">
-                                    <span class="percent"></span>
-                                    <span class="down-arrow"></span>
-                                </span>
-                            </span>
-                        </p>
-                        <div class="progress-content-outter">
-                            <div class="progress-content"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-bar" data-percentage="58%">
-                        <p class="progress-title-holder">
-                            <span class="progress-title">Environmental Testing</span>
-                            <span class="progress-number-wrapper">
-                                <span class="progress-number-mark">
-                                    <span class="percent"></span>
-                                    <span class="down-arrow"></span>
-                                </span>
-                            </span>
-                        </p>
-                        <div class="progress-content-outter">
-                            <div class="progress-content"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-bar" data-percentage="88%">
-                        <p class="progress-title-holder">
-                            <span class="progress-title">Advanced Microscopy</span>
-                            <span class="progress-number-wrapper">
-                                <span class="progress-number-mark">
-                                    <span class="percent"></span>
-                                    <span class="down-arrow"></span>
-                                </span>
-                            </span>
-                        </p>
-                        <div class="progress-content-outter">
-                            <div class="progress-content"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="appointment-form">
-                        <div class="content">
-                            <h3>Make An Appointment</h3>
-                        </div>
-                        <form>
-                            <div class="row">
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="Name"
-                                            placeholder="Enter Your Name">
-                                        <i class="las la-user"></i>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="Email"
-                                            placeholder="Enter Email">
-                                        <i class="las la-envelope"></i>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="Phone"
-                                            placeholder="Enter Phone Number">
-                                        <i class="las la-phone"></i>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="form-group">
-                                        <select>
-                                            <option value="">Select Category</option>
-                                            <option value="">Cardiologists</option>
-                                            <option value="">Dermatologists</option>
-                                            <option value="">Endocrinologists</option>
-                                            <option value="">Gastroenterologists</option>
-                                            <option value="">Allergists</option>
-                                            <option value="">Immunologists</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="form-group">
-                                        <select>
-                                            <option value="">Time</option>
-                                            <option value="">9:00 am - 9:00 pm</option>
-                                            <option value="">8:00 am - 8:00 pm</option>
-                                            <option value="">7:00 am - 7:00 pm</option>
-                                            <option value="">6:00 am - 6:00 pm</option>
-                                            <option value="">5:00 am - 5:00 pm</option>
-                                            <option value="">4:00 am - 4:00 pm</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="form-group">
-                                        <div class="input-group date" id="datetimepicker">
-                                            <input type="text" class="form-control" placeholder="Date">
-                                            <span class="input-group-addon"></span>
-                                        </div>
-                                        <i class="las la-calendar"></i>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <div class="appointment-btn">
-                                        <button type="submit" class="default-btn">
-                                            Book Now
-                                            <span></span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="fun-facts-area pt-100 pb-100">
         <div class="container">
@@ -1093,79 +480,92 @@
         </div>
     </section>
 
-    <section class="blog-area pt-100 pb-70">
+
+    <section class="services-area bg-white pb-70 pt-70">
         <div class="container">
-            <div class="section-title">
-                <span>News</span>
-                <h2>Our Latest News</h2>
-            </div>
-
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-item bg-ffffff">
-                        <div class="image">
-                            <a href="{{ url('services-details') }}">
-                                <img src="{{ asset('assets/img/blog/blog1.jpg') }}" alt="image">
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <img src="{{ asset('assets/img/On-timeSampleCollection.png') }}" alt="" />
+                        </div>
+                        <h3>
+                            <a href="#">On-Time Free Home Simple Collection
                             </a>
-                            <div class="date">
-                                <span>20 Aug 2024</span>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h3>
-                                <a href="{{ url('services-details') }}">
-                                    When I Spent the day at the Medical Facility
-                                </a>
-                            </h3>
-                            <a href="{{ url('services-details') }}" class="blog-btn">Read More +</a>
-                        </div>
+                        </h3>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-item bg-ffffff">
-                        <div class="image">
-                            <a href="{{ url('services-details') }}">
-                                <img src="{{ asset('assets/img/blog/blog2.jpg') }}" alt="image">
-                            </a>
-                            <div class="date">
-                                <span>25 Aug 2024</span>
-                            </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+
+                            <img src="{{ asset('assets/img/DOCTORCONSULTATION.jpg') }}" alt="" />
                         </div>
-                        <div class="content">
-                            <h3>
-                                <a href="{{ url('services-details') }}">
-                                    Research And Verify of a Physics laboratory
-                                </a>
-                            </h3>
-                            <a href="{{ url('services-details') }}" class="blog-btn">Read More +</a>
-                        </div>
+                        <h3>
+                            <a href="#">DOCTOR CONSULTATION</a>
+                        </h3>
+
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
-                    <div class="blog-item bg-ffffff">
-                        <div class="image">
-                            <a href="{{ url('services-details') }}">
-                                <img src="{{ asset('assets/img/blog/blog3.jpg') }}" alt="image">
-                            </a>
-                            <div class="date">
-                                <span>30 Aug 2024</span>
-                            </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+
+                            <img src="{{ asset('assets/img/NABL.png') }}" alt="" />
                         </div>
-                        <div class="content">
-                            <h3>
-                                <a href="{{ url('services-details') }}">
-                                    Role of Genetics in treating Low-grade glioma
-                                </a>
-                            </h3>
-                            <a href="{{ url('services-details') }}" class="blog-btn">Read More +</a>
-                        </div>
+                        <h3>
+                            <a href="#">NABL Certified Labs</a>
+                        </h3>
+
                     </div>
                 </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <img src="{{ asset('assets/img/6179923.png') }}" alt="" />
+                        </div>
+                        <h3>
+                            <a href="#">24/7 Service
+                            </a>
+                        </h3>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <img src="{{ asset('assets/img/GUARANTEEDACCURACY.jpg') }}" alt="" />
+                        </div>
+                        <h3>
+                            <a href="#">GUARANTEED ACCURACY
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-2 col-md-6">
+                    <div class="single-services-item">
+                        <div class="icon">
+
+                            <img src="{{ asset('assets/img/HONESTPRICES.png') }}" alt="" />
+                        </div>
+                        <h3>
+                            <a href="#">HONEST PRICES</a>
+                        </h3>
+
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
 
     <div class="partner-area ptb-100">
         <div class="container">

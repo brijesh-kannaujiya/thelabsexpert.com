@@ -90,16 +90,16 @@
                     <div class="col-lg-4 col-md-12">
                         <aside class="widget-area" id="secondary">
                             <!-- <section class="widget widget_search">
-                                                            <form class="search-form search-top">
-                                                                <label>
-                                                                    <span class="screen-reader-text">Search for:</span>
-                                                                    <input type="search" class="search-field" placeholder="Search...">
-                                                                </label class="">
-                                                                <button type="submit">
-                                                                    <i class="flaticon-loupe"></i>
-                                                                </button>
-                                                            </form>
-                                                        </section> -->
+                                                                                                                                                                                                                                                        <form class="search-form search-top">
+                                                                                                                                                                                                                                                            <label>
+                                                                                                                                                                                                                                                                <span class="screen-reader-text">Search for:</span>
+                                                                                                                                                                                                                                                                <input type="search" class="search-field" placeholder="Search...">
+                                                                                                                                                                                                                                                            </label class="">
+                                                                                                                                                                                                                                                            <button type="submit">
+                                                                                                                                                                                                                                                                <i class="flaticon-loupe"></i>
+                                                                                                                                                                                                                                                            </button>
+                                                                                                                                                                                                                                                        </form>
+                                                                                                                                                                                                                                                    </section> -->
 
                             <section class="widget widget_services_list">
                                 <h3 class="widget-title">Related Test</h3>
@@ -122,21 +122,21 @@
                             </section>
 
                             <!-- <section class="widget widget_download_list">
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="#">
-                                                                        <i class="las la-file-alt"></i>
-                                                                        Download Pdf File
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#">
-                                                                        <i class="las la-book"></i>
-                                                                        Download DOC
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </section> -->
+                                                                                                                                                                                                                                                        <ul>
+                                                                                                                                                                                                                                                            <li>
+                                                                                                                                                                                                                                                                <a href="#">
+                                                                                                                                                                                                                                                                    <i class="las la-file-alt"></i>
+                                                                                                                                                                                                                                                                    Download Pdf File
+                                                                                                                                                                                                                                                                </a>
+                                                                                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                                                            <li>
+                                                                                                                                                                                                                                                                <a href="#">
+                                                                                                                                                                                                                                                                    <i class="las la-book"></i>
+                                                                                                                                                                                                                                                                    Download DOC
+                                                                                                                                                                                                                                                                </a>
+                                                                                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                                    </section> -->
 
                             <section class="widget widget_contact">
                                 <div class="text">
@@ -155,51 +155,91 @@
         <section class="services-area bg-white pb-70 pt-70">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-2 col-md-6">
                         <div class="single-services-item">
                             <div class="icon">
-                                <i class="flaticon-sugar-blood-level"></i>
+                                <img src="{{ asset('assets/img/On-timeSampleCollection.png') }}" alt="" />
                             </div>
                             <h3>
-                                <a href="{{ url('/services-details') }}">Diabetes Testing</a>
+                                <a href="#">On-Time Free Home Simple Collection
+                                </a>
                             </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
-                            <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-2 col-md-6">
                         <div class="single-services-item">
                             <div class="icon">
-                                <i class="flaticon-lab-tool"></i>
+
+                                <img src="{{ asset('assets/img/DOCTORCONSULTATION.jpg') }}" alt="" />
                             </div>
                             <h3>
-                                <a href="{{ url('/services-details') }}">Chemical Research</a>
+                                <a href="#">DOCTOR CONSULTATION</a>
                             </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
-                            <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
+
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-2 col-md-6">
                         <div class="single-services-item">
                             <div class="icon">
-                                <i class="flaticon-lungs"></i>
+
+                                <img src="{{ asset('assets/img/NABL.png') }}" alt="" />
                             </div>
                             <h3>
-                                <a href="{{ url('/services-details') }}">Anatomical Pathology</a>
+                                <a href="#">NABL Certified Labs</a>
                             </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
-                            <a href="{{ url('/services-details') }}" class="read-more-btn">Read More +</a>
+
                         </div>
                     </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <div class="single-services-item">
+                            <div class="icon">
+                                <img src="{{ asset('assets/img/6179923.png') }}" alt="" />
+                            </div>
+                            <h3>
+                                <a href="#">24/7 Service
+                                </a>
+                            </h3>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <div class="single-services-item">
+                            <div class="icon">
+                                <img src="{{ asset('assets/img/GUARANTEEDACCURACY.jpg') }}" alt="" />
+                            </div>
+                            <h3>
+                                <a href="#">GUARANTEED ACCURACY
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-2 col-md-6">
+                        <div class="single-services-item">
+                            <div class="icon">
+
+                                <img src="{{ asset('assets/img/HONESTPRICES.png') }}" alt="" />
+                            </div>
+                            <h3>
+                                <a href="#">HONEST PRICES</a>
+                            </h3>
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
         <!-- End Services Area -->
 
         <!-- Start Newsletter Area -->
-        <div class="newsletter-area pb-100">
+        <div class="newsletter-area pb-100 pt-100">
             <div class="container">
                 <div class="newsletter-inner">
                     <div class="row align-items-center">
