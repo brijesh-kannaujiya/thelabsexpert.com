@@ -63,37 +63,7 @@
         </section>
         <!-- End Services Area -->
 
-        <!-- <section class="top-services-area mt-3">
-                        <div class="container">
-                            <div class="row">
 
-                                @forelse ($tests as $test)
-    <div class="col-lg-3 col-md-6">
-                                    <a href="{{ url('/test') }}/{{ $test->id }}">
-                                        <div class="top-services-item">
-                                            <div class="icon">
-                                                <img src="{{ url($test->banner) }}" />
-                                            </div>
-                                            <h3>
-                                                {{ Str::words($test->test_name, 3, '...') }}
-
-                                            </h3>
-                                            <p>{{ Str::words($test->short_desc, 18, '...') }}
-                                            </p>
-                                        </div>
-                                    </a>
-                                </div>
-                @empty
-                                <div class="col-md-12">
-                                    <div class="top-services-item">
-                                        <p>No Data found</p>
-                                    </div>
-                                </div>
-    @endforelse
-
-                            </div>
-                        </div>
-                    </section> -->
         <!-- Start Newsletter Area -->
         <div class="newsletter-area pb-100">
             <div class="container">
