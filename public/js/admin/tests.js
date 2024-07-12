@@ -34,7 +34,15 @@ var count_comments = $("#count_comments").val();
                 sortable: false,
                 orderable: false,
             },
-            { data: "id", sortable: true, orderable: true },
+            {
+                data: null,
+                searchable: false,
+                orderable: false,
+                render: function (data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+            },
+            // { data: "id", sortable: true, orderable: true },
             { data: "test_name", sortable: true, orderable: true },
             { data: "test_code", sortable: true, orderable: true },
             { data: "mrp_price", sortable: false, orderable: false },

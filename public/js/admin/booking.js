@@ -424,7 +424,7 @@ $("#timeslot_from").on("change", function () {
         });
     }
 });
-
+$("#booking").addClass("active");
 //admin groups datatable
 table = $("#groups_table").DataTable({
     buttons: [],
@@ -437,7 +437,15 @@ table = $("#groups_table").DataTable({
     },
     fixedHeader: false,
     columns: [
-        { data: "id", sortable: true, orderable: true },
+        {
+            data: null,
+            searchable: false,
+            orderable: false,
+            render: function (data, type, row, meta) {
+                return meta.row + meta.settings._iDisplayStart + 1;
+            },
+        },
+        // { data: "id", sortable: true, orderable: true },
         { data: "status", sortable: true, orderable: true },
         { data: "reportDataTime", sortable: true, orderable: true },
         { data: "nameAndAge", sortable: false, orderable: false },
