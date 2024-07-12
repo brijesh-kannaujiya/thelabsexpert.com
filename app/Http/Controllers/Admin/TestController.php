@@ -126,7 +126,7 @@ class TestController extends Controller
             $request->file('icon')->move(public_path('admin/test/icon'), 'icon_' . time() . '.' . $extension);
             $data['icon'] =  'admin/test/icon/icon_' . time() . '.' . $extension;
         } else {
-            $data['icon'] =  'admin/test/icon/icon.png';
+            $data['icon'] =  null;
         }
 
         if ($request->hasFile('banner')) {
@@ -134,7 +134,7 @@ class TestController extends Controller
             $request->file('banner')->move(public_path('admin/test/banner'), 'banner_' . time() . '.' . $extension);
             $data['banner'] =  'admin/test/banner/banner_' . time() . '.' . $extension;
         } else {
-            $data['banner'] = 'admin/test/banner/banner.png';
+            $data['banner'] = null;
         }
         $NewTest = Test::create($data);
         if ($request->has('tests')) {

@@ -3,72 +3,6 @@
 @section('content')
 
 
-    {{-- <div class="home-slides owl-carousel owl-theme pb-70">
-        <div class="main-slider-item">
-            <div class="d-table">
-                <div class="d-table-cell">
-                    <div class="container">
-                        <div class="main-slider-content">
-                            <div class="slider-btn mb-3">
-                                <a href="{{ url('/') }}" class="default-btn">
-                                    Offers
-                                    <span></span>
-                                </a>
-
-                                <a href="{{ url('/upload-prescription') }}" class="default-btn">
-                                    Upload Prescription
-                                    <span></span>
-                                </a>
-                            </div>
-                            <div class="row height d-flex justify-content-center align-items-center">
-
-                                <div class="col-md-12">
-
-                                    <div class="form">
-                                        <i class="fa fa-search"></i>
-                                        <input type="text" onclick="GetTest()" class="form-control form-input"
-                                            placeholder="Search for Test/Package( KFT, Full Body etc.)">
-                                        <span class="left-pan"><i class=" flaticon-loupe" style=""></i></span>
-                                        <div id="listofsearchresults"><a class="search_item search_active"
-                                                href="/angular/default.asp"><span class="span_search">A</span>ngul<span
-                                                    class="span_search">a</span>rJS Tutori<span
-                                                    class="span_search">a</span>l</a><a class="search_item"
-                                                href="/asp/default.asp"><span class="span_search">A</span>SP Tutori<span
-                                                    class="span_search">a</span>l</a><a class="search_item"
-                                                href="/accessibility/index.php"><span
-                                                    class="span_search">A</span>ccessibility Tutori<span
-                                                    class="span_search">a</span>l</a><a class="search_item"
-                                                href="/appml/default.asp"><span class="span_search">A</span>ppML Tutori<span
-                                                    class="span_search">a</span>l</a><a class="search_item"
-                                                href="/ai/default.asp"><span class="span_search">A</span>I Tutori<span
-                                                    class="span_search">a</span>l</a><a class="search_item"
-                                                href="/aws/index.php"><span class="span_search">A</span>WS Cloud Tutori<span
-                                                    class="span_search">a</span>l</a><a class="search_item"
-                                                href="/html/default.asp">HTML Tutori<span class="span_search">a</span>l</a>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="slider-btn">
-                                <a href="{{ url('/appointment') }}" class="default-btn">
-                                    Book Appointment
-                                    <span></span>
-                                </a>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div> --}}
-
-    {{-- assets/img/slides/bg1.jpg --}}
     <div class="page-title-area item-bg-3 mb-5">
         <div class="d-table">
             <div class="d-table-cell">
@@ -95,20 +29,7 @@
                                         placeholder="Search for Test/Package( KFT, Full Body etc.)">
                                     <span class="left-pan"><i class=" flaticon-loupe" style=""></i></span>
                                     <div id="listofsearchresults">
-                                        <a class="search_item search_active" href="/angular/default.asp">
-                                            <span class="span_search">A</span>ngul<span class="span_search">a</span>rJS
-                                            Tutori<span class="span_search">a</span>l</a><a class="search_item"
-                                            href="/asp/default.asp"><span class="span_search">A</span>SP Tutori<span
-                                                class="span_search">a</span>l</a><a class="search_item"
-                                            href="/accessibility/index.php"><span class="span_search">A</span>ccessibility
-                                            Tutori<span class="span_search">a</span>l</a><a class="search_item"
-                                            href="/appml/default.asp"><span class="span_search">A</span>ppML Tutori<span
-                                                class="span_search">a</span>l</a><a class="search_item"
-                                            href="/ai/default.asp"><span class="span_search">A</span>I Tutori<span
-                                                class="span_search">a</span>l</a><a class="search_item"
-                                            href="/aws/index.php"><span class="span_search">A</span>WS Cloud Tutori<span
-                                                class="span_search">a</span>l</a><a class="search_item"
-                                            href="/html/default.asp">HTML Tutori<span class="span_search">a</span>l</a>
+
                                     </div>
                                 </div>
 
@@ -314,9 +235,13 @@
                             <div class="top-services-item">
                                 <div class="icon">
                                     @if (request()->getHost() == '127.0.0.1')
-                                        <img src="{{ url($category->icon) }}" />
+                                        @if ($category->icon)
+                                            <img src="{{ url($category->icon) }}" />
+                                        @endif
                                     @else
-                                        <img src="{{ url('public/' . $category->icon) }}" />
+                                        @if ($category->icon)
+                                            <img src="{{ url('public/' . $category->icon) }}" />
+                                        @endif
                                     @endif
                                     {{-- <i class="flaticon-lab-tool"></i> --}}
                                 </div>
