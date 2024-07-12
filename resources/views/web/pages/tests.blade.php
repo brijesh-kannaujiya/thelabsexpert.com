@@ -45,7 +45,9 @@
 
                                 <h3>
                                     <a href="{{ url('/test-detail') }}/{{ encryptWithPasscode($test->id) }}">
-                                        {{ Str::words($test->test_name, 3, '...') }}</a>
+                                        {{-- {{ Str::words($test->test_name, 3, '...') }} --}}
+                                        {{ $test->test_name }}
+                                    </a>
                                 </h3>
                                 <p>{{ Str::words($test->short_desc, 18, '...') }}</p>
                                 <a href="{{ url('/book-appointment') }}/{{ encryptWithPasscode($test->id) }}"

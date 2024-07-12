@@ -247,8 +247,8 @@
                                 </div>
 
                                 <h3>
-                                    {{ Str::words($category->name, 3, '...') }}
-
+                                    {{-- {{ Str::words($category->name, 3, '...') }} --}}
+                                    {{ $category->name }}
                                 </h3>
                                 {{-- <p>{{ Str::words($category->description, 18, '...') }} --}}
                                 </p>
