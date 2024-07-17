@@ -44,9 +44,9 @@ $("#select_test").select2({
             return {
                 results: $.map(data, function (item) {
                     return {
-                        text:
-                            item.test_name + " ( " + item.category.name + " )",
+                        text: item.test_name,
                         id: item.id,
+                        // + " ( " + item.category.name + " )"
                     };
                 }),
             };
