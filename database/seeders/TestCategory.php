@@ -16,7 +16,9 @@ class TestCategory extends Seeder
         $Tests = Test::get();
 
         foreach ($Tests as $test) {
-            $test->categories()->attach(1);
+            if ($test->category_id != null) {
+                $test->categories()->attach();
+            }
         }
 
         echo "done";
