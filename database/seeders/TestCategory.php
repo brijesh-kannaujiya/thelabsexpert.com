@@ -17,7 +17,10 @@ class TestCategory extends Seeder
 
         foreach ($Tests as $test) {
             if ($test->category_id != null) {
-                $test->categories()->attach();
+                TestCategory::create([
+                    'category_id' => $test->category_id,
+                    'test_id' => $test->id
+                ]);
             }
         }
 
