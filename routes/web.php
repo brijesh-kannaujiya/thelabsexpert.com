@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\CouponController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PackagesController;
+use App\Http\Controllers\Admin\ParameterController;
 use App\Http\Controllers\Admin\PrescriptionsController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RolesController;
@@ -83,8 +84,10 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => '
 
     // prescriptions
     Route::resource('prescriptions', PrescriptionsController::class);
-    //  Route::get('get_users', [UsersController::class, 'ajax'])->name('get_users');
-    Route::post('prescriptions/bulk/delete', [PrescriptionsController::class, 'bulk_delete'])->name('users.bulk_delete');
+    Route::post('prescriptions/bulk/delete', [PrescriptionsController::class, 'bulk_delete'])->name('prescriptions.bulk_delete');
+
+    Route::resource('parameters', ParameterController::class);
+    Route::post('parameters/bulk/delete', [ParameterController::class, 'bulk_delete'])->name('parameters.bulk_delete');
 
     // users
     Route::resource('tests', TestController::class);
@@ -115,6 +118,7 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => '
 Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'ajax', 'as' => 'ajax.'], function () {
     Route::get('get_categories', [AjaxController::class, 'get_categories'])->name('get_categories');
     Route::get('get_vials', [AjaxController::class, 'get_vials'])->name('get_vials');
+    Route::get('get_parameter', [AjaxController::class, 'get_parameter'])->name('get_parameter');
     Route::get('get_specimens', [AjaxController::class, 'get_specimens'])->name('get_specimens');
     Route::get('get_tests', [AjaxController::class, 'get_tests'])->name('get_tests');
     Route::get('tests', [AjaxController::class, 'tests'])->name('tests');

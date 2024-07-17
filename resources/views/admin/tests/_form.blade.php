@@ -14,6 +14,15 @@
             $specimenIDs = $test->specimens->pluck('specimen_id')->toArray();
         }
 
+        $CategoryIDs = [];
+        if (isset($test->categories) && $test->categories) {
+            $CategoryIDs = $test->categories->pluck('id')->toArray();
+        }
+
+        $parametersIds = [];
+        if (isset($test->parameters) && $test->parameters) {
+            $parametersIds = $test->parameters->pluck('id')->toArray();
+        }
     @endphp
     {{-- @dd($testsWithoutPackages); --}}
     <div class="col-lg-3">
@@ -41,11 +50,24 @@
     <div class="col-lg-3">
         <div class="form-group">
             <label for="">{{ __('Category') }}</label>
-            <select name="category_id" class="form-control" id="category">
+            <select name="category_ids[]" class="form-control" id="category" multiple>
                 <option value="">{{ __('Select') }}</option>
                 @foreach ($categories as $key => $category)
-                    <option value="{{ $category->id }}" @if (isset($test) && $test->category_id == $category->id) selected @endif>
+                    <option value="{{ $category->id }}" @if (in_array($category->id, $CategoryIDs)) selected @endif>
                         {{ $category['name'] }}</option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="form-group">
+            <label for="">{{ __('Include Parameter') }}</label>
+            <select name="parameter_ids[]" class="form-control" id="parameter" multiple>
+                <option value="">{{ __('Select') }}</option>
+                @foreach ($parameters as $key => $parameter)
+                    <option value="{{ $parameter->id }}" @if (in_array($parameter->id, $parametersIds)) selected @endif>
+                        {{ $parameter['name'] }}</option>
                 @endforeach
             </select>
         </div>

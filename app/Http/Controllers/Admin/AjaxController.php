@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Parameter;
 use App\Models\Patient;
 use App\Models\PaymentMethod;
 use App\Models\Specimen;
@@ -32,6 +33,16 @@ class AjaxController extends Controller
         }
 
         return response()->json($Vials);
+    }
+    public function get_parameter(Request $request)
+    {
+        if (isset($request->term)) {
+            $Parameter = Parameter::where('name', 'like', '%' . $request->term . '%')->take(20)->get();
+        } else {
+            $Parameter = Parameter::take(20)->get();
+        }
+
+        return response()->json($Parameter);
     }
     public function get_specimens(Request $request)
     {

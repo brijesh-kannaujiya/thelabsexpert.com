@@ -111,6 +111,18 @@
         @endcan
 
 
+        @can('view_parameters')
+            <li class="nav-item">
+                <a href="{{ route('admin.parameters.index') }}" class="nav-link" id="parameters">
+                    <i class="nav-icon fas fa-vial"></i>
+                    <p>
+                        {{ __('Parameters') }}
+                    </p>
+                </a>
+            </li>
+        @endcan
+
+
 
         @can('view_antibiotic')
             <li class="nav-item">

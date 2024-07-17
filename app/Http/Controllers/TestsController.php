@@ -9,41 +9,38 @@ use Illuminate\Http\Request;
 class TestsController extends Controller
 {
     //
-    public function index(){
-        $tests = Test::orderby('id','desc')->get();
+    public function index()
+    {
+        $tests = Test::orderby('id', 'desc')->get();
         // dd($tests);
-      return view('web.pages.tests',compact('tests'));
+        return view('web.pages.tests', compact('tests'));
     }
 
-    public function getTest($categoryId){
+    public function getTest($categoryId)
+    {
         $categoryId = decryptWithPasscode($categoryId);
         $category = Category::find($categoryId);
-        $tests = Test::where('category_id',$categoryId)->get();
-        return view('web.pages.test',compact('category','tests'));
-
+        // $tests = Test::where('category_id',$categoryId)->get();
+        $tests = Test::whereHas('categories', function ($query) use ($categoryId) {
+            $query->where('category_id', $categoryId);
+        })->get();
+        return view('web.pages.test', compact('category', 'tests'));
     }
 
-    public function getTestDetails($testId){
+    public function getTestDetails($testId)
+    {
         $testId = decryptWithPasscode($testId);
         $test = Test::find($testId);
-        if($test->category_id)
-        {
-        $tests = Test::where('category_id',$test->category_id)->inRandomOrder()->limit(6)->get();
-        }
-        else {
-        $tests = Test::inRandomOrder()->limit(6)->get(); 
-        }
-        // dd($tests);
-        return view('web.pages.test-detail',compact('test','tests'));
-
+        $tests = Test::inRandomOrder()->limit(6)->get();
+        return view('web.pages.test-detail', compact('test', 'tests'));
     }
 
-    public function testDetail($id){
+    public function testDetail($id)
+    {
         $testId = decryptWithPasscode($id);
         $test = Test::find($testId);
-        $tests = Test::where('category_id',$test->category_id)->inRandomOrder()->limit(6)->get();
+        $tests = Test::inRandomOrder()->limit(6)->get();
         // dd($tests);
-        return view('web.pages.book-detail',compact('test','tests'));
-
+        return view('web.pages.book-detail', compact('test', 'tests'));
     }
 }

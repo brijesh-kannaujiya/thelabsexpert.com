@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             NewPermissionSeeder::class,
             // PaymentMethod::class,
             // StatusSeeder::class,
+            TestCategory::class,
         ]);
 
         DB::table('activity_log')->truncate();

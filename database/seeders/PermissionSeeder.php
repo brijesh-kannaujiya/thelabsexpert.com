@@ -252,6 +252,34 @@ class PermissionSeeder extends Seeder
             ]
         );
 
+        $prescriptions_module = Module::Create([
+            'name' => 'Prescriptions'
+        ]);
+
+        Permission::insert(
+            [
+                [
+                    'module_id' => $prescriptions_module['id'],
+                    'key' => 'view_prescriptions',
+                    'name' => 'View'
+                ],
+                [
+                    'module_id' => $prescriptions_module['id'],
+                    'key' => 'create_prescriptions',
+                    'name' => 'Create'
+                ],
+                [
+                    'module_id' => $prescriptions_module['id'],
+                    'key' => 'edit_prescriptions',
+                    'name' => 'Edit'
+                ],
+                [
+                    'module_id' => $prescriptions_module['id'],
+                    'key' => 'delete_prescriptions',
+                    'name' => 'Delete'
+                ],
+            ]
+        );
 
         //packages
         // $packages_module = Module::Create([

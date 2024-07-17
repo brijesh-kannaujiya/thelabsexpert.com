@@ -6,9 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\BulkActionRequest;
 use App\Http\Requests\TestRequest;
 use App\Models\Category;
+use App\Models\Parameter;
 use App\Models\Specimen;
 use App\Models\Test;
+use App\Models\TestCategory;
 use App\Models\TestPackage;
+use App\Models\TestParameter;
 use App\Models\TestSpecimen;
 use App\Models\TestVial;
 use App\Models\Vial;
@@ -48,7 +51,7 @@ class TestController extends Controller
      */
     public function ajax(Request $request)
     {
-        $model = Test::with(['category', 'vials', 'specimens', 'tests']);
+        $model = Test::with(['categories', 'vials', 'specimens', 'tests']);
         // dd($model);
         return DataTables::eloquent($model)
             ->editColumn('price', function ($test) {
@@ -66,6 +69,9 @@ class TestController extends Controller
             })
             ->addColumn('tests', function ($tests) {
                 return view('admin.tests._tests', compact('tests'));
+            })
+            ->addColumn('category', function ($tests) {
+                return view('admin.tests._category', compact('tests'));
             })
             ->addColumn('action', function ($test) {
                 return view('admin.tests._action', compact('test'));
@@ -99,7 +105,8 @@ class TestController extends Controller
         $testsWithoutPackages = Test::leftJoin('test_packages', 'tests.id', '=', 'test_packages.package_id')
             ->whereNull('test_packages.package_id')
             ->get();
-        return view('admin.tests.create', compact('categories', 'vials', 'specimens', 'testsWithoutPackages'));
+        $parameters = Parameter::select('name', 'id')->get();
+        return view('admin.tests.create', compact('categories', 'vials', 'specimens', 'testsWithoutPackages', 'parameters'));
     }
 
     /**
@@ -111,7 +118,7 @@ class TestController extends Controller
     public function store(TestRequest $request)
     {
         // dd($request->all());
-        $data = $request->except('_token', '_method', 'icon', 'files', 'banner', 'tests', 'vial_ids', 'specimen_ids');
+        $data = $request->except('_token', '_method', 'icon', 'files', 'banner', 'tests', 'vial_ids', 'specimen_ids', 'category_ids', 'parameter_ids');
 
         $lastRecord = Test::latest()->withTrashed()->first();
         if ($lastRecord) {
@@ -167,6 +174,26 @@ class TestController extends Controller
                 }
             }
         }
+        if ($request->has('category_ids')) {
+            foreach ($request['category_ids'] as $category_id) {
+                if ($category_id != '') {
+                    TestCategory::create([
+                        'category_id' => $category_id,
+                        'test_id' => $NewTest->id
+                    ]);
+                }
+            }
+        }
+        if ($request->has('parameter_ids')) {
+            foreach ($request['parameter_ids'] as $parameter_id) {
+                if ($parameter_id != '') {
+                    TestParameter::create([
+                        'parameter_id' => $parameter_id,
+                        'test_id' => $NewTest->id
+                    ]);
+                }
+            }
+        }
         session()->flash('success', __('Test created successfully'));
         return redirect()->route('admin.tests.index');
     }
@@ -199,7 +226,8 @@ class TestController extends Controller
             ->where('tests.id', '!=', $id)
             ->select('tests.id', 'tests.test_name')
             ->get();
-        return view('admin.tests.edit', compact('test', 'categories', 'vials', 'specimens', 'testsWithoutPackages'));
+        $parameters = Parameter::select('name', 'id')->get();
+        return view('admin.tests.edit', compact('test', 'categories', 'vials', 'specimens', 'testsWithoutPackages', 'parameters'));
     }
 
 
@@ -214,7 +242,7 @@ class TestController extends Controller
     public function update(TestRequest $request, $id)
     {
         $test = Test::findOrFail($id);
-        $data = $request->except('_token', '_method', 'icon', 'files', 'banner', 'tests', 'vial_ids', 'specimen_ids');
+        $data = $request->except('_token', '_method', 'icon', 'files', 'banner', 'tests', 'vial_ids', 'specimen_ids', 'category_ids', 'parameter_ids');
         if ($request->hasFile('icon')) {
             $extension = $request->file('icon')->getClientOriginalExtension();
             $request->file('icon')->move(public_path('admin/test/icon'), 'icon_' . time() . '.' . $extension);
@@ -258,6 +286,28 @@ class TestController extends Controller
                 if ($vial_id != '') {
                     TestVial::create([
                         'vial_id' => $vial_id,
+                        'test_id' => $test->id
+                    ]);
+                }
+            }
+        }
+        TestCategory::where('test_id', $id)->delete();
+        if ($request->has('category_ids')) {
+            foreach ($request['category_ids'] as $category_id) {
+                if ($category_id != '') {
+                    TestCategory::create([
+                        'category_id' => $category_id,
+                        'test_id' => $test->id
+                    ]);
+                }
+            }
+        }
+        TestParameter::where('test_id', $id)->delete();
+        if ($request->has('parameter_ids')) {
+            foreach ($request['parameter_ids'] as $parameter_id) {
+                if ($parameter_id != '') {
+                    TestParameter::create([
+                        'parameter_id' => $parameter_id,
                         'test_id' => $test->id
                     ]);
                 }

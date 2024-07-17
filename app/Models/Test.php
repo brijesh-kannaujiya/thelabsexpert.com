@@ -48,4 +48,14 @@ class Test extends Model
     {
         return $this->hasMany(TestVial::class);
     }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'test_categories', 'test_id', 'category_id');
+    }
+
+    public function parameters()
+    {
+        return $this->belongsToMany(Parameter::class, 'test_parameters', 'test_id', 'parameter_id');
+    }
 }

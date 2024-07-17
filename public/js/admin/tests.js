@@ -56,7 +56,7 @@ var count_comments = $("#count_comments").val();
             },
             { data: "phlebo_instructions", sortable: false, orderable: false },
 
-            { data: "category.name", sortable: false, orderable: false },
+            { data: "category", sortable: false, orderable: false },
             { data: "vial", sortable: false, orderable: false },
             { data: "specimen", sortable: false, orderable: false },
             { data: "icon", sortable: false, orderable: false },
@@ -653,6 +653,33 @@ var count_comments = $("#count_comments").val();
                 $(".loader").show();
             },
             url: ajax_url("get_vials"),
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.name,
+                            id: item.id,
+                        };
+                    }),
+                };
+            },
+            complete: function () {
+                $(".preloader").hide();
+                $(".loader").hide();
+            },
+        },
+    });
+
+    //get category select2 intialize
+    $("#parameter").select2({
+        width: "100%",
+        placeholder: trans("Parameter"),
+        ajax: {
+            beforeSend: function () {
+                $(".preloader").show();
+                $(".loader").show();
+            },
+            url: ajax_url("get_parameter"),
             processResults: function (data) {
                 return {
                     results: $.map(data, function (item) {
