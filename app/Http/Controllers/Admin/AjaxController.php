@@ -58,9 +58,9 @@ class AjaxController extends Controller
     public function get_tests(Request $request)
     {
         if (isset($request->term)) {
-            $tests = Test::where('test_name', 'like', '%' . $request->term . '%')->take(20)->get();
+            $tests = Test::with('categories')->where('test_name', 'like', '%' . $request->term . '%')->take(20)->get();
         } else {
-            $tests = Test::take(20)->get();
+            $tests = Test::with('categories')->take(20)->get();
         }
         return response()->json($tests);
     }

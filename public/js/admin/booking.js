@@ -54,6 +54,15 @@ $("#select_test").select2({
     },
 });
 
+{
+    /* <td>
+` +
+  test.categories.map(item, () => {
+      return item.name;
+  }) +
+  `
+</td> */
+}
 $("#select_test").on("select2:select", function () {
     var test_id = $(this).val();
     if ($("#selected_tests").find("#test_" + test_id).length == 0) {
@@ -64,6 +73,7 @@ $("#select_test").on("select2:select", function () {
                 $(".loader").show();
             },
             success: function (test) {
+                // console.log(test);
                 $("#selected_tests").append(
                     `
                 <tr class="selected_test" id="test_` +
@@ -89,11 +99,7 @@ $("#select_test").on("select2:select", function () {
                         test.price +
                         `">
                    </td>
-                   <td>
-                      ` +
-                        test.category.name +
-                        `
-                   </td>
+                
                    <td class="test_price">
                       ` +
                         test.price +
