@@ -209,7 +209,8 @@
                                 </ul>
 
                                 <div class="pricing-btn">
-                                    <a href="{{ url('services-details/') }}/" class="default-btn">
+                                    <a href="{{ url('/test-detail') }}/{{ encryptWithPasscode($test->id) }}"
+                                        class="default-btn">
                                         Choose Plan
                                         <span></span>
                                     </a>
