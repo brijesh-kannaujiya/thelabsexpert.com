@@ -71,4 +71,5 @@
             @endcan
     </script>
     <script src="{{ asset('js/admin/parameters.js') }}"></script>
+    <script src="{{ asset('js/admin/bulk_action.js') }}"></script>
 @endsection

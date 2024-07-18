@@ -23,10 +23,10 @@ class DatabaseSeeder extends Seeder
             // SpecimenSeeder::class,
             // CategorySeeder::class,
             // TestSeeder::class,
-            // NewPermissionSeeder::class,
+            NewPermissionSeeder::class,
             // PaymentMethod::class,
             // StatusSeeder::class,
-            TestCategory::class,
+            // TestCategory::class,
         ]);
 
         DB::table('activity_log')->truncate();

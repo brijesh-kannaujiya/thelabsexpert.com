@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AjaxController;
+use App\Http\Controllers\Admin\AppointmentController as AdminAppointmentController;
 use App\Http\Controllers\Admin\Booking;
 use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\CategoriesController;
@@ -89,6 +90,8 @@ Route::group(['middleware' => ['Locale', 'auth'], 'prefix' => 'admin', 'as' => '
 
     Route::resource('parameters', ParameterController::class);
     Route::post('parameters/bulk/delete', [ParameterController::class, 'bulk_delete'])->name('parameters.bulk_delete');
+
+    Route::resource('appointment', AdminAppointmentController::class);
 
     // users
     Route::resource('tests', TestController::class);

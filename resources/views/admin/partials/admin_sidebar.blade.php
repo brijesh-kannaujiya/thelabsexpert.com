@@ -122,6 +122,17 @@
             </li>
         @endcan
 
+        @can('view_appointment')
+            <li class="nav-item">
+                <a href="{{ route('admin.appointment.index') }}" class="nav-link" id="appointment">
+                    <i class="nav-icon fas fa-vial"></i>
+                    <p>
+                        {{ __('Appointment') }}
+                    </p>
+                </a>
+            </li>
+        @endcan
+
 
 
         @can('view_antibiotic')

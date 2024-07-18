@@ -281,6 +281,34 @@ class PermissionSeeder extends Seeder
             ]
         );
 
+        $Parameters_module = Module::Create([
+            'name' => 'Parameters'
+        ]);
+
+        Permission::insert(
+            [
+                [
+                    'module_id' => $Parameters_module['id'],
+                    'key' => 'view_parameters',
+                    'name' => 'View'
+                ],
+                [
+                    'module_id' => $Parameters_module['id'],
+                    'key' => 'create_parameters',
+                    'name' => 'Create'
+                ],
+                [
+                    'module_id' => $Parameters_module['id'],
+                    'key' => 'edit_parameters',
+                    'name' => 'Edit'
+                ],
+                [
+                    'module_id' => $Parameters_module['id'],
+                    'key' => 'delete_parameters',
+                    'name' => 'Delete'
+                ],
+            ]
+        );
         //packages
         // $packages_module = Module::Create([
         //     'name' => 'packages'

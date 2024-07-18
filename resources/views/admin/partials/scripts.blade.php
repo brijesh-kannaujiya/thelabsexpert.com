@@ -97,6 +97,6 @@ toastr_error(trans("{{Session::get('failed')}}"));
 
 <!-- Bulk actions -->
 {{-- @if(auth()->guard('admin')->check()) --}}
-<script src="{{ asset('js/admin/bulk_action.js')}}"></script>
+
 {{-- @endif --}}
 <!-- \Bulk actions -->

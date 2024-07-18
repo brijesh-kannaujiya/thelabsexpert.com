@@ -16,30 +16,20 @@ class NewPermissionSeeder extends Seeder
     {
         //packages
         $packages_module = Module::Create([
-            'name' => 'Parameters'
+            'name' => 'Appointment'
         ]);
 
         Permission::insert(
             [
                 [
                     'module_id' => $packages_module['id'],
-                    'key' => 'view_parameters',
+                    'key' => 'view_appointment',
                     'name' => 'View'
                 ],
                 [
                     'module_id' => $packages_module['id'],
-                    'key' => 'create_parameters',
-                    'name' => 'Create'
-                ],
-                [
-                    'module_id' => $packages_module['id'],
-                    'key' => 'edit_parameters',
-                    'name' => 'Edit'
-                ],
-                [
-                    'module_id' => $packages_module['id'],
-                    'key' => 'delete_parameters',
-                    'name' => 'Delete'
+                    'key' => 'done_appointment',
+                    'name' => 'Done'
                 ],
             ]
         );
