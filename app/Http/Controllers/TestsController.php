@@ -39,8 +39,8 @@ class TestsController extends Controller
     {
         $testId = decryptWithPasscode($id);
         $test = Test::find($testId);
-        $tests = Test::inRandomOrder()->limit(6)->get();
+        // $tests = Test::inRandomOrder()->limit(6)->get();
         // dd($tests);
-        return view('web.pages.book-detail', compact('test', 'tests'));
+        return view('web.pages.book-detail', compact('test'));
     }
 }

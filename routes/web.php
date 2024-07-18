@@ -32,6 +32,7 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/', [HomeController::class, 'Home']);
 Route::get('/appointment', [AppointmentController::class, 'index']);
+Route::post('/submit-appointment', [AppointmentController::class, 'save'])->name('submit-appointment');
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/services', [ServiceController::class, 'index']);
 Route::get('/services-details', [ServiceController::class, 'ServiceDetails']);

@@ -724,7 +724,7 @@ var count_comments = $("#count_comments").val();
                 return {
                     results: $.map(data, function (item) {
                         return {
-                            text: item.test_name,
+                            text: item.test_name + `(` + item.price + `)`,
                             id: item.id,
                         };
                     }),

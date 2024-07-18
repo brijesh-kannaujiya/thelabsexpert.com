@@ -73,7 +73,7 @@ class AjaxController extends Controller
                 ->when($request->id, function ($query, $id) {
                     return $query->where('tests.id', '!=', $id);
                 })
-                ->select('tests.test_name', 'tests.id')
+                ->select('tests.test_name', 'tests.price', 'tests.id')
                 ->get();
         } else {
             $tests = Test::leftJoin('test_packages', 'tests.id', '=', 'test_packages.package_id')
@@ -81,7 +81,7 @@ class AjaxController extends Controller
                 ->when($request->id, function ($query, $id) {
                     return $query->where('tests.id', '!=', $id);
                 })
-                ->select('tests.test_name', 'tests.id')
+                ->select('tests.test_name',  'tests.price', 'tests.id')
                 ->get();
         }
         return response()->json($tests);

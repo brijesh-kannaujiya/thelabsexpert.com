@@ -89,17 +89,6 @@
 
                     <div class="col-lg-4 col-md-12">
                         <aside class="widget-area" id="secondary">
-                            <!-- <section class="widget widget_search">
-                                                                                                                                                                                                                                                        <form class="search-form search-top">
-                                                                                                                                                                                                                                                            <label>
-                                                                                                                                                                                                                                                                <span class="screen-reader-text">Search for:</span>
-                                                                                                                                                                                                                                                                <input type="search" class="search-field" placeholder="Search...">
-                                                                                                                                                                                                                                                            </label class="">
-                                                                                                                                                                                                                                                            <button type="submit">
-                                                                                                                                                                                                                                                                <i class="flaticon-loupe"></i>
-                                                                                                                                                                                                                                                            </button>
-                                                                                                                                                                                                                                                        </form>
-                                                                                                                                                                                                                                                    </section> -->
 
                             <section class="widget widget_services_list">
                                 <h3 class="widget-title">Related Test</h3>
@@ -121,22 +110,6 @@
                                 </ul>
                             </section>
 
-                            <!-- <section class="widget widget_download_list">
-                                                                                                                                                                                                                                                        <ul>
-                                                                                                                                                                                                                                                            <li>
-                                                                                                                                                                                                                                                                <a href="#">
-                                                                                                                                                                                                                                                                    <i class="las la-file-alt"></i>
-                                                                                                                                                                                                                                                                    Download Pdf File
-                                                                                                                                                                                                                                                                </a>
-                                                                                                                                                                                                                                                            </li>
-                                                                                                                                                                                                                                                            <li>
-                                                                                                                                                                                                                                                                <a href="#">
-                                                                                                                                                                                                                                                                    <i class="las la-book"></i>
-                                                                                                                                                                                                                                                                    Download DOC
-                                                                                                                                                                                                                                                                </a>
-                                                                                                                                                                                                                                                            </li>
-                                                                                                                                                                                                                                                        </ul>
-                                                                                                                                                                                                                                                    </section> -->
 
                             <section class="widget widget_contact">
                                 <div class="text">

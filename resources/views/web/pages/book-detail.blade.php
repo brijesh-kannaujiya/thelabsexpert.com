@@ -81,25 +81,30 @@
 
                 <div class="col-lg-6">
                     <div class="appointment-form-others">
-                        <form>
+                        @if (session()->has('success'))
+                            <div class="callout callout-success">
+                                <h5 class="text-success mb-2">
+                                    <i class="fa fa-check"></i> {{ session()->get('success') }}
+                                </h5>
+                            </div>
+                        @endif
+                        <form action="{{ route('submit-appointment') }}" method="POST">
+                            <input type="hidden" name="test_name" value="{{ $test->test_name }}">
+                            <input type="hidden" name="test_id" value="{{ $test->id }}">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Name">
+                                <input type="text" name="name" class="form-control" placeholder="Name" required>
                             </div>
 
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email">
+                                <input type="email" name="email" class="form-control" placeholder="Email" required>
                             </div>
 
                             <div class="form-group">
-                                <input type="phone" class="form-control" placeholder="Phone">
+                                <input type="phone" name="phone" class="form-control" placeholder="Phone">
                             </div>
-
                             <div class="form-group">
-                                <input type="subjects" class="form-control" placeholder="Subjects">
-                            </div>
-
-                            <div class="form-group">
-                                <textarea cols="30" rows="6" class="form-control" placeholder="Message"></textarea>
+                                <textarea cols="30" rows="6" name="message" class="form-control" placeholder="Message"></textarea>
                             </div>
 
                             <button type="submit">Send a Request</button>
