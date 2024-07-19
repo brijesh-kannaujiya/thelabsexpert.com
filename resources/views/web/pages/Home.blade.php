@@ -275,34 +275,34 @@
                 <div class="col-lg-7">
                     <div class="about-content">
                         <span>About Us</span>
-                        <h3>Accredited quality We'll provide you Always Latest Technology</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Quis suspendisse ultrice.</p>
-                        <p class="p-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Quis suspendisse ultrices gravida. commodo
-                            viverra maecenas accumsan lacus vel facilisis.</p>
+                        <h3>Welcome to Thexpertlab: Your Partner in Precision Health Diagnostics </h3>
+                        <p>Welcome to Thexpertlab, your trusted partner in health and wellness. At Thexpertlab, we are
+                            committed to providing high-quality diagnostic services to help you understand and manage your
+                            health. Our state-of-the-art facilities and experienced professionals ensure accurate and
+                            reliable results for a range of essential tests. .</p>
+
 
                         <ul class="about-list">
                             <li>
                                 <i class="las la-check-circle"></i>
-                                Led by Passionate Experts
+                                Precision Diagnostics
                             </li>
                             <li>
                                 <i class="las la-check-circle"></i>
-                                Safe Diagnoses and Effective Therapies
+                                Revolutionizing Patient Interaction
                             </li>
                             <li>
                                 <i class="las la-check-circle"></i>
-                                Fully Equipment
+                                Insightful Health
                             </li>
                             <li>
                                 <i class="las la-check-circle"></i>
-                                Affordable Health Packages
+                                Anatomical Discovery
                             </li>
                         </ul>
                         <div class="about-btn">
-                            <a href="#" class="default-btn">
-                                Discover More
+                            <a href="{{ url('/about') }}" class="default-btn">
+                                Read More
                                 <span></span>
                             </a>
                         </div>

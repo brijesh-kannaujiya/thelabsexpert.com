@@ -2582,7 +2582,7 @@ Fun Facts Area CSS
   position: relative;
   margin-bottom: 5px;
   line-height: 1;
-  color: #11e7f91f;
+  color: #000000;
   font-size: 48px;
 }
 
@@ -4675,7 +4675,7 @@ Sidebar Widget Area CSS
 
 .widget-area .widget_services_list ul li a:hover {
   background-color: #11e7f91f;
-  color: #ffffff;
+  color: #000000;
   -webkit-box-shadow: 0px 5px 28.5px 1.5px rgba(254, 35, 9, 0.2);
           box-shadow: 0px 5px 28.5px 1.5px rgba(254, 35, 9, 0.2);
 }
