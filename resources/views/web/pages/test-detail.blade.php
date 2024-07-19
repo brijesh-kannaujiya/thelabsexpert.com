@@ -61,14 +61,14 @@
                                 $parameters = $test->parameters;
                             @endphp
 
-                            @if (!$Chieldtests)
-                                <!-- <h3>Short Description</h3> -->
-                                <p class="pt-3">{{ $test->short_desc }}</p>
-                                <!-- <h3>Description 1</h3> -->
-                                <p class="pb-5 text-white">{!! $test->desc_1 !!}</p>
-                                <!-- <h3>Description 2</h3> -->
-                                <p class="pb-5 text-white">{!! $test->desc_2 !!}</p>
-                            @endif
+                            {{-- @if (!$Chieldtests) --}}
+                            <!-- <h3>Short Description</h3> -->
+                            <p class="pt-3">{{ $test->short_desc }}</p>
+                            <!-- <h3>Description 1</h3> -->
+                            <p class="pb-5 text-white">{!! $test->desc_1 !!}</p>
+                            <!-- <h3>Description 2</h3> -->
+                            <p class="pb-5 text-white">{!! $test->desc_2 !!}</p>
+                            {{-- @endif --}}
 
                             <div class="services-details-faq">
                                 <ul class="accordion">
