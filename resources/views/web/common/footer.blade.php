@@ -132,11 +132,11 @@
     <div class="container">
         <p>
             Copyright ©
-
-            document.write(new Date().getFullYear())
+            <script>
+                document.write(new Date().getFullYear())
             </script> Thexpertlab. All Rights Reserved by
             <a href="#" target="_blank">
-                Thexpertlab Team
+                Thexpertlab
             </a>
         </p>
     </div>
