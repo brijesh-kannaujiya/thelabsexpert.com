@@ -55,27 +55,31 @@
                                     ₹{{ $test->price }}
                                 </div>
                             </div>
-                            <!-- <h3>Short Description</h3> -->
-                            <p class="pt-3">{{ $test->short_desc }}</p>
-                            <!-- <h3>Description 1</h3> -->
-                            <p class="pb-5 text-white">{!! $test->desc_1 !!}</p>
-                            <!-- <h3>Description 2</h3> -->
-                            <p class="pb-5 text-white">{!! $test->desc_2 !!}</p>
+
                             @php
                                 $Chieldtests = $test->tests;
+                                $parameters = $test->parameters;
                             @endphp
 
+                            @if (!$Chieldtests)
+                                <!-- <h3>Short Description</h3> -->
+                                <p class="pt-3">{{ $test->short_desc }}</p>
+                                <!-- <h3>Description 1</h3> -->
+                                <p class="pb-5 text-white">{!! $test->desc_1 !!}</p>
+                                <!-- <h3>Description 2</h3> -->
+                                <p class="pb-5 text-white">{!! $test->desc_2 !!}</p>
+                            @endif
 
                             <div class="services-details-faq">
                                 <ul class="accordion">
-                                    @foreach ($Chieldtests as $key => $Chieldtest)
+                                    @foreach ($parameters as $key => $parameter)
                                         <li class="accordion-item">
                                             <a class="accordion-title @if ($key == 0) active @endif"
-                                                href="javascript:void(0)">{{ $Chieldtest->test->test_name }} <i
+                                                href="javascript:void(0)">{{ $parameter->name }} <i
                                                     class="las la-plus"></i></a>
-                                            <p
+                                            <div
                                                 class="accordion-content @if ($key == 0) show @endif text-stone-950">
-                                                {{ $Chieldtest->test->short_desc }}</p>
+                                                {!! $parameter->description !!}</div>
                                         </li>
                                     @endforeach
                                 </ul>
