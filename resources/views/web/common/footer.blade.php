@@ -132,13 +132,11 @@
     <div class="container">
         <p>
             Copyright ©
-            <script data-cfasync="false"
-                src="https://templates.envytheme.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-            <script>
-                document.write(new Date().getFullYear())
-            </script> Lebo. All Rights Reserved by
+
+            document.write(new Date().getFullYear())
+            </script> Thexpertlab. All Rights Reserved by
             <a href="#" target="_blank">
-                EnvyTheme
+                Thexpertlab Team
             </a>
         </p>
     </div>
