@@ -179,7 +179,8 @@
                     <h2>Top Health Packages</h2>
                 </div>
 
-                <div class="row">
+
+                <div class="row box">
 
                     @foreach ($packages as $package)
                         {{-- @json($package) --}}
@@ -199,14 +200,12 @@
                                     {{-- @dd($package) --}}
                                     @foreach ($package->tests as $test)
                                         <li>
-                                            <h4>{{ $test->test->test_name }} </h4><span>( {{ $test->test->short_desc_1 }}
-                                                )</span>
+                                            <h4>{{ $test->test->test_name }} </h4>
+                                            @if ($test->test->short_desc_1 != null)
+                                                <span>( {{ $test->test->short_desc_1 }} )</span>
+                                            @endif
+
                                         </li>
-                                        {{-- <li>
-                                            <i class="las la-check"></i>
-                                            {{ $test->test->test_name }} 
-                                            <span>{{ $test->test->short_desc_1 }}</span>
-                                        </li> --}}
                                     @endforeach
 
 
