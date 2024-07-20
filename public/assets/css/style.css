@@ -1268,6 +1268,7 @@ Top Services Area CSS
 }
 
 .top-services-item {
+  border-radius: 50px;
   background-color: #11e7f91f;
   /* background-color: #f6f2fe; */
   padding: 35px 20px;

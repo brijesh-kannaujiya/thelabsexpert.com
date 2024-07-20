@@ -316,24 +316,26 @@
     </section>
 
 
-
     <section class="why-choose-area ptb-100">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="why-choose-content">
                         <span>Why Choose Us</span>
-                        <h3>Over 20 Years of Experience With Best Results</h3>
+                        <h3>Over 02 Years Of Experience With Best Results </h3>
                         <strong>Your full-service lab for clinical trials. Our mission is to ensure the generation of
-                            accurate and precise findings</strong>
+                            accurate and precise findings. </strong>
 
                         <div class="why-choose-text">
                             <div class="icon">
                                 <i class="las la-check"></i>
                             </div>
                             <h4>Free Home Sampling</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                dolore. magna aliqua.</p>
+                            <p>We offer convenient home sampling services, allowing you to provide samples from the comfort
+                                of your home. Our trained professionals ensure safe and hygienic sample collection,
+                                providing you with accurate results without the need to visit the lab.
+
+                                .</p>
                         </div>
 
                         <div class="why-choose-text">
@@ -341,8 +343,10 @@
                                 <i class="las la-check"></i>
                             </div>
                             <h4>High- End Technology</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                dolore. magna aliqua.</p>
+                            <p>At Thexpertlab, we utilize the latest technology and advanced equipment to perform a wide
+                                range of diagnostic tests. Our state-of-the-art facilities ensure high precision and
+                                reliability in every test we conduct.
+                            </p>
                         </div>
 
                         <div class="why-choose-text">
@@ -350,8 +354,9 @@
                                 <i class="las la-check"></i>
                             </div>
                             <h4>Patient Support</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                dolore. magna aliqua.</p>
+                            <p>Our dedicated support team is here to assist you every step of the way. From answering your
+                                queries to providing detailed explanations of your test results, we are committed to
+                                supporting your health journey .</p>
                         </div>
 
                         <div class="why-choose-text">
@@ -359,8 +364,11 @@
                                 <i class="las la-check"></i>
                             </div>
                             <h4>500 + Different Tests</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                dolore. magna aliqua.</p>
+                            <p>We offer an extensive range of over 500 diagnostic tests, covering various aspects of health
+                                and wellness. From routine blood tests to specialized genetic screenings, we have the
+                                expertise to provide comprehensive insights into your health.
+
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -373,7 +381,6 @@
             </div>
         </div>
     </section>
-
 
     <section class="fun-facts-area pt-100 pb-100">
         <div class="container">
