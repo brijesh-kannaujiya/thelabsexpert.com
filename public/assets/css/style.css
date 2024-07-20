@@ -3122,7 +3122,9 @@ Pricing Area CSS
   text-align: center;
   -webkit-box-shadow: 0 0 40px 3px rgba(0, 0, 0, 0.05);
           box-shadow: 0 0 40px 3px rgba(0, 0, 0, 0.05);
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  background-color: #e2caf1;
+  border: 1.196px solid #CFA8E9;
 }
 
 .single-pricing-box .pricing-header h3 {
@@ -3157,7 +3159,7 @@ Pricing Area CSS
   position: relative;
   text-transform: capitalize;
   font-weight: 400;
-  background-color: #f6f9fc;
+  background-color: #fef7f3;
   padding: 10px;
 }
 

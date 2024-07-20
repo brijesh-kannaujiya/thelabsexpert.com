@@ -9,7 +9,7 @@
                 <div class="d-table-cell">
                     <div class="container">
                         <div class="page-title-content">
-                            <h2>Test</h2>
+                            <h2>Test & Package</h2>
                             <ul>
                                 <li><a href="{{ url('/') }}">Home</a></li>
                                 <li>Test</li>
