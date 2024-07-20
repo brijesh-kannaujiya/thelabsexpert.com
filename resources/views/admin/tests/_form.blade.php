@@ -184,6 +184,21 @@
 </textarea>
         </div>
     </div>
+
+    <div class=" col-md-12 mt-2">
+        <label>{{ __('Short Description 1') }}</label>
+        <div class="form-group">
+            <textarea class="col-md-12" name="short_desc_1">
+@if (isset($test))
+{{ $test->short_desc_1 }}
+@else
+{{ old('short_desc') }}
+@endif
+</textarea>
+        </div>
+    </div>
+
+
     <div class=" col-md-12 mt-2">
         <label>{{ __('Description 1') }}</label>
         <div class="form-group">

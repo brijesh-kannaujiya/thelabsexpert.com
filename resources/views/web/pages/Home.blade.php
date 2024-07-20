@@ -199,9 +199,14 @@
                                     {{-- @dd($package) --}}
                                     @foreach ($package->tests as $test)
                                         <li>
-                                            <i class="las la-check"></i>
-                                            {{ $test->test->test_name }}
+                                            <h4>{{ $test->test->test_name }} </h4><span>( {{ $test->test->short_desc_1 }}
+                                                )</span>
                                         </li>
+                                        {{-- <li>
+                                            <i class="las la-check"></i>
+                                            {{ $test->test->test_name }} 
+                                            <span>{{ $test->test->short_desc_1 }}</span>
+                                        </li> --}}
                                     @endforeach
 
 

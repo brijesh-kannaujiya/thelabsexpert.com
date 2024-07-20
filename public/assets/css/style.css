@@ -5899,3 +5899,17 @@ Buy Now Btn
 a.accordion-title {
   background: #11e7f91f;
 }
+
+
+.single-pricing-box ul li h4 {
+  margin-top: 0;
+  font-size: 13px;
+  margin-bottom: 0;
+  color: #000;
+}
+
+.single-pricing-box ul li span {
+  font-size: 11px;
+  top: -5px;
+  position: relative;
+}
