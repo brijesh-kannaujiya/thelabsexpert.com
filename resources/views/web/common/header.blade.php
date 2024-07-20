@@ -108,7 +108,7 @@
 
 
                     </ul>
-
+                    {{-- 
                     <div class="others-options d-flex align-items-center">
                         <div class="option-item">
                             <div class="burger-menu">
@@ -133,7 +133,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </nav>
         </div>
