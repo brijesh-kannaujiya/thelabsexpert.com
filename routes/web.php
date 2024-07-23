@@ -47,6 +47,7 @@ Route::get('/faq', [FaqController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 Route::get('/getTests', [AjaxController::class, 'getTests'])->name('getTests');
 
+
 Auth::routes();
 
 

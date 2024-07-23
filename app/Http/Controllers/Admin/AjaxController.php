@@ -17,9 +17,9 @@ class AjaxController extends Controller
     public function get_categories(Request $request)
     {
         if (isset($request->term)) {
-            $categories = Category::where('name', 'like', '%' . $request->term . '%')->take(20)->get();
+            $categories = Category::where('name', 'like', '%' . $request->term . '%')->get();
         } else {
-            $categories = Category::take(20)->get();
+            $categories = Category::get();
         }
 
         return response()->json($categories);
@@ -37,9 +37,9 @@ class AjaxController extends Controller
     public function get_parameter(Request $request)
     {
         if (isset($request->term)) {
-            $Parameter = Parameter::where('name', 'like', '%' . $request->term . '%')->take(20)->get();
+            $Parameter = Parameter::where('name', 'like', '%' . $request->term . '%')->get();
         } else {
-            $Parameter = Parameter::take(20)->get();
+            $Parameter = Parameter::get();
         }
 
         return response()->json($Parameter);
@@ -47,9 +47,9 @@ class AjaxController extends Controller
     public function get_specimens(Request $request)
     {
         if (isset($request->term)) {
-            $specimens = Specimen::where('name', 'like', '%' . $request->term . '%')->take(20)->get();
+            $specimens = Specimen::where('name', 'like', '%' . $request->term . '%')->get();
         } else {
-            $specimens = Specimen::take(20)->get();
+            $specimens = Specimen::get();
         }
 
         return response()->json($specimens);
@@ -58,9 +58,9 @@ class AjaxController extends Controller
     public function get_tests(Request $request)
     {
         if (isset($request->term)) {
-            $tests = Test::with('categories')->where('test_name', 'like', '%' . $request->term . '%')->take(20)->get();
+            $tests = Test::with('categories')->where('test_name', 'like', '%' . $request->term . '%')->get();
         } else {
-            $tests = Test::with('categories')->take(20)->get();
+            $tests = Test::with('categories')->get();
         }
         return response()->json($tests);
     }

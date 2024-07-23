@@ -169,6 +169,7 @@
 
     @php
         $packages = get_Packeges();
+        $TestData = TestData();
     @endphp
 
     @empty(!$packages)
@@ -228,384 +229,427 @@
         </section>
     @endempty
 
-
-
-    <section class="top-services-area">
-        <div class="container">
-            <div class="row">
-
-                @foreach (get_Categoryes() as $category)
-                    <div class="col-lg-3 col-md-6 col-4">
-                        <a href="{{ url('/test') }}/{{ encryptWithPasscode($category->id) }}">
-                            <div class="top-services-item">
-                                <div class="icon">
-                                    @if (request()->getHost() == '127.0.0.1')
-                                        @if ($category->icon)
-                                            <img src="{{ url($category->icon) }}" />
-                                        @endif
-                                    @else
-                                        @if ($category->icon)
-                                            <img src="{{ url('public/' . $category->icon) }}" />
-                                        @endif
-                                    @endif
-                                    {{-- <i class="flaticon-lab-tool"></i> --}}
-                                </div>
-
-                                <h3>
-                                    {{-- {{ Str::words($category->name, 3, '...') }} --}}
-                                    {{ $category->name }}
-                                </h3>
-                                {{-- <p>{{ Str::words($category->description, 18, '...') }} --}}
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
-
-            </div>
-        </div>
-    </section>
-
-    <section class="about-area ptb-100">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <div class="about-image">
-                        <img src="{{ asset('assets/img/about/about-1.jpg') }}" alt="image">
-                        <img src="{{ asset('assets/img/about/about-2.jpg') }}" alt="image">
-                    </div>
-                </div>
-
-                <div class="col-lg-7">
-                    <div class="about-content">
-                        <span>About Us</span>
-                        <h3>Welcome to Thexpertlab: Your Partner in Precision Health Diagnostics </h3>
-                        <p>Welcome to Thexpertlab, your trusted partner in health and wellness. At Thexpertlab, we are
-                            committed to providing high-quality diagnostic services to help you understand and manage your
-                            health. Our state-of-the-art facilities and experienced professionals ensure accurate and
-                            reliable results for a range of essential tests. .</p>
-
-
-                        <ul class="about-list">
-                            <li>
-                                <i class="las la-check-circle"></i>
-                                Precision Diagnostics
-                            </li>
-                            <li>
-                                <i class="las la-check-circle"></i>
-                                Revolutionizing Patient Interaction
-                            </li>
-                            <li>
-                                <i class="las la-check-circle"></i>
-                                Insightful Health
-                            </li>
-                            <li>
-                                <i class="las la-check-circle"></i>
-                                Anatomical Discovery
-                            </li>
-                        </ul>
-                        <div class="about-btn">
-                            <a href="{{ url('/about') }}" class="default-btn">
-                                Read More
-                                <span></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="about-shape">
-            <img src="{{ asset('assets/img/about/shape.png') }}" alt="image">
-        </div>
-    </section>
-
-
-    <section class="why-choose-area ptb-100">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="why-choose-content">
-                        <span>Why Choose Us</span>
-                        <h3>Over 02 Years Of Experience With Best Results </h3>
-                        <strong>Your full-service lab for clinical trials. Our mission is to ensure the generation of
-                            accurate and precise findings. </strong>
-
-                        <div class="why-choose-text">
-                            <div class="icon">
-                                <i class="las la-check"></i>
-                            </div>
-                            <h4>Free Home Sampling</h4>
-                            <p>We offer convenient home sampling services, allowing you to provide samples from the comfort
-                                of your home. Our trained professionals ensure safe and hygienic sample collection,
-                                providing you with accurate results without the need to visit the lab.
-
-                                .</p>
-                        </div>
-
-                        <div class="why-choose-text">
-                            <div class="icon">
-                                <i class="las la-check"></i>
-                            </div>
-                            <h4>High- End Technology</h4>
-                            <p>At Thexpertlab, we utilize the latest technology and advanced equipment to perform a wide
-                                range of diagnostic tests. Our state-of-the-art facilities ensure high precision and
-                                reliability in every test we conduct.
-                            </p>
-                        </div>
-
-                        <div class="why-choose-text">
-                            <div class="icon">
-                                <i class="las la-check"></i>
-                            </div>
-                            <h4>Patient Support</h4>
-                            <p>Our dedicated support team is here to assist you every step of the way. From answering your
-                                queries to providing detailed explanations of your test results, we are committed to
-                                supporting your health journey .</p>
-                        </div>
-
-                        <div class="why-choose-text">
-                            <div class="icon">
-                                <i class="las la-check"></i>
-                            </div>
-                            <h4>500 + Different Tests</h4>
-                            <p>We offer an extensive range of over 500 diagnostic tests, covering various aspects of health
-                                and wellness. From routine blood tests to specialized genetic screenings, we have the
-                                expertise to provide comprehensive insights into your health.
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="why-choose-image">
-                        <img src="{{ asset('assets/img/why-choose.png') }}" alt="image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="fun-facts-area pt-100 pb-100">
-        <div class="container">
-            <div class="fun-facts-inner">
-                <div class="row align-items-center">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-fun-fact">
-                            <h3>
-                                <span class="odometer" data-count="25">00</span>
-                            </h3>
-                            <p>Winning Award</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-fun-fact">
-                            <h3>
-                                <span class="odometer" data-count="55">00</span>
-                            </h3>
-                            <p>Our Equipment</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-fun-fact">
-                            <h3>
-                                <span class="odometer" data-count="425">00</span>
-                            </h3>
-                            <p>Complete Cases</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-fun-fact">
-                            <h3>
-                                <span class="odometer" data-count="125">00</span>
-                            </h3>
-                            <p>Expertise</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="fun-facts-shape">
-                    <div class="shape1">
-                        <img src="{{ asset('assets/img/fun-facts-shape/shape1.png') }}" alt="image">
-                    </div>
-                    <div class="shape2">
-                        <img src="{{ asset('assets/img/fun-facts-shape/shape2.png') }}" alt="image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonial-area ptb-100">
-        <div class="container">
-            <div class="section-title">
-                <span>Testimonial</span>
-                <h2>What Our Clients Say</h2>
-            </div>
-
-            <div class="testimonial-slider owl-carousel owl-theme">
-                <div class="testimonial-item">
-                    <div class="info">
-                        <img src="{{ asset('assets/img/client/client1.jpg') }}" alt="image">
-                        <h3>Ken Morris</h3>
-                        <span>Artist</span>
-                    </div>
-                    <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                            viverra maecenas accumsan Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry Lorem Ipsum</p>
-                    </div>
-                </div>
-
-                <div class="testimonial-item">
-                    <div class="info">
-                        <img src="{{ asset('assets/img/client/client2.jpg') }}" alt="image">
-                        <h3>Johansen Lisa</h3>
-                        <span>Artist</span>
-                    </div>
-                    <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                            viverra maecenas accumsan Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry Lorem Ipsum</p>
-                    </div>
-                </div>
-
-                <div class="testimonial-item">
-                    <div class="info">
-                        <img src="{{ asset('assets/img/client/client3.jpg') }}" alt="image">
-                        <h3>Lodi Kheda</h3>
-                        <span>Artist</span>
-                    </div>
-                    <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                            viverra maecenas accumsan Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry Lorem Ipsum</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="services-area bg-white pb-70 pt-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2 col-md-6">
-                    <div class="single-services-item">
-                        <div class="icon">
-                            <img src="{{ asset('assets/img/On-timeSampleCollection.png') }}" alt="" />
-                        </div>
-                        <h3>
-                            <a href="#">On-Time Free Home Simple Collection
-                            </a>
-                        </h3>
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-6">
-                    <div class="single-services-item">
-                        <div class="icon">
-
-                            <img src="{{ asset('assets/img/DOCTORCONSULTATION.jpg') }}" alt="" />
-                        </div>
-                        <h3>
-                            <a href="#">DOCTOR CONSULTATION</a>
-                        </h3>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-6">
-                    <div class="single-services-item">
-                        <div class="icon">
-
-                            <img src="{{ asset('assets/img/NABL.png') }}" alt="" />
-                        </div>
-                        <h3>
-                            <a href="#">NABL Certified Labs</a>
-                        </h3>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-6">
-                    <div class="single-services-item">
-                        <div class="icon">
-                            <img src="{{ asset('assets/img/6179923.png') }}" alt="" />
-                        </div>
-                        <h3>
-                            <a href="#">24/7 Service
-                            </a>
-                        </h3>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-6">
-                    <div class="single-services-item">
-                        <div class="icon">
-                            <img src="{{ asset('assets/img/GUARANTEEDACCURACY.jpg') }}" alt="" />
-                        </div>
-                        <h3>
-                            <a href="#">GUARANTEED ACCURACY
-                            </a>
-                        </h3>
-                    </div>
-                </div>
-
-
-
-                <div class="col-lg-2 col-md-6">
-                    <div class="single-services-item">
-                        <div class="icon">
-
-                            <img src="{{ asset('assets/img/HONESTPRICES.png') }}" alt="" />
-                        </div>
-                        <h3>
-                            <a href="#">HONEST PRICES</a>
-                        </h3>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
     <div class="partner-area ptb-100">
         <div class="container">
             <div class="partner-slider owl-carousel owl-theme">
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="{{ asset('assets/img/partner/partner1.png') }}" alt="image">
-                    </a>
+                {{-- <div class="partner-item"> --}}
+
+                @foreach ($TestData as $test)
+                    <div class="partner-item">
+                        <div class="single-services-item">
+                            <a href="{{ url('/test-detail') }}/{{ encryptWithPasscode($test->id) }}">
+                                <div class="icon">
+                                    @if (request()->getHost() == '127.0.0.1')
+                                        @if ($test->icon)
+                                            <img src="{{ url($test->icon) }}" />
+                                        @endif
+                                    @else
+                                        @if ($test->icon)
+                                            <img src="{{ url('public/' . $test->icon) }}" />
+                                        @endif
+                                    @endif
+
+                                </div>
+                            </a>
+
+                            <h3>
+                                <a href="{{ url('/test-detail') }}/{{ encryptWithPasscode($test->id) }}">
+                                    {{-- {{ Str::words($test->test_name, 3, '...') }} --}}
+                                    {{ $test->test_name }}
+                                </a>
+                            </h3>
+                            <p>{{ Str::words($test->short_desc, 18, '...') }}</p>
+                            <a href="{{ url('/book-appointment') }}/{{ encryptWithPasscode($test->id) }}"
+                                class="read-more-btn">Book Now</a>
+                        </div>
+                    </div>
+                @endforeach
+
+
+                {{-- </div> --}}
+            </div>
+        </div>
+
+        <section class="top-services-area pt-100">
+            <div class="container">
+                <div class="row">
+
+                    @foreach (get_Categoryes() as $category)
+                        <div class="col-lg-3 col-md-6 col-4">
+                            <a href="{{ url('/test') }}/{{ encryptWithPasscode($category->id) }}">
+                                <div class="top-services-item">
+                                    <div class="icon">
+                                        @if (request()->getHost() == '127.0.0.1')
+                                            @if ($category->icon)
+                                                <img src="{{ url($category->icon) }}" />
+                                            @endif
+                                        @else
+                                            @if ($category->icon)
+                                                <img src="{{ url('public/' . $category->icon) }}" />
+                                            @endif
+                                        @endif
+                                        {{-- <i class="flaticon-lab-tool"></i> --}}
+                                    </div>
+
+                                    <h3>
+                                        {{-- {{ Str::words($category->name, 3, '...') }} --}}
+                                        {{ $category->name }}
+                                    </h3>
+                                    {{-- <p>{{ Str::words($category->description, 18, '...') }} --}}
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+
+                </div>
+            </div>
+        </section>
+
+        <section class="about-area ptb-100">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <div class="about-image">
+                            <img src="{{ asset('assets/img/about/about-1.jpg') }}" alt="image">
+                            <img src="{{ asset('assets/img/about/about-2.jpg') }}" alt="image">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="about-content">
+                            <span>About Us</span>
+                            <h3>Welcome to Thexpertlab: Your Partner in Precision Health Diagnostics </h3>
+                            <p>Welcome to Thexpertlab, your trusted partner in health and wellness. At Thexpertlab, we are
+                                committed to providing high-quality diagnostic services to help you understand and manage
+                                your
+                                health. Our state-of-the-art facilities and experienced professionals ensure accurate and
+                                reliable results for a range of essential tests. .</p>
+
+
+                            <ul class="about-list">
+                                <li>
+                                    <i class="las la-check-circle"></i>
+                                    Precision Diagnostics
+                                </li>
+                                <li>
+                                    <i class="las la-check-circle"></i>
+                                    Revolutionizing Patient Interaction
+                                </li>
+                                <li>
+                                    <i class="las la-check-circle"></i>
+                                    Insightful Health
+                                </li>
+                                <li>
+                                    <i class="las la-check-circle"></i>
+                                    Anatomical Discovery
+                                </li>
+                            </ul>
+                            <div class="about-btn">
+                                <a href="{{ url('/about') }}" class="default-btn">
+                                    Read More
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-shape">
+                <img src="{{ asset('assets/img/about/shape.png') }}" alt="image">
+            </div>
+        </section>
+
+
+        <section class="why-choose-area ptb-100">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="why-choose-content">
+                            <span>Why Choose Us</span>
+                            <h3>Over 02 Years Of Experience With Best Results </h3>
+                            <strong>Your full-service lab for clinical trials. Our mission is to ensure the generation of
+                                accurate and precise findings. </strong>
+
+                            <div class="why-choose-text">
+                                <div class="icon">
+                                    <i class="las la-check"></i>
+                                </div>
+                                <h4>Free Home Sampling</h4>
+                                <p>We offer convenient home sampling services, allowing you to provide samples from the
+                                    comfort
+                                    of your home. Our trained professionals ensure safe and hygienic sample collection,
+                                    providing you with accurate results without the need to visit the lab.
+
+                                    .</p>
+                            </div>
+
+                            <div class="why-choose-text">
+                                <div class="icon">
+                                    <i class="las la-check"></i>
+                                </div>
+                                <h4>High- End Technology</h4>
+                                <p>At Thexpertlab, we utilize the latest technology and advanced equipment to perform a wide
+                                    range of diagnostic tests. Our state-of-the-art facilities ensure high precision and
+                                    reliability in every test we conduct.
+                                </p>
+                            </div>
+
+                            <div class="why-choose-text">
+                                <div class="icon">
+                                    <i class="las la-check"></i>
+                                </div>
+                                <h4>Patient Support</h4>
+                                <p>Our dedicated support team is here to assist you every step of the way. From answering
+                                    your
+                                    queries to providing detailed explanations of your test results, we are committed to
+                                    supporting your health journey .</p>
+                            </div>
+
+                            <div class="why-choose-text">
+                                <div class="icon">
+                                    <i class="las la-check"></i>
+                                </div>
+                                <h4>500 + Different Tests</h4>
+                                <p>We offer an extensive range of over 500 diagnostic tests, covering various aspects of
+                                    health
+                                    and wellness. From routine blood tests to specialized genetic screenings, we have the
+                                    expertise to provide comprehensive insights into your health.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="why-choose-image">
+                            <img src="{{ asset('assets/img/why-choose.png') }}" alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="fun-facts-area pt-100 pb-100">
+            <div class="container">
+                <div class="fun-facts-inner">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="single-fun-fact">
+                                <h3>
+                                    <span class="odometer" data-count="25">00</span>
+                                </h3>
+                                <p>Winning Award</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="single-fun-fact">
+                                <h3>
+                                    <span class="odometer" data-count="55">00</span>
+                                </h3>
+                                <p>Our Equipment</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="single-fun-fact">
+                                <h3>
+                                    <span class="odometer" data-count="425">00</span>
+                                </h3>
+                                <p>Complete Cases</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="single-fun-fact">
+                                <h3>
+                                    <span class="odometer" data-count="125">00</span>
+                                </h3>
+                                <p>Expertise</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fun-facts-shape">
+                        <div class="shape1">
+                            <img src="{{ asset('assets/img/fun-facts-shape/shape1.png') }}" alt="image">
+                        </div>
+                        <div class="shape2">
+                            <img src="{{ asset('assets/img/fun-facts-shape/shape2.png') }}" alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial-area ptb-100">
+            <div class="container">
+                <div class="section-title">
+                    <span>Testimonial</span>
+                    <h2>What Our Clients Say</h2>
                 </div>
 
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="{{ asset('assets/img/partner/partner2.png') }}" alt="image">
-                    </a>
-                </div>
+                <div class="testimonial-slider owl-carousel owl-theme">
+                    <div class="testimonial-item">
+                        <div class="info">
+                            <img src="{{ asset('assets/img/client/client1.jpg') }}" alt="image">
+                            <h3>Ken Morris</h3>
+                            <span>Artist</span>
+                        </div>
+                        <div class="text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry Lorem Ipsum</p>
+                        </div>
+                    </div>
 
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="{{ asset('assets/img/partner/partner3.png') }}" alt="image">
-                    </a>
-                </div>
+                    <div class="testimonial-item">
+                        <div class="info">
+                            <img src="{{ asset('assets/img/client/client2.jpg') }}" alt="image">
+                            <h3>Johansen Lisa</h3>
+                            <span>Artist</span>
+                        </div>
+                        <div class="text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry Lorem Ipsum</p>
+                        </div>
+                    </div>
 
-                <div class="partner-item">
-                    <a href="#">
-                        <img src="{{ asset('assets/img/partner/partner4.png') }}" alt="image">
-                    </a>
+                    <div class="testimonial-item">
+                        <div class="info">
+                            <img src="{{ asset('assets/img/client/client3.jpg') }}" alt="image">
+                            <h3>Lodi Kheda</h3>
+                            <span>Artist</span>
+                        </div>
+                        <div class="text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry Lorem Ipsum</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="services-area bg-white pb-70 pt-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-md-6">
+                        <div class="single-services-item">
+                            <div class="icon">
+                                <img src="{{ asset('assets/img/On-timeSampleCollection.png') }}" alt="" />
+                            </div>
+                            <h3>
+                                <a href="#">On-Time Free Home Simple Collection
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <div class="single-services-item">
+                            <div class="icon">
+
+                                <img src="{{ asset('assets/img/DOCTORCONSULTATION.jpg') }}" alt="" />
+                            </div>
+                            <h3>
+                                <a href="#">DOCTOR CONSULTATION</a>
+                            </h3>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <div class="single-services-item">
+                            <div class="icon">
+
+                                <img src="{{ asset('assets/img/NABL.png') }}" alt="" />
+                            </div>
+                            <h3>
+                                <a href="#">NABL Certified Labs</a>
+                            </h3>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <div class="single-services-item">
+                            <div class="icon">
+                                <img src="{{ asset('assets/img/6179923.png') }}" alt="" />
+                            </div>
+                            <h3>
+                                <a href="#">24/7 Service
+                                </a>
+                            </h3>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <div class="single-services-item">
+                            <div class="icon">
+                                <img src="{{ asset('assets/img/GUARANTEEDACCURACY.jpg') }}" alt="" />
+                            </div>
+                            <h3>
+                                <a href="#">GUARANTEED ACCURACY
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-2 col-md-6">
+                        <div class="single-services-item">
+                            <div class="icon">
+
+                                <img src="{{ asset('assets/img/HONESTPRICES.png') }}" alt="" />
+                            </div>
+                            <h3>
+                                <a href="#">HONEST PRICES</a>
+                            </h3>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <div class="partner-area ptb-100">
+            <div class="container">
+                <div class="partner-slider owl-carousel owl-theme">
+                    <div class="partner-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/img/partner/partner1.png') }}" alt="image">
+                        </a>
+                    </div>
+
+                    <div class="partner-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/img/partner/partner2.png') }}" alt="image">
+                        </a>
+                    </div>
+
+                    <div class="partner-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/img/partner/partner3.png') }}" alt="image">
+                        </a>
+                    </div>
+
+                    <div class="partner-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/img/partner/partner4.png') }}" alt="image">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-@endsection
+    @endsection

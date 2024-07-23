@@ -77,3 +77,11 @@ if (!function_exists("decryptWithPasscode")) {
         return $output;
     }
 }
+
+if (!function_exists("TestData")) {
+    function TestData()
+    {
+        $tests = Test::with('categories')->take(10)->get();
+        return $tests;
+    }
+}

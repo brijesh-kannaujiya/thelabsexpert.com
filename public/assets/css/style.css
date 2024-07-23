@@ -229,6 +229,7 @@ Section Title CSS
 Top Area CSS
 =================================================*/
 .top-header {
+  /* background-color: #faf3ee; */
   background-color: #11e7f91f;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -655,7 +656,8 @@ Navbar Area CSS
   left: 0;
   width: 100%;
   z-index: 999;
-  background:#e2caf1;
+  /* background:#e2caf1; */
+  background: #11e7f9;
   -webkit-box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
           box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
   /* background-color: #7da3ca !important; */
@@ -1269,6 +1271,7 @@ Top Services Area CSS
 
 .top-services-item {
   border-radius: 50px;
+  /* background-color: #fef7f2; */
   background-color: #11e7f91f;
   /* background-color: #f6f2fe; */
   padding: 35px 20px;
@@ -1473,7 +1476,9 @@ Services Area CSS
 }
 
 .services-area.bg-white .single-services-item {
-  background-color: #fafafa;
+  background-color: #e9fdfe;
+  /* background-color: #faf3ee; */
+  /* background-color: #fafafa; */
 }
 
 .single-services {
@@ -1576,7 +1581,9 @@ Services Area CSS
 
 .single-services-item {
   text-align: center;
-  background-color: #11e7f91f;
+  background-color: #e9fdfe;
+  /* background-color: #faf3ee; */
+  /* background-color: #11e7f91f; */
   padding: 30px;
   position: relative;
   border-radius: 10px;
@@ -1642,7 +1649,9 @@ Services Area CSS
 }
 
 .single-services-item:hover {
-  background: #11e7f97a;
+  background: #e9fdfe;
+  /* background: #faf3ee; */
+  /* background: #11e7f97a; */
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
 }
@@ -3122,9 +3131,10 @@ Pricing Area CSS
   text-align: center;
   -webkit-box-shadow: 0 0 40px 3px rgba(0, 0, 0, 0.05);
           box-shadow: 0 0 40px 3px rgba(0, 0, 0, 0.05);
-  /* background-color: #ffffff; */
-  background-color: #e2caf1;
-  border: 1.196px solid #CFA8E9;
+  background-color: #ffffff;
+  /* background-color: #e2caf1; */
+  border: 3px solid #11e7f9;
+  /* border: 1.196px solid #CFA8E9; */
 }
 
 .single-pricing-box .pricing-header h3 {
@@ -3159,7 +3169,8 @@ Pricing Area CSS
   position: relative;
   text-transform: capitalize;
   font-weight: 400;
-  background-color: #fef7f3;
+  background-color: #e9fdfe;
+  /* background-color: #fef7f3; */
   padding: 10px;
 }
 
@@ -5714,7 +5725,9 @@ Footer Area CSS
 Copyright Section CSS
 =================================================*/
 .copyright-area {
-  background-color: #11e7f91f;
+  background-color: #11e7f9;
+  /* background-color: #faf3ee; */
+  /* background-color: #11e7f91f; */
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
