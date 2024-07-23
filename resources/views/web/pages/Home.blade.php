@@ -259,8 +259,14 @@
                                 </a>
                             </h3>
                             <p>{{ Str::words($test->short_desc, 18, '...') }}</p>
-                            <a href="{{ url('/book-appointment') }}/{{ encryptWithPasscode($test->id) }}"
-                                class="read-more-btn">Book Now</a>
+                            <div class="row mt-2">
+                                <div class="price col-md-6">
+                                    <span style="  text-decoration: line-through; ">₹{{ $test->mrp_price }}</span>
+                                    ₹{{ $test->price }}
+                                </div>
+                                <a href="{{ url('/book-appointment') }}/{{ encryptWithPasscode($test->id) }}"
+                                    class="read-more-btn col-md-6 pt-0 mt-0">Book Now</a>
+                            </div>
                         </div>
                     </div>
                 @endforeach
