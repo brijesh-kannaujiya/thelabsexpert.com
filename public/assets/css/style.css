@@ -3124,7 +3124,7 @@ Pricing Area CSS
 =================================================*/
 .single-pricing-box {
   margin-bottom: 30px;
-  padding: 0px 0 35px 0;
+  padding: 0px 0 0px 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   border-radius: 15px;
@@ -3187,6 +3187,9 @@ Pricing Area CSS
 
 .single-pricing-box .pricing-btn {
   margin-top: 25px;
+  background-color: #01aef0;
+  border-radius: 0px 0px 13px 13px;
+
 }
 
 .single-pricing-box .pricing-btn .default-btn {
@@ -5966,4 +5969,10 @@ a.accordion-title {
 
  .title:before {
   background: #01aef0;
+}
+
+.pricing-btn{
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0px;
 }

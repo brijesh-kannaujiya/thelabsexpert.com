@@ -171,6 +171,7 @@
             text-align: center;
             padding: 14px 6px 5px 5px;
             background: #11e7f9;
+            border-radius: 12px 12px 0px 0px;
         }
 
         .table-header h2 {
@@ -217,92 +218,11 @@
             transition: all 500ms ease;
         }
 
-        .pricing-block-one .pricing-table .table-content {
+        .table-header {
             position: relative;
-            padding: 4px 15px 6px 75px;
-        }
-
-        .pricing-block-one .pricing-table .table-content .title h4 {
-            position: relative;
-            display: block;
-            font-weight: 700;
-            color: #fff;
-            margin: 0;
-        }
-
-        .pricing-block-one .pricing-table .table-content .title {
-            position: relative;
-            padding: 4px 30px 7px 0;
-        }
-
-        .pricing-block-one .pricing-table .table-content .title:before {
-            position: absolute;
-            content: "";
-            width: 5000px;
-            height: 100%;
-            top: 0;
-            right: 0;
-            border-top-right-radius: 30px;
-            border-bottom-right-radius: 30px;
-        }
-
-        .pricing-block-one .pricing-table .table-content .list-item {
-            position: relative;
-            display: block;
-            padding-top: 8px;
-        }
-
-        .pricing-block-one .pricing-table .table-content .list-item li {
-            position: relative;
-            display: block;
-            font-size: 16px;
-            margin-bottom: 7px;
-            color: #666;
-            transition: all 500ms ease;
-        }
-
-        .pricing-block-one .pricing-table:hover .table-content .list-item li,
-        .pricing-block-one.active-block .pricing-table .table-content .list-item li {
-            color: #666;
-        }
-
-        .pricing-block-one .pricing-table .table-content .list-item li:last-child {
-            margin-bottom: 0;
-        }
-
-        .pricing-block-one .pricing-table .table-content .list-item li i {
-            position: absolute;
-            left: -37px;
-            top: 5px;
-        }
-
-        .pricing-block-one .pricing-table .table-footer {
-            position: relative;
-            display: block;
             text-align: center;
-            padding: 14px 15px 8px;
-            background-color: #f5b535;
-        }
-
-        .pricing-block-one .pricing-table .table-footer a {
-            position: relative;
-            display: inline-block;
-            font-size: 13px;
-            line-height: 26px;
-            font-family: "Titillium Web", sans-serif;
-            background-color: #fff;
-            border-radius: 40px;
-            font-weight: 400;
-            color: #000;
-            border: 1px solid #05aaeb;
-            text-align: center;
-            text-transform: uppercase;
-            padding: 2px 30px;
-        }
-
-        .pricing-block-one .pricing-table:hover .table-footer a,
-        .pricing-block-one.active-block .pricing-table .table-footer a {
-            border-color: #fff;
+            padding: 14px 6px 5px 5px;
+            background: #51ada7;
         }
     </style>
 
@@ -346,37 +266,44 @@
                                     <span>Original Price : ₹ <b
                                             style="text-decoration: line-through;">{{ $package->mrp_price }}</b></span>
                                 </div>
+                                <div class="table-content">
+                                    <div class="title">
+                                        <h4>Includes: {{ $package->parameter_count }} Parameters</h4>
+                                    </div>
 
-                                <div class="title">
-                                    <h4>Includes: {{ $package->parameter_count }} Parameters</h4>
+                                    <ul class="pricing-features">
+                                        {{-- @dd($package) --}}
+                                        @foreach ($package->tests as $test)
+                                            <li class="pricing_li">
+                                                <i class="las la-check"></i>
+                                                <h4>
+                                                    {{-- <img class="packaage-icon" src="{{ asset('img/blod.png') }}" /> --}}
+                                                    {{ $test->test->test_name }}
+                                                </h4>
+                                                @if ($test->test->short_desc_1 != null)
+                                                    <span>( {{ $test->test->short_desc_1 }} )</span>
+                                                @endif
+
+                                            </li>
+                                        @endforeach
+
+
+
+                                    </ul>
                                 </div>
-
-                                <ul class="pricing-features">
-                                    {{-- @dd($package) --}}
-                                    @foreach ($package->tests as $test)
-                                        <li class="pricing_li">
-                                            <i class="las la-check"></i>
-                                            <h4>
-                                                {{-- <img class="packaage-icon" src="{{ asset('img/blod.png') }}" /> --}}
-                                                {{ $test->test->test_name }}
-                                            </h4>
-                                            @if ($test->test->short_desc_1 != null)
-                                                <span>( {{ $test->test->short_desc_1 }} )</span>
-                                            @endif
-
-                                        </li>
-                                    @endforeach
-
-
-
-                                </ul>
-
                                 <div class="pricing-btn">
+
+                                    <a href=""><img src="{{ asset('img/whatsapp.png') }}" width="50"
+                                            alt="whatsapp"></a>
+
                                     <a href="{{ url('/test-detail') }}/{{ encryptWithPasscode($package->id) }}"
                                         class="default-btn">
                                         Book Now
                                         <span></span>
                                     </a>
+
+                                    <a href=""><img src="{{ asset('img/call-me-back.png') }}" width="50"
+                                            alt="whatsapp"></a>
                                 </div>
                             </div>
                         </div>
