@@ -78,8 +78,7 @@
             <label for="mrp_price">{{ __('Include Parameter Count') }}</label>
             <div class="input-group form-group mb-3">
                 <input type="number" class="form-control" name="parameter_count" min="0" id="parameter_count"
-                    @if (isset($test)) value="{{ $test->parameter_count }}" @else value="{{ old('parameter_count') }}" @endif
-                    required>
+                    @if (isset($test)) value="{{ $test->parameter_count }}" @else value="{{ old('parameter_count') }}" @endif>
             </div>
         </div>
     </div>
