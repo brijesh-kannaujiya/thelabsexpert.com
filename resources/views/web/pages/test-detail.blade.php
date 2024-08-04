@@ -100,10 +100,10 @@
                                 </ul>
                             </div>
 
-
-
-
                         </div>
+
+                        {{-- Booking --}}
+
                     </div>
 
                     <div class="col-lg-4 col-md-12">

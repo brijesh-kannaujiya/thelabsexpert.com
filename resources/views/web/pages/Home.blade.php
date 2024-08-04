@@ -4,74 +4,21 @@
 
 
 
-<!-- Start Main Slider Area -->
-        <div class="home-slides owl-carousel owl-theme">
-            <div class="main-slider-item"> </div>
-            <div class="main-slider-item item-two"></div>
-            <div class="main-slider-item item-three"> </div>
-        </div>
-        <!-- End Main Slider Area -->
+    <!-- Start Main Slider Area -->
+    <div class="home-slides owl-carousel owl-theme">
+        <div class="main-slider-item"> </div>
+        <div class="main-slider-item item-two"></div>
+        <div class="main-slider-item item-three"> </div>
+    </div>
+    <!-- End Main Slider Area -->
 
-                <!-- Start Top Services Area -->
-                <section class="top-services-area cust-to-area">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-10 offset-md-1">
-                                <div class="slider_filter">
-                                <div class="slider-btn ">
-                                        <a href="{{ url('/') }}" class="default-btn">
-                                            Offers
-                                            <span></span>
-                                        </a>
-
-                                        <a href="{{ url('/upload-prescription') }}" class="default-btn">
-                                            Upload Prescription
-                                            <span></span>
-                                        </a>
-                                    </div>
-
-                            
-
-                                <div class="form">
-                                            <i class="fa fa-search"></i>
-                                            <input type="text" onkeyup="GetTest(this.value)" class="form-control form-input"
-                                                placeholder="Search for Test/Package( KFT, Full Body etc.)">
-                                            <span class="left-pan"><i class=" flaticon-loupe" style=""></i></span>
-                                            <div id="listofsearchresults">
-
-                                            </div>
-                                        </div>
-                            </div>
-                                    </div>
-                            <div class="col-lg-12">
-                            <div class="page-title-content">
-                                
-                                
-                                <!-- <div class="slider-btn mt-3">
-                                    <a href="{{ url('/appointment') }}" class="default-btn">
-                                        Book Appointment
-                                        <span></span>
-                                    </a>
-                                </div> -->
-
-                            </div>
-                            </div>
-
-                        
-
-                        </div>
-                    </div>
-                </section>
-        <!-- End Top Services Area -->
-
-
-
-    <!-- <div class="page-title-area item-bg-3 mb-5">
-        <div class="d-table">
-            <div class="d-table-cell">
-                <div class="container">
-                    <div class="page-title-content">
-                        <div class="slider-btn mb-3">
+    <!-- Start Top Services Area -->
+    <section class="top-services-area cust-to-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <div class="slider_filter">
+                        <div class="slider-btn ">
                             <a href="{{ url('/') }}" class="default-btn">
                                 Offers
                                 <span></span>
@@ -82,35 +29,88 @@
                                 <span></span>
                             </a>
                         </div>
-                        <div class="row height d-flex justify-content-center align-items-center">
 
-                            <div class="col-md-9">
 
-                                <div class="form">
-                                    <i class="fa fa-search"></i>
-                                    <input type="text" onkeyup="GetTest(this.value)" class="form-control form-input"
-                                        placeholder="Search for Test/Package( KFT, Full Body etc.)">
-                                    <span class="left-pan"><i class=" flaticon-loupe" style=""></i></span>
-                                    <div id="listofsearchresults">
 
-                                    </div>
-                                </div>
+                        <div class="form">
+                            <i class="fa fa-search"></i>
+                            <input type="text" onkeyup="GetTest(this.value)" class="form-control form-input"
+                                placeholder="Search for Test/Package( KFT, Full Body etc.)">
+                            <span class="left-pan"><i class=" flaticon-loupe" style=""></i></span>
+                            <div id="listofsearchresults">
 
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="page-title-content">
 
-                        </div>
-                        <div class="slider-btn mt-3">
-                            <a href="{{ url('/appointment') }}" class="default-btn">
-                                Book Appointment
-                                <span></span>
-                            </a>
-                        </div>
+
+                        <!-- <div class="slider-btn mt-3">
+                                                <a href="{{ url('/appointment') }}" class="default-btn">
+                                                    Book Appointment
+                                                    <span></span>
+                                                </a>
+                                            </div> -->
 
                     </div>
                 </div>
+
+
+
             </div>
         </div>
-    </div> -->
+    </section>
+    <!-- End Top Services Area -->
+
+
+
+    <!-- <div class="page-title-area item-bg-3 mb-5">
+                    <div class="d-table">
+                        <div class="d-table-cell">
+                            <div class="container">
+                                <div class="page-title-content">
+                                    <div class="slider-btn mb-3">
+                                        <a href="{{ url('/') }}" class="default-btn">
+                                            Offers
+                                            <span></span>
+                                        </a>
+
+                                        <a href="{{ url('/upload-prescription') }}" class="default-btn">
+                                            Upload Prescription
+                                            <span></span>
+                                        </a>
+                                    </div>
+                                    <div class="row height d-flex justify-content-center align-items-center">
+
+                                        <div class="col-md-9">
+
+                                            <div class="form">
+                                                <i class="fa fa-search"></i>
+                                                <input type="text" onkeyup="GetTest(this.value)" class="form-control form-input"
+                                                    placeholder="Search for Test/Package( KFT, Full Body etc.)">
+                                                <span class="left-pan"><i class=" flaticon-loupe" style=""></i></span>
+                                                <div id="listofsearchresults">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="slider-btn mt-3">
+                                        <a href="{{ url('/appointment') }}" class="default-btn">
+                                            Book Appointment
+                                            <span></span>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
 
 
 
@@ -288,10 +288,9 @@
             background: #2A88D3;
         }
 
-        .table-header h3{
+        .table-header h3 {
             color: #fff;
         }
-
     </style>
 
 
@@ -331,9 +330,10 @@
                                     <h3 style="color:#fff; font-size: 22px; margin-bottom:2px; line-height: 20px">
                                         {{ $package->test_name }}</h3>
                                     <!-- <h3><span>₹ {{ $package->price }}</span></h3> -->
-                                    <span class="prc_cut">Price : ₹ 
-                                    <span style="text-decoration: line-through;">{{ $package->mrp_price }}</span> 
-                                    <span style=" font-size:22px; position:relative; top:-3px; right:-3px;"> {{ $package->price }}</span></span>
+                                    <span class="prc_cut">Price : ₹
+                                        <span style="text-decoration: line-through;">{{ $package->mrp_price }}</span>
+                                        <span style=" font-size:22px; position:relative; top:-3px; right:-3px;">
+                                            {{ $package->price }}</span></span>
                                 </div>
                                 <div class="table-content">
                                     <div class="title">
@@ -385,6 +385,9 @@
 
     <div class="partner-area ptb-100">
         <div class="container">
+            <div class="section-title">
+                <h2 class="m-0">Tests</h2>
+            </div>
             <div class="partner-slider owl-carousel owl-theme">
                 {{-- <div class="partner-item"> --}}
 
@@ -415,7 +418,8 @@
                             <p>{{ Str::words($test->short_desc, 18, '...') }}</p>
                             <div class="row mt-2">
                                 <div class="price col-md-6">
-                                    <span style="  text-decoration: line-through; font-size:14px">₹{{ $test->mrp_price }}</span>
+                                    <span
+                                        style="  text-decoration: line-through; font-size:14px">₹{{ $test->mrp_price }}</span>
                                     ₹{{ $test->price }}
                                 </div>
                                 <a href="{{ url('/book-appointment') }}/{{ encryptWithPasscode($test->id) }}"
@@ -432,9 +436,9 @@
     </div>
     <section class="top-services-area">
         <div class="container">
-        <div class="section-title">
-                    <h2 class="m-0">Test & Package</h2>
-                </div>
+            <div class="section-title">
+                <h2 class="m-0">Test & Package</h2>
+            </div>
             <div class="row">
 
                 @foreach (get_Categoryes() as $category)
