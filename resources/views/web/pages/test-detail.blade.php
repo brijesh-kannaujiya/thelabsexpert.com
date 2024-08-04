@@ -103,7 +103,13 @@
                         </div>
 
                         {{-- Booking --}}
-
+                        <p class="price price_cutm"><del><span class=""><span
+                                        class="">₹</span>{{ $test->mrp_price }}</span></del>
+                            <ins style="font-size: 28px; text-decoration:none;"><span class=""><span
+                                        class="">₹</span>{{ $test->price }}</span></ins>
+                        </p>
+                        <button type="submit" name="add-to-cart" value="18583"
+                            class="single_add_to_cart_button button alt default-btn">Book Now</button>
                     </div>
 
                     <div class="col-lg-4 col-md-12">

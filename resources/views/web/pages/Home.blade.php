@@ -48,11 +48,11 @@
 
 
                         <!-- <div class="slider-btn mt-3">
-                                                <a href="{{ url('/appointment') }}" class="default-btn">
-                                                    Book Appointment
-                                                    <span></span>
-                                                </a>
-                                            </div> -->
+                                                                    <a href="{{ url('/appointment') }}" class="default-btn">
+                                                                        Book Appointment
+                                                                        <span></span>
+                                                                    </a>
+                                                                </div> -->
 
                     </div>
                 </div>
@@ -67,50 +67,50 @@
 
 
     <!-- <div class="page-title-area item-bg-3 mb-5">
-                    <div class="d-table">
-                        <div class="d-table-cell">
-                            <div class="container">
-                                <div class="page-title-content">
-                                    <div class="slider-btn mb-3">
-                                        <a href="{{ url('/') }}" class="default-btn">
-                                            Offers
-                                            <span></span>
-                                        </a>
+                                        <div class="d-table">
+                                            <div class="d-table-cell">
+                                                <div class="container">
+                                                    <div class="page-title-content">
+                                                        <div class="slider-btn mb-3">
+                                                            <a href="{{ url('/') }}" class="default-btn">
+                                                                Offers
+                                                                <span></span>
+                                                            </a>
 
-                                        <a href="{{ url('/upload-prescription') }}" class="default-btn">
-                                            Upload Prescription
-                                            <span></span>
-                                        </a>
-                                    </div>
-                                    <div class="row height d-flex justify-content-center align-items-center">
+                                                            <a href="{{ url('/upload-prescription') }}" class="default-btn">
+                                                                Upload Prescription
+                                                                <span></span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="row height d-flex justify-content-center align-items-center">
 
-                                        <div class="col-md-9">
+                                                            <div class="col-md-9">
 
-                                            <div class="form">
-                                                <i class="fa fa-search"></i>
-                                                <input type="text" onkeyup="GetTest(this.value)" class="form-control form-input"
-                                                    placeholder="Search for Test/Package( KFT, Full Body etc.)">
-                                                <span class="left-pan"><i class=" flaticon-loupe" style=""></i></span>
-                                                <div id="listofsearchresults">
+                                                                <div class="form">
+                                                                    <i class="fa fa-search"></i>
+                                                                    <input type="text" onkeyup="GetTest(this.value)" class="form-control form-input"
+                                                                        placeholder="Search for Test/Package( KFT, Full Body etc.)">
+                                                                    <span class="left-pan"><i class=" flaticon-loupe" style=""></i></span>
+                                                                    <div id="listofsearchresults">
 
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="slider-btn mt-3">
+                                                            <a href="{{ url('/appointment') }}" class="default-btn">
+                                                                Book Appointment
+                                                                <span></span>
+                                                            </a>
+                                                        </div>
+
+                                                    </div>
                                                 </div>
                                             </div>
-
                                         </div>
-
-                                    </div>
-                                    <div class="slider-btn mt-3">
-                                        <a href="{{ url('/appointment') }}" class="default-btn">
-                                            Book Appointment
-                                            <span></span>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+                                    </div> -->
 
 
 
@@ -362,7 +362,7 @@
                                 </div>
                                 <div class="pricing-btn">
 
-                                    <a href=""><img src="{{ asset('img/whatsapp.png') }}" width="32"
+                                    <a href=""><img src="{{ asset('img/whatsapp.png') }}" width="35"
                                             alt="whatsapp"></a>
 
                                     <a href="{{ url('/test-detail') }}/{{ encryptWithPasscode($package->id) }}"
@@ -371,8 +371,8 @@
                                         <span></span>
                                     </a>
 
-                                    <a href=""><img src="{{ asset('img/call-me-back.png') }}" width="32"
-                                            alt="whatsapp"></a>
+                                    <a href=""><img src="{{ asset('img/call-me-back_.png') }}" class="blacktoIcon"
+                                            width="40" alt="whatsapp"></a>
                                 </div>
                             </div>
                         </div>

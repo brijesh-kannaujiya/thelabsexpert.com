@@ -2,10 +2,10 @@
     <div class="container">
         <div class="row">
 
-        <a href="{{ url('/appointment') }}" class="btn-appot">
-                                        Book Appointment
-                                        <span></span>
-                                    </a>
+            <a href="{{ url('/appointment') }}" class="btn-appot">
+                Book Appointment
+                <span></span>
+            </a>
             <div class="col-lg-3 col-sm-6">
                 <div class="single-footer-widget">
                     <div class="logo">
@@ -148,4 +148,12 @@
 </div>
 <div class="go-top">
     <i class="las la-long-arrow-alt-up"></i>
+</div>
+
+<div class="whatsapp btn-wat">
+    <a href=""><img src="{{ asset('img/whatsapp.png') }}" width="40" alt="whatsapp"></a>
+</div>
+
+<div class="call-phone btn-call">
+    <a href=""><img src="{{ asset('img/call-me-back.png') }}" width="40" alt="whatsapp"></a>
 </div>
