@@ -22,7 +22,7 @@
         <!-- End Page Title Area -->
 
         <!-- Start Services Area -->
-        <section class="services-area bg-ffffff pt-100 pb-70 test-page">
+        <section class="services-area bg-ffffff pt-100 pb-70">
             <div class="container">
                 <div class="row">
                     @forelse ($tests as $test)

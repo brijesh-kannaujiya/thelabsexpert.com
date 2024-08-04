@@ -67,7 +67,7 @@ a {
   text-decoration: none;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  color: #333333;
+  color: #031521;
 }
 
 a:hover, a:focus {
@@ -82,7 +82,7 @@ button {
 p {
   margin-bottom: 15px;
   line-height: 1.8;
-  color: #333;
+  color: #6b6b84;
   font-weight: 400;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -137,7 +137,7 @@ img {
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  color: #333333;
+  color: #031521;
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
   text-transform: capitalize;
@@ -157,8 +157,8 @@ Default Btn CSS
   text-align: center;
   overflow: hidden;
   z-index: 1;
-  background-color: #F3100A;
-  background-color: #F3100A;
+  background-color: #11e7f91f;
+  background-color: #000000;
   color: #ffffff;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -166,10 +166,10 @@ Default Btn CSS
   opacity: 1;
   font-weight: 400;
   font-size: 16px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .default-btn span {
@@ -178,7 +178,7 @@ Default Btn CSS
   width: 0;
   height: 0;
   border-radius: 50%;
-  background-color: #B90A06;
+  background-color: #031521;
   color: #ffffff;
   -webkit-transition: width 0.5s ease-in-out, 
  height 0.5s ease-in-out;
@@ -216,7 +216,7 @@ Section Title CSS
 }
 
 .section-title span {
-  color: #2A88D3;
+  color: #11e7f91f;
 }
 
 .section-title h2 {
@@ -339,12 +339,11 @@ Navbar Area CSS
 }
 
 .main-navbar .navbar .navbar-brand img {
-  max-width: 200px !important;
-  width:200px !important
+  max-width: 120px !important;
 }
 
 .main-navbar .navbar .navbar-nav {
-  margin-left: auto;
+  margin: auto;
 }
 
 .main-navbar .navbar .navbar-nav .nav-item {
@@ -354,7 +353,7 @@ Navbar Area CSS
 }
 
 .main-navbar .navbar .navbar-nav .nav-item a {
-  color: #2A88D3;
+  color: #031521;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: 16px;
@@ -418,7 +417,7 @@ Navbar Area CSS
   padding: 10px 20px;
   position: relative;
   display: block;
-  color: #333333;
+  color: #031521;
   text-transform: capitalize;
   font-size: 16px;
   font-weight: 500;
@@ -448,7 +447,7 @@ Navbar Area CSS
 }
 
 .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a {
-  color: #333333;
+  color: #031521;
 }
 
 .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:hover, .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:focus, .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a.active {
@@ -463,7 +462,7 @@ Navbar Area CSS
 }
 
 .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a {
-  color: #333333;
+  color: #031521;
 }
 
 .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active {
@@ -478,7 +477,7 @@ Navbar Area CSS
 }
 
 .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a {
-  color: #333333;
+  color: #031521;
 }
 
 .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active {
@@ -493,7 +492,7 @@ Navbar Area CSS
 }
 
 .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a {
-  color: #333333;
+  color: #031521;
 }
 
 .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active {
@@ -508,7 +507,7 @@ Navbar Area CSS
 }
 
 .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a {
-  color: #333333;
+  color: #031521;
 }
 
 .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active {
@@ -523,7 +522,7 @@ Navbar Area CSS
 }
 
 .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a {
-  color: #333333;
+  color: #031521;
 }
 
 .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active {
@@ -595,7 +594,7 @@ Navbar Area CSS
   cursor: pointer;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  color: #333333;
+  color: #031521;
   font-size: 22px;
   font-weight: bold;
 }
@@ -605,7 +604,7 @@ Navbar Area CSS
   display: none;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  color: #333333;
+  color: #031521;
   font-size: 22px;
   font-weight: bold;
 }
@@ -629,10 +628,10 @@ Navbar Area CSS
   display: block;
   width: 40px;
   height: 3px;
-  background: #333333;
+  background: #031521;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  border-radius: 10px;
+  border-radius: 30px;
   margin-left: auto;
   margin-bottom: 5px;
 }
@@ -658,9 +657,9 @@ Navbar Area CSS
   width: 100%;
   z-index: 999;
   /* background:#e2caf1; */
-  background: #fff;
-  -webkit-box-shadow: 0 0px 10px 0 #50ACFF;
-          box-shadow: 0 0px 10px 0 #50ACFF;
+  background: #11e7f9;
+  -webkit-box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+          box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
   /* background-color: #7da3ca !important; */
   -webkit-animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
           animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
@@ -693,7 +692,7 @@ Navbar Area CSS
   height: 50px;
   line-height: initial;
   border: 1px solid #eeeeee;
-  color: #333333;
+  color: #031521;
   outline: 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -768,7 +767,7 @@ Navbar Area CSS
   font-size: 14px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  color: #333333;
+  color: #031521;
   cursor: pointer;
   width: 35px;
   text-align: center;
@@ -874,11 +873,11 @@ Navbar Area CSS
 }
 
 .sidebar-modal .sidebar-contact-area .contact-info .contact-info-content h2 a:hover {
-  color: #333333;
+  color: #031521;
 }
 
 .sidebar-modal .sidebar-contact-area .contact-info .contact-info-content h2 a:not(:first-child) {
-  color: #333333;
+  color: #031521;
 }
 
 .sidebar-modal .sidebar-contact-area .contact-info .contact-info-content h2 a:not(:first-child):hover {
@@ -984,7 +983,7 @@ Navbar Area CSS
   margin: 0 2px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  background-color: #333333;
+  background-color: #031521;
 }
 
 .others-option-for-responsive .dot-menu:hover .inner .circle {
@@ -1026,7 +1025,7 @@ Navbar Area CSS
   cursor: pointer;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  color: #333333;
+  color: #031521;
   font-size: 22px;
   font-weight: bold;
 }
@@ -1036,7 +1035,7 @@ Navbar Area CSS
   display: none;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  color: #333333;
+  color: #031521;
   font-size: 22px;
   font-weight: bold;
 }
@@ -1060,10 +1059,10 @@ Navbar Area CSS
   display: block;
   width: 40px;
   height: 3px;
-  background: #333333;
+  background: #031521;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  border-radius: 10px;
+  border-radius: 30px;
   margin-left: auto;
   margin-bottom: 5px;
 }
@@ -1112,17 +1111,17 @@ Navbar Area CSS
     background-color: #ffffff;
   }
   .main-responsive-nav .mean-container a.meanmenu-reveal {
-    color: #333333;
+    color: #031521;
   }
   .main-responsive-nav .mean-container a.meanmenu-reveal span {
-    background: #333333;
+    background: #031521;
     position: relative;
   }
   .main-responsive-nav .logo {
     position: relative;
   }
   .main-responsive-nav .logo img {
-    max-width: 200px !important;
+    max-width: 100px !important;
   }
   .navbar-area {
     /* background-color: #7da3ca; */
@@ -1147,10 +1146,10 @@ Main Slider Area CSS
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: calc(100vh - 75px);
+  height: 650px;
 }
 
-/* .main-slider-item::before {
+.main-slider-item::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -1161,7 +1160,7 @@ Main Slider Area CSS
   top: 0;
   opacity: .70;
   z-index: -1;
-} */
+}
 
 .main-slider-item.item-two {
   background-image: url(../img/slides/bg2.jpg);
@@ -1227,15 +1226,15 @@ Main Slider Area CSS
   line-height: 52px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  background-color: #2A88D3;
-  color: #fff;
+  background-color: #ffffff;
+  color: #11e7f91f;
   border-radius: 50%;
   opacity: 1;
   visibility: hidden;
 }
 
 .home-slides.owl-theme .owl-nav [class*=owl-]:hover, .home-slides.owl-theme .owl-nav [class*=owl-]:focus {
-  background-color: #50ACFF;
+  background-color: #031521;
 }
 
 .home-slides.owl-theme .owl-nav [class*=owl-].owl-next {
@@ -1264,43 +1263,22 @@ Main Slider Area CSS
 /*================================================
 Top Services Area CSS
 =================================================*/
-
-
 .top-services-area {
   position: relative;
   z-index: 1;
-  margin-top: 0;
-}
-
-.cust-to-area{
-  position: relative;
-  z-index: 1;
-  margin-top: -100px;
-  padding: 20px 0;
-  background: #2a88d347;
-}
-
-.top-services-area .form{
-  flex: auto;
-    margin-left: 5px;
-}
-
-.top-services-area .slider-btn .default-btn{
-  height: 55px;
-  padding: 15px 50px;
+  /* margin-top: -200px; */
 }
 
 .top-services-item {
-  border-radius: 10px;
-  background-color: #fff;
+  border-radius: 50px;
+  /* background-color: #fef7f2; */
+  background-color: #11e7f91f;
+  /* background-color: #f6f2fe; */
   padding: 35px 20px;
   margin-bottom: 30px;
   text-align: center;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  -webkit-box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
-          box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
-          border: .5px solid #2a88d338;
 }
 
 .top-services-item .icon {
@@ -1338,8 +1316,6 @@ Top Services Area CSS
 .top-services-item h3 {
   font-size: 14px;
   margin-bottom: 12px;
-  color: #2A88D3;
-  letter-spacing: .5px;
 }
 
 .top-services-item p {
@@ -1391,7 +1367,7 @@ About Area CSS
   bottom: 0;
   z-index: 1;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 0;
 }
 
@@ -1400,7 +1376,7 @@ About Area CSS
 }
 
 .about-content span {
-  color: #2A88D3;
+  color: #11e7f91f;
 }
 
 .about-content h3 {
@@ -1432,7 +1408,7 @@ About Area CSS
   padding-left: 35px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  color: #2A88D3;
+  color: #02334f;
 }
 
 .about-content .about-list li:last-child {
@@ -1446,11 +1422,11 @@ About Area CSS
   font-size: 25px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  color: #333;
+  color: #02334f;
 }
 
 .about-content .about-list li:hover i {
-  color: #000;
+  color: #11e7f91f;
 }
 
 .about-content.two {
@@ -1477,7 +1453,7 @@ About Area CSS
   bottom: 0;
   z-index: 1;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 0;
   max-width: 220px;
 }
@@ -1500,27 +1476,9 @@ Services Area CSS
 }
 
 .services-area.bg-white .single-services-item {
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
-  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
-  border: .5px solid #2a88d338;
-}
-
-.services-area.bg-white .single-services-item h3{
-  text-align: center;
-  font-size: 14px;
-  padding: 0 20px;
-  margin: 0;
-}
-
-.services-area.bg-white .single-services-item:hover{
-  -webkit-transform: translateY(-5px);
-    transform: translateY(-5px);
-    background-color: #fff;
-}
-
-.services-area.bg-white .single-services-item::before{
-  background: #fff;
+  background-color: #e9fdfe;
+  /* background-color: #faf3ee; */
+  /* background-color: #fafafa; */
 }
 
 .single-services {
@@ -1566,7 +1524,7 @@ Services Area CSS
 }
 
 .single-services h3 a {
-  color: #333333;
+  color: #031521;
 }
 
 .single-services p {
@@ -1577,7 +1535,7 @@ Services Area CSS
 
 .single-services .read-more-btn {
   font-weight: 500;
-  color: #333333;
+  color: #031521;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -1624,14 +1582,15 @@ Services Area CSS
 .single-services-item {
   text-align: center;
   background-color: #e9fdfe;
-  padding: 20px 0;
+  /* background-color: #faf3ee; */
+  /* background-color: #11e7f91f; */
+  padding: 30px;
   position: relative;
   border-radius: 10px;
   z-index: 1;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  margin-bottom: 0px;
-    border: .5px solid #2a88d338;
+  margin-bottom: 30px;
 }
 
 .single-services-item .icon {
@@ -1654,47 +1613,16 @@ Services Area CSS
 }
 
 .single-services-item h3 {
-  font-size: 16px;
+  font-size: 14px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   margin-bottom: 15px;
-  text-align: left;
-  padding: 0 15px;
-  min-height: 50px;
-}
-
-.single-services-item h3 a{
-  color: #2A88D3;
 }
 
 .single-services-item p {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   margin-bottom: 0;
-  text-align: left;
-  font-size: 14px;
-  line-height: 1.5;
-  padding: 0 15px;
-  height: 120px;
-    overflow: auto;
-}
-
-.single-services-item p 
-
-.single-services-item p::-webkit-scrollbar {
-  width: 10px;
-}
-
-.single-services-item p::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-.single-services-item p::-webkit-scrollbar-thumb {
-  background: #888; 
-}
-
-.single-services-item p::-webkit-scrollbar-thumb:hover {
-  background: #555; 
 }
 
 .single-services-item .read-more-btn {
@@ -1704,12 +1632,7 @@ Services Area CSS
   -webkit-transition: 0.5s;
   transition: 0.5s;
   margin-top: 12px;
-  color: #F3100A;
 }
-
-.single-services-item .price{
-  color: #2A88D3;
-} 
 
 .single-services-item::before {
   content: '';
@@ -1729,15 +1652,15 @@ Services Area CSS
   background: #e9fdfe;
   /* background: #faf3ee; */
   /* background: #11e7f97a; */
-  /* -webkit-transform: translateY(-10px);
-          transform: translateY(-10px); */
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .single-services-item:hover::before {
   height: 100%;
 }
 
-/* .single-services-item:hover h3 a {
+.single-services-item:hover h3 a {
   color: #000000;
 }
 
@@ -1751,7 +1674,7 @@ Services Area CSS
 
 .single-services-item:hover .read-more-btn {
   color: #000000;
-} */
+}
 
 .services-shape .shape1 {
   position: absolute;
@@ -1890,7 +1813,7 @@ Projects Area CSS
 }
 
 .projects-slider.owl-theme .owl-nav [class*=owl-]:hover, .projects-slider.owl-theme .owl-nav [class*=owl-]:focus {
-  background-color: #333333;
+  background-color: #031521;
 }
 
 .projects-slider.owl-theme .owl-nav [class*=owl-].owl-next {
@@ -1934,7 +1857,7 @@ Why Choose Area CSS
 }
 
 .why-choose-content span {
-  color: #2A88D3;
+  color: #11e7f91f;
 }
 
 .why-choose-content h3 {
@@ -1965,11 +1888,11 @@ Why Choose Area CSS
   height: 40px;
   width: 40px;
   line-height: 40px;
-  border: 1px solid #2A88D3;
+  border: 1px solid #0fe7f9;
   border-radius: 50px;
   text-align: center;
   font-size: 25px;
-  color: #2A88D3;
+  color: #0fe7f9;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -1984,9 +1907,9 @@ Why Choose Area CSS
 }
 
 .why-choose-content .why-choose-text:hover .icon i {
-  border: 1px solid #2A88D3;
+  border: 1px solid #11e7f91f;
   color: #ffffff;
-  background-color: #2A88D3;
+  background-color: #11e7f91f;
 }
 
 /*================================================
@@ -2043,7 +1966,7 @@ Team Area CSS
   position: relative;
   font-size: 20px;
   color: #ffffff;
-  border-radius: 10px;
+  border-radius: 30px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -2323,7 +2246,7 @@ Appointment Area CSS
 .appointment-form .nice-select .list .option {
   -webkit-transition: .6s;
   transition: .6s;
-  color: #333333;
+  color: #031521;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -2364,7 +2287,7 @@ Appointment Area CSS
 }
 
 .table-condensed .prev:hover {
-  background-color: #333333;
+  background-color: #031521;
   color: #ffffff;
 }
 
@@ -2377,7 +2300,7 @@ Appointment Area CSS
 }
 
 .table-condensed .next:hover {
-  background-color: #333333;
+  background-color: #031521;
   color: #ffffff;
 }
 
@@ -2472,7 +2395,7 @@ Appointment Area CSS
 }
 
 .appointment-form-others {
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #ffffff;
   -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.02);
           box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.02);
@@ -2502,31 +2425,31 @@ Appointment Area CSS
   display: block;
   width: 100%;
   margin-top: 20px;
-  color: #fff;
-  background-color: #F3100A;
+  color: #000000;
+  background-color: #11e7f91f;
   padding: 14px 25px;
-  border: 1px solid #F3100A;
+  border: 1px solid #11e7f91f;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   text-transform: capitalize;
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  border-radius: 10px;
 }
 
 .appointment-form-others form button:hover {
-  border-color: #B90A06;
-  color: #fff;
-  background-color: #B90A06;
- 
+  border-color: #11e7f91f;
+  color: #000000;
+  background-color: transparent;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.02);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.02);
 }
 
 .appointment-inner .appointment-content h3 {
   font-size: 38px;
   margin-bottom: 16px;
   line-height: 1.4;
-  color: #333333;
+  color: #031521;
 }
 
 .appointment-inner .appointment-content p {
@@ -2547,7 +2470,7 @@ Appointment Area CSS
 .appointment-inner .skill-bar .progress-title {
   font-size: 18px;
   font-weight: 500;
-  color: #333333;
+  color: #031521;
 }
 
 .appointment-inner .skill-bar .progress-number-wrapper {
@@ -2560,7 +2483,7 @@ Appointment Area CSS
   font-weight: 600;
   font-style: normal;
   text-transform: none;
-  color: #333333;
+  color: #031521;
 }
 
 .appointment-inner .skill-bar .progress-number-mark {
@@ -2569,7 +2492,7 @@ Appointment Area CSS
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   font-size: 18px;
-  color: #333333;
+  color: #031521;
   font-weight: 500;
 }
 
@@ -2585,7 +2508,7 @@ Appointment Area CSS
 
 .appointment-inner .skill-bar .progress-content {
   height: 8px;
-  background-color: #2A88D3;
+  background-color: #11e7f91f;
   border-radius: 4px;
   width: 0%;
 }
@@ -2611,7 +2534,7 @@ Fun Facts Area CSS
   padding: 60px 100px;
   position: relative;
   z-index: 1;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .single-fun-fact {
@@ -2633,7 +2556,7 @@ Fun Facts Area CSS
 
 .single-fun-fact p {
   line-height: initial;
-  color: #000;
+  color: #031521;
   margin-top: 10px;
   margin-bottom: 0;
   line-height: 1;
@@ -2687,7 +2610,7 @@ Fun Facts Area CSS
 
 .single-fun-fact-two p {
   line-height: initial;
-  color: #333333;
+  color: #031521;
   margin-top: 10px;
   margin-bottom: 0;
   line-height: 1;
@@ -2726,7 +2649,6 @@ Testimonial Area CSS
   padding: 30px 50px;
   max-width: 950px;
   margin: 25px auto 0;
-  border-radius: 10px;
 }
 
 .testimonial-slider .testimonial-item .info {
@@ -2748,7 +2670,7 @@ Testimonial Area CSS
 }
 
 .testimonial-slider .testimonial-item .info span {
-  color: #333333;
+  color: #031521;
   font-weight: 500;
 }
 
@@ -2817,15 +2739,15 @@ Testimonial Area CSS
   line-height: 52px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  background-color: #2A88D3;
-  color: #fff;
+  background-color: #ffffff;
+  color: #11e7f91f;
   border-radius: 50%;
   opacity: 1;
   visibility: hidden;
 }
 
 .testimonial-slider.owl-theme .owl-nav [class*=owl-]:hover, .testimonial-slider.owl-theme .owl-nav [class*=owl-]:focus {
-  background-color: #50ACFF;
+  background-color: #031521;
 }
 
 .testimonial-slider.owl-theme .owl-nav [class*=owl-].owl-next {
@@ -2894,7 +2816,7 @@ Blog Area CSS
 }
 
 .blog-item .content h3 a {
-  color: #333333;
+  color: #031521;
 }
 
 .blog-item .content .blog-btn {
@@ -2966,7 +2888,7 @@ Main Banner Area CSS
 }
 
 .main-banner-area.item-two .main-banner-content h1 {
-  color: #333333;
+  color: #031521;
 }
 
 .main-banner-area.item-two .main-banner-content p {
@@ -3039,7 +2961,7 @@ Main Banner Area CSS
 
 .main-banner-item .main-banner-content h1 {
   font-size: 55px;
-  color: #333333;
+  color: #031521;
   margin-bottom: 18px;
 }
 
@@ -3128,7 +3050,7 @@ Core Services Area CSS
 }
 
 .core-services-item .content span {
-  color: #333333;
+  color: #031521;
   font-weight: 500;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -3171,7 +3093,7 @@ Core Services Area CSS
 }
 
 .core-services-slider.owl-theme .owl-nav [class*=owl-]:hover, .core-services-slider.owl-theme .owl-nav [class*=owl-]:focus {
-  background-color: #333333;
+  background-color: #031521;
 }
 
 .core-services-slider.owl-theme .owl-nav [class*=owl-].owl-next {
@@ -3205,12 +3127,14 @@ Pricing Area CSS
   padding: 0px 0 0px 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  border-radius: 10px;
+  border-radius: 15px;
   text-align: center;
-  -webkit-box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
-          box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
-          border: .5px solid #2a88d338;
+  -webkit-box-shadow: 0 0 40px 3px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 40px 3px rgba(0, 0, 0, 0.05);
   background-color: #ffffff;
+  /* background-color: #e2caf1; */
+  border: 3px solid #11e7f9;
+  /* border: 1.196px solid #CFA8E9; */
 }
 
 .single-pricing-box .pricing-header h3 {
@@ -3231,72 +3155,45 @@ Pricing Area CSS
   font-size: 30px;
   font-weight: 700;
   font-family: "Open Sans", sans-serif;
-  color: #333333;
+  color: #031521;
 }
 
 .single-pricing-box .pricing-features {
   padding-left: 0;
   margin-bottom: 0;
   list-style-type: none;
-  height: 200px;
-  overflow: auto;
-  background: #e9fdfe;
-}
-
-.single-pricing-box .pricing-features::-webkit-scrollbar {
-  width: 10px;
-}
-
-.single-pricing-box .pricing-features::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-.single-pricing-box .pricing-features::-webkit-scrollbar-thumb {
-  background: #888; 
-}
-
-.single-pricing-box .pricing-features::-webkit-scrollbar-thumb:hover {
-  background: #555; 
 }
 
 .single-pricing-box .pricing-features li {
+
+  margin-bottom: 12px;
+  margin-top: 10px;
   position: relative;
   text-transform: capitalize;
   font-weight: 400;
   background-color: #e9fdfe;
-  padding: 10px 20px 10px 55px;
-  border-top: .5px solid lightgray;
-  text-align: left;
+  /* background-color: #fef7f3; */
+  padding: 10px;
 }
 
 .single-pricing-box .pricing-features li:last-child {
   margin-bottom: 0;
 }
 
-.prc_cut{
-    display: flex !important;
-    justify-content: center;
-    padding-top: 20px;
-    color: #fff;
-}
-
 .single-pricing-box .pricing-features li i {
   margin-right: 5px;
-  color: #2A88D3;
+  color: #000;
 }
 
 .single-pricing-box .pricing-btn {
-  margin-top: 0;
-  background-color: #2A88D3;
-  border-radius: 0px 0px 10px 10px;
+  margin-top: 25px;
+  background-color: #01aef0;
+  border-radius: 0px 0px 13px 13px;
+
 }
 
-
-
 .single-pricing-box .pricing-btn .default-btn {
-  height: 40px;
-    padding: 9px 15px !important;
-    background-color: #F3100A;
+  padding: 12px 25px;
 }
 
 .single-pricing-box:hover {
@@ -3334,7 +3231,7 @@ Testing Area CSS
 .testing-inner .skill-bar .progress-title {
   font-size: 18px;
   font-weight: 500;
-  color: #333333;
+  color: #031521;
 }
 
 .testing-inner .skill-bar .progress-number-wrapper {
@@ -3347,7 +3244,7 @@ Testing Area CSS
   font-weight: 600;
   font-style: normal;
   text-transform: none;
-  color: #333333;
+  color: #031521;
 }
 
 .testing-inner .skill-bar .progress-number-mark {
@@ -3356,7 +3253,7 @@ Testing Area CSS
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   font-size: 18px;
-  color: #333333;
+  color: #031521;
   font-weight: 500;
 }
 
@@ -3427,14 +3324,13 @@ Testing Area CSS
 Newsletter Area CSS
 =================================================*/
 .newsletter-inner {
-  background-color: #2A88D3;
+  background-color: #0fe7f9;
   padding: 55px 70px;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .newsletter-content h2 {
   font-size: 30px;
-  color: #fff;
 }
 
 .newsletter-form {
@@ -3448,9 +3344,9 @@ Newsletter Area CSS
   border: 1px solid #ffffff;
   height: 60px;
   padding-left: 25px;
-  border-radius: 10px;
+  border-radius: 15px;
   outline: 0;
-  color: #333333;
+  color: #031521;
 }
 
 .newsletter-form .input-newsletter::-webkit-input-placeholder {
@@ -3478,7 +3374,7 @@ Newsletter Area CSS
   border: none;
   height: 52px;
   padding: 0 30px;
-  border-radius: 10px;
+  border-radius: 15px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   line-height: 50px;
@@ -3489,7 +3385,7 @@ Newsletter Area CSS
 }
 
 .newsletter-form button:hover {
-  background-color: #333333;
+  background-color: #031521;
   color: #ffffff;
 }
 
@@ -3647,7 +3543,7 @@ How It Works Area CSS
   border-radius: 50px;
   text-align: center;
   font-size: 25px;
-  color: #333333;
+  color: #031521;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -3813,7 +3709,7 @@ Page Title Area CSS
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 200px;
+  height: 400px;
   background-attachment: fixed;
 }
 
@@ -3853,8 +3749,8 @@ Page Title Area CSS
   z-index: -1;
   width: 100%;
   height: 100%;
-  background: #2A88D3;
-  opacity: .5;
+  background: #000000;
+  opacity: .77;
 }
 
 .page-title-content {
@@ -3904,7 +3800,7 @@ Page Title Area CSS
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #11e7f91f;
 }
 
 .page-title-content ul li:last-child::before {
@@ -3919,7 +3815,7 @@ Log In Area CSS
   -webkit-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
           box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
   padding: 40px;
-  border-radius: 10px;
+  border-radius: 5px;
   max-width: 850px;
   margin: auto;
 }
@@ -3946,10 +3842,9 @@ Log In Area CSS
   height: 50px;
   border: 1px solid #eeeeee;
   border-radius: 3px;
-  color: #333333;
+  color: #031521;
   padding-left: 20px;
   background: transparent;
-  border-radius: 10px;
 }
 
 .login-form form .form-control:focus {
@@ -4059,7 +3954,7 @@ Register CSS
   height: 60px;
   border: 1px solid #eeeeee;
   border-radius: 3px;
-  color: #333333;
+  color: #031521;
   padding-left: 20px;
   background: transparent;
 }
@@ -4146,7 +4041,7 @@ Faq Area CSS
 
 .faq-accordion-content .accordion .accordion-title {
   padding: 18px 20px 18px 55px;
-  color: #333333;
+  color: #031521;
   position: relative;
   border-bottom: 1px solid transparent;
   margin-bottom: -1px;
@@ -4243,7 +4138,7 @@ Faq Area CSS
   display: inline-block;
   background-color: #11e7f91f;
   padding: 14px 30px;
-  border-radius: 10px;
+  border-radius: 30px;
   color: #ffffff;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -4364,7 +4259,7 @@ Contact Info Area CSS
   height: 60px;
   padding: 0 0 0 15px;
   line-height: initial;
-  color: #333333;
+  color: #031521;
   background-color: transparent;
   border: 1px solid #e5e0e0;
   border-radius: 0;
@@ -4495,7 +4390,7 @@ Services Details Area CSS
 
 .services-details-desc .features-list li {
   position: relative;
-  color: #333333;
+  color: #031521;
   margin-bottom: 15px;
   padding-left: 25px;
   line-height: 1.8;
@@ -4549,7 +4444,7 @@ Services Details Area CSS
 
 .services-details-desc .services-details-faq .accordion .accordion-title {
   padding: 18px 20px 18px 55px;
-  color: #333333;
+  color: #031521;
   position: relative;
   border-bottom: 1px solid transparent;
   margin-bottom: -1px;
@@ -4682,7 +4577,7 @@ Sidebar Widget Area CSS
 }
 
 .widget-area .widget_search form button:hover {
-  background-color: #333333;
+  background-color: #031521;
   color: #ffffff;
 }
 
@@ -4711,7 +4606,7 @@ Sidebar Widget Area CSS
 
 .widget-area .widget_projects_info ul li span {
   display: inline-block;
-  color: #333333;
+  color: #031521;
   font-weight: 600;
 }
 
@@ -4774,7 +4669,7 @@ Sidebar Widget Area CSS
 
 .widget-area .widget_services_list ul li a {
   display: block;
-  color: #333333;
+  color: #031521;
   -webkit-box-shadow: 0px 0px 29px 0px rgba(102, 102, 102, 0.1);
           box-shadow: 0px 0px 29px 0px rgba(102, 102, 102, 0.1);
   background-color: #ffffff;
@@ -4793,7 +4688,7 @@ Sidebar Widget Area CSS
   z-index: 1;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  color: #333333;
+  color: #031521;
   font-size: 20px;
 }
 
@@ -4969,11 +4864,11 @@ Sidebar Widget Area CSS
   left: 0;
   top: 8px;
   position: absolute;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .widget-area .widget_categories ul li a {
-  color: #333333;
+  color: #031521;
   display: block;
 }
 
@@ -5008,11 +4903,11 @@ Sidebar Widget Area CSS
   left: 0;
   top: 8px;
   position: absolute;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .widget-area .widget_archive ul li a {
-  color: #333333;
+  color: #031521;
   display: block;
 }
 
@@ -5026,7 +4921,7 @@ Sidebar Widget Area CSS
 
 .widget-area .tagcloud a {
   display: inline-block;
-  color: #333333;
+  color: #031521;
   font-weight: 500;
   font-size: 14.5px !important;
   padding: 6px 13px;
@@ -5060,13 +4955,13 @@ Blog Details Area CSS
 .blog-details-desc .article-content .entry-meta ul li {
   position: relative;
   display: inline-block;
-  color: #333333;
+  color: #031521;
   margin-right: 20px;
 }
 
 .blog-details-desc .article-content .entry-meta ul li span {
   display: inline-block;
-  color: #333333;
+  color: #031521;
   font-weight: 500;
 }
 
@@ -5194,7 +5089,7 @@ Blog Details Area CSS
 
 .blog-details-desc .article-footer .article-tags span {
   display: inline-block;
-  color: #333333;
+  color: #031521;
   font-size: 20px;
   margin-right: 5px;
   position: relative;
@@ -5267,7 +5162,7 @@ blockquote, .blockquote {
 }
 
 blockquote p, .blockquote p {
-  color: #333333;
+  color: #031521;
   line-height: 1.6;
   margin-bottom: 0;
   font-style: italic;
@@ -5387,7 +5282,7 @@ blockquote::after, .blockquote::after {
 .comments-area .comment-body {
   border-bottom: 1px solid #eeeeee;
   padding-left: 115px;
-  color: #333333;
+  color: #031521;
   font-size: 14px;
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -5399,10 +5294,10 @@ blockquote::after, .blockquote::after {
 
 .comments-area .comment-body .reply a {
   border: 1px solid #ded9d9;
-  color: #333333;
+  color: #031521;
   display: inline-block;
   padding: 5px 20px;
-  border-radius: 10px;
+  border-radius: 30px;
   text-transform: capitalize;
   position: relative;
   z-index: 1;
@@ -5487,7 +5382,7 @@ blockquote::after, .blockquote::after {
 .comments-area .comment-respond label {
   display: block;
   font-weight: 400;
-  color: #333333;
+  color: #031521;
   margin-bottom: 5px;
 }
 
@@ -5572,7 +5467,7 @@ blockquote::after, .blockquote::after {
 
 .comments-area .comment-respond .form-submit input:hover, .comments-area .comment-respond .form-submit input:focus {
   color: #ffffff;
-  background-color: #333333;
+  background-color: #031521;
 }
 
 /*================================================
@@ -5590,7 +5485,7 @@ Pagination Area CSS
   display: inline-block;
   background-color: #ffffff;
   line-height: 48px;
-  color: #333333;
+  color: #031521;
   -webkit-box-shadow: 0 2px 10px 0 #d8dde6;
           box-shadow: 0 2px 10px 0 #d8dde6;
   font-size: 18px;
@@ -5623,11 +5518,10 @@ Footer Area CSS
 
 .single-footer-widget .logo {
   margin-bottom: 25px;
-  width: 220px;
 }
 
 .single-footer-widget p {
-  color: #333333;
+  color: #031521;
   margin-bottom: 0;
 }
 
@@ -5714,7 +5608,6 @@ Footer Area CSS
   position: relative;
   padding-bottom: 15px;
   margin-bottom: 25px;
-  color: #2A88D3;
 }
 
 .single-footer-widget h3::before {
@@ -5724,7 +5617,7 @@ Footer Area CSS
   left: 0;
   height: 2px;
   width: 50px;
-  background-color: #2A88D3;
+  background-color: #031521;
 }
 
 .single-footer-widget .quick-links {
@@ -5735,19 +5628,19 @@ Footer Area CSS
 
 .single-footer-widget .quick-links li {
   margin-bottom: 12px;
-  color: #333333;
+  color: #031521;
   font-size: 15px;
 }
 
 .single-footer-widget .quick-links li a {
   display: inline-block;
-  color: #333333;
+  color: #031521;
   font-weight: 500;
   position: relative;
 }
 
 .single-footer-widget .quick-links li a:hover {
-  color: #2A88D3;
+  color: #11e7f91f;
 }
 
 .single-footer-widget .quick-links li a:hover::before {
@@ -5767,7 +5660,7 @@ Footer Area CSS
 }
 
 .single-footer-widget .quick-links li i {
-  color: #333333;
+  color: #031521;
 }
 
 .single-footer-widget .quick-links li:last-child {
@@ -5782,7 +5675,7 @@ Footer Area CSS
 
 .single-footer-widget .footer-contact-info li {
   margin-bottom: 20px;
-  color: #333333;
+  color: #031521;
   position: relative;
   padding-left: 35px;
 }
@@ -5792,7 +5685,7 @@ Footer Area CSS
   left: 0;
   top: 0;
   font-size: 25px;
-  color: #333333;
+  color: #031521;
 }
 
 .single-footer-widget .footer-contact-info li span {
@@ -5803,14 +5696,14 @@ Footer Area CSS
 
 .single-footer-widget .footer-contact-info li a {
   display: inline-block;
-  color: #333333;
+  color: #031521;
   font-weight: 400;
   position: relative;
   font-size: 15px;
 }
 
 .single-footer-widget .footer-contact-info li a:hover {
-  color: #2A88D3;
+  color: #11e7f91f;
 }
 
 .single-footer-widget .footer-contact-info li a:hover::before {
@@ -5837,20 +5730,20 @@ Footer Area CSS
 Copyright Section CSS
 =================================================*/
 .copyright-area {
-  background-color: #2A88D3;
+  background-color: #11e7f9;
   /* background-color: #faf3ee; */
   /* background-color: #11e7f91f; */
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .copyright-area p {
-  color: #fff;
+  color: #000000;
 }
 
 .copyright-area p a {
-  color: #fff;
+  color: #000000;
   display: inline-block;
   font-weight: 600;
 }
@@ -5868,7 +5761,7 @@ Go Top CSS
   bottom: -100px;
   right: 20px;
   color: #ffffff;
-  background-color: #2A88D3;
+  background-color: #031521;
   z-index: 4;
   width: 45px;
   text-align: center;
@@ -5924,7 +5817,7 @@ Buy Now Btn
   position: fixed;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  border-radius: 10px;
+  border-radius: 30px;
   display: inline-block;
   color: #ffffff !important;
   background-color: #82b440;
@@ -6000,15 +5893,11 @@ Buy Now Btn
 .top-services-item img {
   height: 100px;
   width: 100px;
-  object-fit: contain;
-  object-position: center;
 }
 
 .single-services-item img {
   height: 80px;
   width: 80px;
-  object-fit: contain;
-  object-position: center;
 }
 
 /* .services-details-desc p{
@@ -6086,53 +5975,4 @@ a.accordion-title {
   display: flex;
   justify-content: space-around;
   padding: 15px 0px;
-  place-items: center;
-}
-
-.slider_filter{
-  display: flex;
-}
-
-@media (max-width:1024px) {
-  .slider_filter{
-    display: block;
-  }
-  .cust-to-area{
-    background: #2A88D3;
-    padding: 20px 0 !important;
-    text-align: center;
-  }
-  .top-services-area .form{
-    margin: 0;
-  }
-}
-
-.test-page .single-services-item{
-  margin-bottom: 30px;
-}
-
-.btn-appot {
-    width: auto;
-    left: 30px;
-    z-index: 99;
-    bottom: 5%;
-    position: fixed;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    border-radius: 30px;
-    display: inline-block;
-    color: #ffffff !important;
-    background-color: #2A88D3;
-    padding: 8px 20px 8px;
-    font-size: 14px;
-    font-weight: 500;
-    -webkit-animation-name: tada;
-    animation-name: tada;
-    -webkit-animation-duration: 5s;
-    animation-duration: 5s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }

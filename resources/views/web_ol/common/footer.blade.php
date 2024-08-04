@@ -1,17 +1,12 @@
 <div class="footer-area pt-100 pb-70">
     <div class="container">
         <div class="row">
-
-        <a href="{{ url('/appointment') }}" class="btn-appot">
-                                        Book Appointment
-                                        <span></span>
-                                    </a>
             <div class="col-lg-3 col-sm-6">
                 <div class="single-footer-widget">
                     <div class="logo">
                         <a href="{{ url('/') }}">
-                            <img src="{{ asset('assets/img/lab.PNG') }}" class="black-logo" alt="image">
-                            <img src="{{ asset('assets/img/lab.PNG') }}" class="white-logo" alt="image">
+                            <img src="{{ asset('assets/img/logo.png') }}" class="black-logo" alt="image">
+                            <img src="{{ asset('assets/img/logo-2.png') }}" class="white-logo" alt="image">
                         </a>
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut

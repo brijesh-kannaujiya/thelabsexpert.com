@@ -1,4 +1,4 @@
-<!-- <div class="top-header">
+<div class="top-header">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <div class="navbar-area">
     <div class="main-responsive-nav">
@@ -33,7 +33,7 @@
             <div class="main-responsive-menu">
                 <div class="logo">
                     <a href="{{ url('/') }}">
-                        <img src="{{ asset('assets/img/lab.PNG') }}" class="black-logo" alt="image">
+                        <img src="{{ asset('assets/img/logo.png') }}" class="black-logo" alt="image">
                         {{-- <img src="{{ asset('assets/img/logo-2.png') }}" class="white-logo" alt="image"> --}}
                     </a>
                 </div>
@@ -45,7 +45,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ asset('assets/img/lab.PNG') }}" class="black-logo" alt="image">
+                    <img src="{{ asset('assets/img/logo.png') }}" class="black-logo" alt="image">
                     {{-- <img src="{{ asset('assets/img/logo-2.png') }}" class="white-logo" alt="image"> --}}
                 </a>
 
